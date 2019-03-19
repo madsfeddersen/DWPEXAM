@@ -1,38 +1,10 @@
-body {
-    margin: 0;
-    font-family: "arial", "sans-serif";
-    background: #f1f1f1;
-    color: rgb(0, 0, 0);
-    background-color: #f3f3f3;
-    text-align: center;
-}
+body
+    {
+        font-family: "arial", "sans-serif";
+    }
 
+a
+    {
+        text-decoration: none;
+    }
 
-a {
-    text-decoration: none;
-  }
-
-body p {
-    
-}
-
-#container {
-    margin: 0, auto;
-    text-align: center;
-}
-
-.duckContainer {
-    border: 1px solid #000;
-    width: 300px;
-    padding: 10px 10px;
-    
-}
-
-.duckImgAnchor {
-    
-}
-
-.duckImg {
-    overflow: hidden;
-    border-radius: 8px;
-}
