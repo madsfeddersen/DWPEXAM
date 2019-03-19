@@ -10,11 +10,11 @@
                 ["name" => "Arnold Duck", "price" => "12.00", "id" => "000005"],
                 ["name" => "Sunglasses Duck", "price" => "10.00", "id" => "000006"],
                 ["name" => "Donald Trump Duck", "price" => "32.00", "id" => "000007"],
-                ["name" => "Turtle Duck", "price" => "32.00", "id" => "000008"],
-                ["name" => "Bat Duck", "price" => "32.00", "id" => "000009"],
-                ["name" => "Female Duck", "price" => "32.00", "id" => "000010"],
-                ["name" => "Ninja Duck", "price" => "32.00", "id" => "000011"],
-                ["name" => "Standard Duck", "price" => "32.00", "id" => "000012"],
+                ["name" => "Turtle Duck", "price" => "5.00", "id" => "000008"],
+                ["name" => "Bat Duck", "price" => "25.00", "id" => "000009"],
+                ["name" => "Female Duck", "price" => "47.00", "id" => "000010"],
+                ["name" => "Ninja Duck", "price" => "25.00", "id" => "000011"],
+                ["name" => "Standard Duck", "price" => "10.00", "id" => "000012"]
             ];
         foreach ($ducks as $duck)
         {
