@@ -1,6 +1,4 @@
 <?php         
-
-
     function duck()
     {
         $ducks =
@@ -20,8 +18,8 @@
             ];
         foreach ($ducks as $duck)
         {
-            $getDuckImg = "https://banner2.kisspng.com/20180404/wsq/kisspng-rubber-duck-mallard-ernie-big-duck-duck-5ac4d942243ec3.8484753515228501141485.jpg";
-            $duckImg = '<v-img class="duckImg" src="' . $getDuckImg . '"></v-img>';
+            $getDuckImgId = 'img/' . $duck['id'] . '.jpg';
+            $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
             $duckInfo = $duck['name'] . $b . $duck['price'] . ' USD$';
             $duckString = '<v-flex xs3><v-card>' . $duckImg . '<v-card-text class="px-0">' . $duckInfo . '</v-card-text></v-card></v-flex>';
