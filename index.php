@@ -1,4 +1,5 @@
-<?php         
+<?php  
+    //DUMMY      
     function duck()
     {
         $ducks =
