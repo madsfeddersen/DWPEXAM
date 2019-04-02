@@ -2,24 +2,49 @@ body
     {
         font-family: "Montserrat", "sans-serif";
         background-color:#292c2f;
+        color: #fff;
     }
 
+    /*
+    #baggrund {
+        background: url("../img/background.svg")!important;
+        background-size: cover!important;
+        background-repeat: no-repeat!important;
+        background-position: center!important;
+    }
+    */
 a
     {
-
+        text-decoration: none;
     }
-    .header-user-dropdown {
+
+.pricecard
+    {
+    -webkit-box-shadow: 0 0 10px 0px rgba(0,0,0,0.3)!important;
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3)!important;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3)!important;
+    border-radius: 10px!important;
+    }
+
+    .v-card__text.px-0 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: #000!important;
+    }
+
+.header-user-dropdown
+    {
         background-color:#292c2f;
         box-shadow:0 1px 1px #ccc;
         padding: 20px 40px;
         height: 80px;
         color: #ffffff;
         box-sizing: border-box;
-    }
+}
      
     /* Our Logo */
-    
-    .header-user-dropdown .header-limiter h1{
+    .header-user-dropdown .header-limiter h1
+    {
         float: left;
         font: normal 28px;
         line-height: 40px;
@@ -27,26 +52,42 @@ a
         font-family: "Montserrat", "strong";
         font-weight: bold;
         font-style: italic;
-        
     }
     
-    .header-user-dropdown .header-limiter h1 span {
+    .header-user-dropdown .header-limiter h1 span
+    {
         color:#fbbc05;
         font-style: italic;
     }
     
     /* our header links */
     
-    .header-user-dropdown .header-limiter a {
+    .header-user-dropdown .header-limiter a
+    {
         color: #ffffff;
         text-decoration: none;
         font-family: "Montserrat", "strong";
-        font-weight: bold;
-        
-        
+        font-weight: bold;        
     }
     
-    .header-user-dropdown .header-limiter nav{
+    .header-user-dropdown .header-Login h1
+    {
+        float: right!important;
+        color: red!important;
+        text-decoration: none;
+        font-family: "Montserrat", "strong";
+        font-weight: bold;   
+    }
+
+    .header-user-dropdown .header-limiter a:hover 
+    {
+        color: #fbbc05;       
+    }
+
+    
+    
+    .header-user-dropdown .header-limiter nav
+    {
         font:16px Arial, Helvetica, sans-serif;
         line-height: 40px;
         float: left;
@@ -54,7 +95,8 @@ a
         padding: 0;
     }
     
-    .header-user-dropdown .header-limiter nav a{
+    .header-user-dropdown .header-limiter nav a
+    {
         font-size: 14px;
         display: inline-block;
         padding: 0 12px;
@@ -64,50 +106,63 @@ a
         line-height: 1;
     }
     
-    @media all and (max-width: 800px) {
+@media all and (max-width: 800px) {
     
-        .header-user-dropdown .header-limiter h1 {
-            font-size: 24px;
-        }
+    .header-user-dropdown .header-limiter h1
+    {
+        font-size: 24px;
+    }
+
+    .header-user-dropdown .header-limiter h4
+    {
+        font-size: 24px;
+        padding: 20px 40px;
+    }
     
-        .header-user-dropdown .header-limiter nav a {
-            padding: 0 5px;
-        }
+    .header-user-dropdown .header-limiter nav a
+    {
+        padding: 0 5px;
+    }
     
-        .header-user-dropdown .header-limiter nav {
+    .header-user-dropdown .header-limiter nav
+    {
             margin-left: 20px;
-        }
+    }
     
     }
     
     @media all and (max-width: 600px) {
     
-        .header-user-dropdown .header-limiter nav {
+        .header-user-dropdown .header-limiter nav
+        {
             display: none;
         }
     
     }
 
-    .footer-distributed{
+    .footer-distributed
+    {
         background-color: #292c2f;
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
         box-sizing: border-box;
         width: 100%;
         text-align: left;
         font: normal 16px sans-serif;
-    
         padding: 45px 50px;
         margin-top: 2px;
     }
     
-    .footer-distributed .footer-left p{
+
+    .footer-distributed .footer-left p
+    {
         color:  #8f9296;
         font-size: 14px;
         margin: 0;
     }
     
     
-    .footer-distributed p.footer-links{
+    .footer-distributed p.footer-links
+    {
         font-size:18px;
         font-weight: bold;
         color:  #ffffff;
@@ -115,31 +170,32 @@ a
         padding: 0;
     }
     
-    .footer-distributed p.footer-links a{
+    .footer-distributed p.footer-links a
+    {
         display:inline-block;
         line-height: 1.8;
         text-decoration: none;
         color:  inherit;
     }
     
-    .footer-distributed .footer-right{
+    .footer-distributed .footer-right
+    {
         float: right;
         margin-top: 6px;
         max-width: 180px;
     }
     
-    .footer-distributed .footer-right a{
+    .footer-distributed .footer-right a
+    {
         display: inline-block;
         width: 35px;
         height: 35px;
         background-color:  #33383b;
         border-radius: 2px;
-    
         font-size: 20px;
         color: #ffffff;
         text-align: center;
         line-height: 35px;
-    
         margin-left: 3px;
     }
     
@@ -147,19 +203,23 @@ a
     @media (max-width: 600px) {
     
         .footer-distributed .footer-left,
-        .footer-distributed .footer-right{
+        .footer-distributed .footer-right
+        {
             text-align: center;
         }
     
-        .footer-distributed .footer-right{
+        .footer-distributed .footer-right
+        {
             float: none;
             margin: 0 auto 20px;
         }
     
-        .footer-distributed .footer-left p.footer-links{
+        .footer-distributed .footer-left p.footer-links
+        {
             line-height: 1.8;
         }
     }
-    footer-text {
-        font-style: italic;
+    .footer-text
+    {
+        font-style: italic!important;
     }
