@@ -25,17 +25,24 @@ a
 
 .pricecard
     {
-    -webkit-box-shadow: 0 0 10px 0px rgba(0,0,0,0.3)!important;
+    -webkit-box-shadow: 0px 0px 10px px rgba(0,0,0,0.3)!important;
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3)!important;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3)!important;
     border-radius: 10px!important;
     }
+.pricecard:hover {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
+        transition: 0.5s;
+}
+
 .pricecard:hover, .v-card__text.px-0:hover
     {
         /*background-color: rgba(251, 188, 5, 1);*/
         color: rgba(251, 188, 5, 1)!important;
-        background-color:rgba(41,44,47,0.9)!important;
-        transition: 0.3s;
+        background-color:rgba(41,44,47,1)!important;
+        border-radius: 10px!important;
     }
 
 .v-card__text.px-0
