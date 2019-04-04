@@ -10,13 +10,16 @@ function displayProducts()
 
         foreach ($getProducts as $duck)
         {
-            //WORKS WITH LOCALHOST $getDuckImgId = '/../backend/DWPEXAM/presentation/img/products/' . $duck['id'] . '.png';
+            // THISWORKS WITH LOCALHOST $getDuckImgId = '/../backend/DWPEXAM/presentation/img/products/' . $duck['id'] . '.png';
             $getDuckImgId = '/presentation/img/products/' . $duck['id'] . '.png';
+            
             $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
             $duckInfo = $duck['name'] . $b . 'Duck' . $b . $duck['price'] . ' USD$';
-            $duckString = '<v-flex xl2 md2 xs3><a href="/presentation/product"><v-card class="pricecard ma-2 pt-4">' . $duckImg . '<v-card-text class="px-0">' .
-            $duckInfo . '</v-card-text></v-card></a></v-flex>';
+            
+            $duckString = '<v-flex xl2 md2 xs3><a href="/product"><v-card class="pricecard ma-2 pt-4">' . $duckImg . '<v-card-text class="px-0">' .
+                $duckInfo . '</v-card-text></v-card></a></v-flex>';
+
             echo $duckString;
         }
     }
