@@ -25,21 +25,38 @@ a
     {
         font-weight: bolder;
         font-size: 36px;
+        color: #fff;
+    }
+    .page-title-register
+    {
+        color: #000;
     }
 
-.page-sub-title
+.page-sub-title, .page-sub-title-register
     {
         font-weight: bold;
         font-size: 22px;
         margin-top: 10px;
     }
-        .page-sub-title a 
+    .page-sub-title-register
+    {
+        color: #000;
+    }
+        .page-sub-title a, .page-sub-title-register a
         {
             color: rgba(251, 188, 5, 1);
+            
         }
+       
         .page-sub-title a:hover
         {
             color: #fff;
+            text-decoration: underline;
+        }
+        
+        .page-sub-title-register a:hover
+        {
+            color: #000;
             text-decoration: underline;
         }
     
