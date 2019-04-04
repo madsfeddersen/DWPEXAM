@@ -5,23 +5,55 @@ body
         color: #fff;
     }
 
-    /*
-    #baggrund {
+
+/*#baggrund {
         background: url("../img/background.svg")!important;
         background-size: cover!important;
         background-repeat: no-repeat!important;
         background-position: center!important;
-    }
-    */
+    }*/
+    
+
 a
     {
         text-decoration: none;
+        color: #fff;
     }
 
+
 .page-title
-{
-    text-align: center;
-}
+    {
+        font-weight: bolder;
+        font-size: 36px;
+    }
+
+.page-sub-title
+    {
+        font-weight: bold;
+        font-size: 22px;
+        margin-top: 10px;
+    }
+        .page-sub-title a 
+        {
+            color: rgba(251, 188, 5, 1);
+        }
+        .page-sub-title a:hover
+        {
+            color: #fff;
+            text-decoration: underline;
+        }
+    
+.page-text
+    {
+        font-weight: normal;
+        font-size: 20px;
+    }
+
+    .page-title, .page-text, .page-sub-title
+    {
+        text-align: center; 
+    }
+ 
 
 .pricecard
     {
@@ -30,29 +62,23 @@ a
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3)!important;
     border-radius: 10px!important;
     }
+    .pricecard:hover {
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
+        transition: 0.5s;
+        color: rgba(251, 188, 5, 1)!important;
+        background-color:rgba(41,44,47,1)!important;
+    }
 
-    .v-card__text.px-0
+.v-card__text.px-0
     {
         font-family: "Montserrat";
         font-weight: bolder;
         font-size: 16px;
     }
 
-.pricecard:hover {
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1)!important;
-    transition: 0.5s;
-    color: rgba(251, 188, 5, 1)!important;
-    background-color:rgba(41,44,47,1)!important;
-        
-}
 
-.v-card__text.px-0:hover
-    {
-        /*background-color: rgba(251, 188, 5, 1);*/
-      
-    }
 
 
 
