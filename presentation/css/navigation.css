@@ -1,0 +1,107 @@
+.header-user-dropdown
+    {
+        background-color:#292c2f;
+        box-shadow:0 1px 1px #ccc;
+        padding: 20px 40px;
+        height: 80px;
+        color: #ffffff;
+        box-sizing: border-box;
+}
+     
+    /* Our Logo */
+    .header-user-dropdown .header-limiter h1
+    {
+        float: left;
+        font: normal 28px;
+        line-height: 40px;
+        margin:0;
+        font-family: "Montserrat", "strong";
+        font-weight: bold;
+        font-style: italic;
+    }
+    
+    .header-user-dropdown .header-limiter h1 span
+    {
+        color:#fbbc05;
+        font-style: italic;
+    }
+    
+    /* our header links */
+    
+    .header-user-dropdown .header-limiter a
+    {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Montserrat", "strong";
+        font-weight: bold;        
+    }
+    
+    .header-user-dropdown .header-Login h1
+    {
+        float: right!important;
+        color: red!important;
+        text-decoration: none;
+        font-family: "Montserrat", "strong";
+        font-weight: bold;   
+    }
+
+    .header-user-dropdown .header-limiter a:hover 
+    {
+        color: #fbbc05;       
+    }
+
+    
+    
+    .header-user-dropdown .header-limiter nav
+    {
+        font:16px Arial, Helvetica, sans-serif;
+        line-height: 40px;
+        float: left;
+        margin: 0 0 0 60px;
+        padding: 0;
+    }
+    
+    .header-user-dropdown .header-limiter nav a
+    {
+        font-size: 14px;
+        display: inline-block;
+        padding: 0 12px;
+        opacity: 0.9;
+        position: relative;
+        text-decoration:none;
+        line-height: 1;
+    }
+    
+@media all and (max-width: 800px) {
+    
+    .header-user-dropdown .header-limiter h1
+    {
+        font-size: 24px;
+    }
+
+    .header-user-dropdown .header-limiter h4
+    {
+        font-size: 24px;
+        padding: 20px 40px;
+    }
+    
+    .header-user-dropdown .header-limiter nav a
+    {
+        padding: 0 5px;
+    }
+    
+    .header-user-dropdown .header-limiter nav
+    {
+            margin-left: 20px;
+    }
+    
+    }
+    
+    @media all and (max-width: 600px) {
+    
+        .header-user-dropdown .header-limiter nav
+        {
+            display: none;
+        }
+    
+    }
