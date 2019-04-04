@@ -27,7 +27,8 @@ function displayProducts()
 
         foreach ($getProducts as $duck)
         {
-            $getDuckImgId = '/../backend/DWPEXAM/presentation/img/products/' . $duck['id'] . '.png';
+            //$getDuckImgId = '/../backend/DWPEXAM/presentation/img/products/' . $duck['id'] . '.png';
+            $getDuckImgId = '/presentation/img/products/' . $duck['id'] . '.png';
             $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
             $duckInfo = $duck['name'] . $b . $duck['price'] . ' USD$';
