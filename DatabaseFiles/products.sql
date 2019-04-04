@@ -1,3 +1,9 @@
+create table products (
+	id INT,
+	name VARCHAR(50),
+	price DECIMAL(5,2),
+	description VARCHAR(50)
+);
 insert into products (id, name, price, description) values (1, 'Standard', 31.17, 'This is your standard average duck. A true classic, if you will!');
 insert into products (id, name, price, description) values (2, 'Mermaid', 78.41, 'Traum hemor l cereb w LOC of 30 minutes or less, sequela');
 insert into products (id, name, price, description) values (3, 'Arnold', 45.06, 'Corrosion of unspecified degree of left foot');

@@ -32,7 +32,7 @@ function displayProducts()
             $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
             $duckInfo = $duck['name'] . $b . 'Duck' . $b . $duck['price'] . ' USD$';
-            $duckString = '<v-flex xs4 md2 xl3><a><v-card class="pricecard ma-2 pt-4">' . $duckImg . '<v-card-text class="px-0" >' .
+            $duckString = '<v-flex xs4 md2 xl3><a href="/presentation/productPage"><v-card class="pricecard ma-2 pt-4">' . $duckImg . '<v-card-text class="px-0" >' .
              $duckInfo . '</v-card-text></v-card></a></v-flex>';
             echo $duckString;
         }

@@ -7,11 +7,10 @@ include (__DIR__ . "/header.php");
     <?php
     include (__DIR__ . "/navigation.php");
     
-
     $request = $_SERVER['REQUEST_URI'];
     $router = new Router($request);
 
-    $router->get('/', 'presentation/home');
+    $router->get('/', 'presentation/shop');
     $router->get('home', 'presentation/home');
     $router->get('shop', 'presentation/shop');
     $router->get('about', 'presentation/about');
