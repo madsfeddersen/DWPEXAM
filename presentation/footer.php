@@ -7,11 +7,11 @@
         </div>
         <div class="footer-left">
             <p class="footer-links">
-                <a href="#">Home</a> |
-                <a href="#">Products</a> |
-                <a href="#">About us</a> |
-                <a href="#">FAQ</a> |
-                <a href="#">Contact</a>
+                <a href="/home">Home</a> |
+                <a href="/shop">Products</a> |
+                <a href="/about">About us</a> |
+                <a href="/faq">FAQ</a> |
+                <a href="/contact">Contact</a>
             </p>
             <br>
             <p class="footer-text">
