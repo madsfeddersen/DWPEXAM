@@ -6,13 +6,13 @@ body
     }
 
 
-#baggrund
+/*#baggrund
     {
-        background: url("../img/background.svg")!important;
+        background: url("../img/background2.jpeg")!important;
         background-size: cover!important;
         background-repeat: no-repeat!important;
         background-position: center!important;
-    }
+    }*/
     
 
 a
@@ -89,7 +89,7 @@ a
         background-color:rgba(41,44,47,1)!important;
     }
 
-.v-card__text.px-0
+.v-card__text.px-0, .productdetails
     {
         font-family: "Montserrat"!important;
         font-weight: bolder;
