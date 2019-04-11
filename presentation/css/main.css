@@ -6,12 +6,13 @@ body
     }
 
 
-/*#baggrund {
+#baggrund
+    {
         background: url("../img/background.svg")!important;
         background-size: cover!important;
         background-repeat: no-repeat!important;
         background-position: center!important;
-    }*/
+    }
     
 
 a

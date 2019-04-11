@@ -1,14 +1,21 @@
 <?php
 require_once (__DIR__ . "/../business/productDAO.php");
 
-echo "<h1>ProductPage</h1>";
-
-$productID = $args[0];
-
-displayProductDetails($productID);
-
 ?>
 
-<div id="app">
 
+<div id="app">
+    <v-app id="baggrund">
+        <v-container>
+            <div class="page-sub-title" style="font-family: Montserrat;">
+            <h1>Product details</h1>
+            </div>
+            <v-layout>    
+                <?php
+                $productID = $args[0];
+                    displayProductDetails($productID);
+                ?>
+            </v-layout>
+        </v-container>
+    </v-app>
 </div>

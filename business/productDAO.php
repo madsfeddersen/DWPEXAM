@@ -40,10 +40,22 @@ function displayProductDetails($productID)
         $getProducts = $query->fetchAll();
         
       
+
        foreach($getProducts as $duck)
-    
             {
-               echo $duck['id'] . " ";
+            $getDuckImgId = '/presentation/img/products/' . $duck['id'] . '.png';
+            
+            $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
+            $b = "<br>";
+            $duckInfo = $duck['name'] . " " . 'Duck' . $b . $duck['price'] . ' USD$' . $b . $duck['description'];
+            
+            $duckString1 = '<v-flex xl6 md6 xs6><a href="/product/' . $duck['id'] . '">' . $duckImg . '</a></v-flex>';
+           
+            $duckString2 = '<v-flex xl6 md6 xs6 pt-5><a href="/product/' . $duck['id'] . '">' .
+            $duckInfo . '</a></v-flex>';
+
+            echo $duckString1 . $duckString2;
+        
             }
             
           

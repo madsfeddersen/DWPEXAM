@@ -2,7 +2,7 @@ create table products (
 	id INT,
 	name VARCHAR(50),
 	price DECIMAL(5,2),
-	description VARCHAR(50)
+	description VARCHAR(1000)
 );
 insert into products (id, name, price, description) values (1, 'Standard', 31.17, 'This is your standard average duck. A true classic, if you will!');
 insert into products (id, name, price, description) values (2, 'Mermaid', 78.41, 'Because, why not?');
