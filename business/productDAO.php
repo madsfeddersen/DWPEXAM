@@ -29,44 +29,24 @@ function displayProducts()
         
     }
 
-function displayProductDetails()
+    
+function displayProductDetails($productID)
     {          
-
         
-
-        require_once "dbcon.php";  
+        require_once "dbcon.php";
         $dbCon = dbCon($user, $pass);
-        $query = $dbCon->prepare("SELECT * FROM products");
+        $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");
         $query->execute();
         $getProducts = $query->fetchAll();
         
-
-        $item = $_SERVER['REQUEST_URI'];
-        $trim = preg_replace('/\D/', '', $item);
-        
-       echo "<br><br>";
-
-        
-       /*foreach($getProducts as $duck)
+      
+       foreach($getProducts as $duck)
+    
             {
-                print $duck['id'] . " ";  
-            }*/
-
-        foreach($getProducts as $duck){
-                if (isset($duck["id"])){
-                    echo $duck["name"] . "<br>";
-                }
+               echo $duck['id'] . " ";
             }
-
-        /*echo "<br><br>";
-       
-        print_r($getProducts);
-
-        echo "<br><br>";
-
-        echo var_dump($getProducts);
-      */
-        
+            
+          
     }
       
 

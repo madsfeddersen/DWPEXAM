@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="presentation/css/main.css">
-    <link rel="stylesheet" href="presentation/css/navigation.css">
-    <link rel="stylesheet" href="presentation/css/footer.css">
-    
+    <?php
+    echo '<link rel="stylesheet" href="/../presentation/css/main.css">';
+    echo '<link rel="stylesheet" href="/../presentation/css/navigation.css">';
+    echo '<link rel="stylesheet" href="/../presentation/css/footer.css">';
+    ?>
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="/presentation/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/presentation/img/favicon/apple-icon-60x60.png">

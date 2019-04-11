@@ -15,6 +15,7 @@ class Router{
 		echo "Route: ";
 		print_r($route);
 		echo "<br>";
+		
 		echo "File path: ";
 		print_r($file);
 		echo "<br>";

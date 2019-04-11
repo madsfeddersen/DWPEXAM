@@ -1,6 +1,7 @@
 <?php
-    include ("business/router.php");
+    
     include (__DIR__ . "/header.php");
+    include ("business/router.php");
 ?>
 <body>
 <?php
@@ -10,7 +11,7 @@
     // Gets URI
     $request = $_SERVER['REQUEST_URI'];
 
-    // Instantiates the Router class and parses URI to router ($request is the URI)
+    // Instantiate Router and parse URI to router
     $router = new Router($request);
     
 
