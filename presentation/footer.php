@@ -8,7 +8,7 @@
         <div class="footer-left">
             <p class="footer-links">
                 <a href="/home">Home</a> |
-                <a href="/shop">Products</a> |
+                <a href="/shop">Shop</a> |
                 <a href="/about">About us</a> |
                 <a href="/faq">FAQ</a> |
                 <a href="/contact">Contact</a>
