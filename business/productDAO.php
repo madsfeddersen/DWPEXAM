@@ -6,7 +6,6 @@ function displayProducts()
         $query = $dbCon->prepare("SELECT * FROM products");
         $query->execute();
         $getProducts = $query->fetchAll();
-        //var_dump($getProducts);
 
         foreach ($getProducts as $duck)
         {
@@ -24,7 +23,7 @@ function displayProducts()
                 </a>
                 </v-flex>';
            
-            echo $duckString;
+            echo ($duckString);
         }
         
     }
@@ -47,7 +46,7 @@ function displayProductDetails($productID)
             
             $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
-            $duckInfo = $duck['name'] . " " . 'Duck' . $b . $duck['price'] . ' USD$' . $b . $duck['description'];
+            $duckInfo = $duck['name'] . " " . 'Duck' . $b . $b . $duck['description'] . $b . $b . $duck['price'] . ' USD$';
             
             $duckString1 = '<v-flex xl2 md2 xs2></v-flex><v-flex xl4 md4 xs4 ><a href="/product/' . $duck['id'] . '">' . $duckImg . '</a></v-flex>';
            
