@@ -1,7 +1,6 @@
 <footer class="footer-distributed">
         <div class="footer-right">
             <a href="https://www.facebook.com/KimThoeisen" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="https://www.linkedin.com/in/kim-th%C3%B8isen/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/madsfeddersen/DWPEXAM" target="_blank"><i class="fab fa-github"></i></a>
         </div>
