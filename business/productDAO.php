@@ -46,12 +46,12 @@ function displayProductDetails($productID)
             
             $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
-            $duckInfo = $duck['name'] . " " . 'Duck' . $b . $b . $duck['description'] . $b . $b . $duck['price'] . ' USD$';
+            $duckInfo = $duck['name'] . " " . 'Duck' . $b . $duck['description'] . $b . $duck['price'] . ' USD$';
             
             $duckString1 = '<v-flex xl2 md2 xs2></v-flex><v-flex xl4 md4 xs4 ><a href="/product/' . $duck['id'] . '">' . $duckImg . '</a></v-flex>';
            
-            $duckString2 = '<v-flex xl4 md4 xs4 pt-5 class="productdetails"><a href="/product/' . $duck['id'] . '">' .
-            $duckInfo . '</a></v-flex><v-flex xl2 md2 xs2></v-flex>';
+            $duckString2 = '<v-flex xl4 md4 xs4 pt-5 class="productdetails">' .
+            $duckInfo . $b . '<a target="_blank">Add to cart</a></v-flex><v-flex xl2 md2 xs2></v-flex>';
 
             echo $duckString1 . $duckString2;
         

@@ -3,6 +3,8 @@ body
         font-family: "Montserrat", "sans-serif"!important;
         background-color:#292c2f;
         color: #fff;
+        text-align:center;
+        
     }
 
 
@@ -104,15 +106,6 @@ a
     }
 
 /* LOGIN FORM */
-body{
-    font-family: 'Montserrat', sans-serif;
-    background:#292c2f;
-    margin: 0 auto 0 auto;  
-    width:100%; 
-    text-align:center;
-    margin: 20px 0px 20px 0px; 
-   
-  }
   
   p{
     font-size:12px;
@@ -189,7 +182,7 @@ body{
     width:300px;
     border-radius:6px;
     margin: 0 auto 0 auto;
-    padding:0px 0px 70px 0px;
+    padding:20px 20px 20px 20px;
     border: #fbbc05 4px solid; 
     
   }

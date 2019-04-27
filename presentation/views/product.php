@@ -1,5 +1,5 @@
 <?php
-require_once (__DIR__ . "/../business/productDAO.php");
+require_once ("business/productDAO.php");
 
 ?>
 
