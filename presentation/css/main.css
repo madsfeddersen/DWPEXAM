@@ -195,3 +195,9 @@ a
       font-style: italic;
   }
 
+
+  /* Contact Form */
+  .contact-form {
+      font-style: italic;
+      border: #fbbc05 1px solid;
+  }
