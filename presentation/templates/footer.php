@@ -18,7 +18,7 @@
             </p> 
             <br>
             <p class="footer-text">
-                We’ve got all shapes, colors and sizes of duck
+                We've got all shapes, colors and sizes of duck
                 that you could possibly think of!
             </p>
             <br>
@@ -36,7 +36,7 @@
             <br>
             <br>
             <p class="copyright">
-                Duck You! &copy; 2019
+                Duck You! 	&copy;2019
             </p>
         </div>
     </footer>

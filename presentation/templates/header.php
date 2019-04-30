@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/presentation/css/navigation.css">
     <link rel="stylesheet" href="/presentation/css/footer.css">
     
-
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="/presentation/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/presentation/img/favicon/apple-icon-60x60.png">
@@ -31,27 +30,37 @@
     <meta name="msapplication-TileImage" content="/presentation/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- SEO -->
+    <!-- Title, Meta & SEO -->
+    <title>DuckYou!</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Duck you is an enterprise, who are supplying the world with all kinds of rubber ducks!">
+    <meta name="keywords" content="rubber,duck,ducks,rubberduck,shop,rubberducks,">
+    <meta name="author" content="Andreas Madum & Mads Feddersen">
+    <meta http-equiv="refresh" content="30">
 
+    <!-- COOKIE Consent xD -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#f3f3f3",
-      "text": "#000000"
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+    "palette": {
+        "popup": {
+        "background": "#f3f3f3",
+        "text": "#000000"
+        },
+        "button": {
+        "background": "#fbbc05",
+        "text": "#000000"
+        }
     },
-    "button": {
-      "background": "#fbbc05",
-      "text": "#000000"
+    "theme": "classic",
+    "content": {
+        "dismiss": "I get it!"
     }
-  },
-  "theme": "classic",
-  "content": {
-    "dismiss": "I get it!"
-  }
-})});
-</script>
+    })});
+    </script>
+
+    
+    
 </head>

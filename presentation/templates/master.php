@@ -2,7 +2,7 @@
     
     include (__DIR__ . "/header.php");
     include ("business/router.php");
-    include ("business/session.php");
+    //include ("business/session.php");
 ?>
 <body>
 <?php
