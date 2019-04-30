@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="/presentation/css/main.css">
     <link rel="stylesheet" href="/presentation/css/navigation.css">
     <link rel="stylesheet" href="/presentation/css/footer.css">
-    
+    <link rel="stylesheet" href="/presentation/css/contact.css">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="/presentation/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/presentation/img/favicon/apple-icon-60x60.png">

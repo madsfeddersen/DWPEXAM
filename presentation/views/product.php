@@ -1,5 +1,5 @@
 <?php
-require_once ("business/productDAO.php");
+require_once (__DIR__ . "/../../persistence/productDAO.php");
 
 ?>
 
@@ -13,7 +13,7 @@ require_once ("business/productDAO.php");
             <v-layout>    
                 <?php
                 $productID = $args[0];
-                    displayProductDetails($productID);
+                    readProduct($productID);
                 ?>
             </v-layout>
         </v-container>
