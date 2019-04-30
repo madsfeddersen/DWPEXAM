@@ -1,5 +1,5 @@
 <?php
-require_once (__DIR__ . "/../../business/productDAO.php");
+require_once (__DIR__ . "/../../persistence/productDAO.php");
 ?>
 
 <div id="app">
@@ -10,7 +10,7 @@ require_once (__DIR__ . "/../../business/productDAO.php");
             </div>
             <v-layout ma-5 row wrap>    
                 <?php
-                    displayProducts();
+                    readShop();
                 ?>
             </v-layout>
         </v-container>

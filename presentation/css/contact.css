@@ -1,0 +1,27 @@
+.controls {
+    margin-top: 30px;
+    text-align: center;
+   
+}
+
+.sendbutton {
+    font-size: 100%;
+}
+
+.form-group {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-group input {
+    border: 1px solid #fff; 
+    border-radius: 15px;
+}
+
+.form-group textarea {
+    border: 1px solid #fff; 
+}

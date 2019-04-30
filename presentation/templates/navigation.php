@@ -8,6 +8,6 @@
             <a href="/faq">FAQ</a>
             <a href="/contact">Contact</a>
         </nav>
-        <h1 id="loginBtn"><a href="/login">Login</a></h1>
+        <h1 id="loginBtn"><a href="/login">Sign in</a></h1>
     </div>
 </header>
