@@ -1,75 +1,62 @@
-<?php
-/*
- *  CONFIGURE EVERYTHING HERE
- */
-
-// an email address that will be in the From field of the email.
-$from = 'Demo contact form <andreashenriksen95@live.dk>';
-
-// an email address that will receive the email with the output of the form
-$sendTo = 'Demo contact form <andreashenriksen95@live.dk>';
-
-// subject of the email
-$subject = 'New message from contact form';
-
-// form field names and their translations.
-// array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message');
-
-// message that will be displayed when everything is OK :)
-$okMessage = 'Contact form successfully submitted. Thank you, we will get back to you soon!';
-
-// If something goes wrong, we will display this message.
-$errorMessage = 'There was an error while submitting the form. Please try again later';
-
-/*
- *  LET'S DO THE SENDING
- */
-
-// if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
-error_reporting(E_ALL & ~E_NOTICE);
-
-try
-{
-
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
-
-    $emailText = "You have a new message from your contact form\n=============================\n";
-
-    foreach ($_POST as $key => $value) {
-        // If the field exists in the $fields array, include it in the email
-        if (isset($fields[$key])) {
-            $emailText .= "$fields[$key]: $value\n";
-        }
-    }
-
-    // All the neccessary headers for the email.
-    $headers = array('Content-Type: text/plain; charset="UTF-8";',
-        'From: ' . $from,
-        'Reply-To: ' . $from,
-        'Return-Path: ' . $from,
-    );
-
-    // Send email
-    mail($sendTo, $subject, $emailText, implode("\n", $headers));
-
-    $responseArray = array('type' => 'success', 'message' => $okMessage);
-}
-catch (\Exception $e)
-{
-    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
-}
-
-
-// if requested by AJAX request return JSON response
-if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    $encoded = json_encode($responseArray);
-
-    header('Content-Type: application/json');
-
-    echo $encoded;
-}
-// else just display the message
-else {
-    echo $responseArray['message'];
-}
+<?php 
+$postData = $statusMsg = ''; 
+$status = 'error'; 
+ 
+// If the form is submitted 
+if(isset($_POST['submit'])){ 
+    $postData = $_POST; 
+     
+    // Validate form fields 
+    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])){ 
+         
+        // Validate reCAPTCHA box 
+        if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){ 
+            // Google reCAPTCHA API secret key 
+            $secretKey = '6LchXaEUAAAAAMgUiUcUXKlMcK24aQDWP1MpSwbA'; 
+             
+            // Verify the reCAPTCHA response 
+            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']); 
+             
+            // Decode json data 
+            $responseData = json_decode($verifyResponse); 
+             
+            // If reCAPTCHA response is valid 
+            if($responseData->success){ 
+                // Posted form data 
+                $name = !empty($_POST['name'])?$_POST['name']:''; 
+                $email = !empty($_POST['email'])?$_POST['email']:''; 
+                $message = !empty($_POST['message'])?$_POST['message']:''; 
+                 
+                // Send email notification to the site admin 
+                $to = 'admin@example.com'; 
+                $subject = 'New contact form have been submitted'; 
+                $htmlContent = " 
+                    <h1>Contact request details</h1> 
+                    <p><b>Name: </b>".$name."</p> 
+                    <p><b>Email: </b>".$email."</p> 
+                    <p><b>Message: </b>".$message."</p> 
+                "; 
+                 
+                // Always set content-type when sending HTML email 
+                $headers = "MIME-Version: 1.0" . "\r\n"; 
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+                // More headers 
+                $headers .= 'From:'.$name.' <'.$email.'>' . "\r\n"; 
+                 
+                // Send email 
+                @mail($to,$subject,$htmlContent,$headers); 
+                 
+                $status = 'success'; 
+                $statusMsg = 'Your contact request has submitted successfully.'; 
+                $postData = '';
+            }else{ 
+                $statusMsg = 'Robot verification failed, please try again.'; 
+            } 
+        }else{ 
+            $statusMsg = 'Please check on the reCAPTCHA box.'; 
+        } 
+    }else{ 
+        $statusMsg = 'Please fill all the mandatory fields.'; 
+    } 
+} 
+?>
