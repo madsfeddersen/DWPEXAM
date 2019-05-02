@@ -3,7 +3,7 @@
     <p class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></p>
 <?php } ?>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 <form action="" method="post">
     <!-- Form fields -->
@@ -19,8 +19,10 @@
 		
     <!-- Google reCAPTCHA box -->
     <div class="g-recaptcha" data-sitekey="6LchXaEUAAAAAID5UnKUmw3LJqVA9fmo1vWM8TVO"></div>
-	
+    
     <!-- Submit button -->
     <input id="submit" type="submit" name="submit" value="Submit">
 </form>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 

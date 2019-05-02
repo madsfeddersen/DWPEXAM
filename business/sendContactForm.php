@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
                 $message = !empty($_POST['message'])?$_POST['message']:''; 
                  
                 // Send email notification to the site admin 
-                $to = 'admin@example.com'; 
+                $to = 'andreas.madum1@gmail.com'; 
                 $subject = 'New contact form have been submitted'; 
                 $htmlContent = " 
                     <h1>Contact request details</h1> 
@@ -59,4 +59,5 @@ if(isset($_POST['submit'])){
         $statusMsg = 'Please fill all the mandatory fields.'; 
     } 
 } 
+
 ?>

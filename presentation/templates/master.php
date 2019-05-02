@@ -21,6 +21,7 @@
     $router->get('home', 'presentation/views/home');
     $router->get('shop', 'presentation/views/shop');
     $router->get('login', 'presentation/views/login');
+    $router->get('cart', 'presentation/views/cart');
     $router->get('signup', 'presentation/views/signup');
     $router->get('about', 'presentation/views/about');
     $router->get('faq', 'presentation/views/faq');

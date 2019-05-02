@@ -10,7 +10,7 @@ form {
 }
 
 #submit:hover {
-    background: lightgreen;
+    background: #fbbc05;
     color: #000;
     
 }
@@ -30,5 +30,7 @@ form {
 }
 
 .g-recaptcha {
-    text-align: center;
+
+    margin: 10 auto;
+    width: 304px;
 }

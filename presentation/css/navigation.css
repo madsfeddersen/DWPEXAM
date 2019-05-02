@@ -1,6 +1,9 @@
-#loginBtn
+#loginBtn, #cartBtn
     {
         float: right;
+        font-size: 30px;
+        margin-top: 5px;
+        margin-right: 20px;
     }
 
 .header-user-dropdown

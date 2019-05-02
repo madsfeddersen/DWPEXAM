@@ -8,6 +8,16 @@
             <a href="/faq">FAQ</a>
             <a href="/contact">Contact</a>
         </nav>
-        <h1 id="loginBtn"><a href="/login">Sign in</a></h1>
+        <h1 id="loginBtn">
+            <a href="/login">
+                <i class="fas fa-user-alt"></i>
+            </a>
+        </h1>
+        <h1 id="cartBtn">
+            <a href="/cart">
+            <i class="fas fa-shopping-cart"></i>
+            </a>
+        </h1>
     </div>
 </header>
+

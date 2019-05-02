@@ -5,7 +5,7 @@ require_once (__DIR__ . "/../../persistence/productDAO.php");
 
 
 <div id="app">
-    <v-app id="baggrund">
+    <v-app>
         <v-container>
             <div class="page-sub-title" style="font-family: Montserrat;">
             <h1>Product details</h1>
@@ -16,6 +16,7 @@ require_once (__DIR__ . "/../../persistence/productDAO.php");
                     readProduct($productID);
                 ?>
             </v-layout>
+            
         </v-container>
     </v-app>
 </div>

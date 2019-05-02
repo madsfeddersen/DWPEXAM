@@ -37,7 +37,6 @@
     <meta name="description" content="Duck you is an enterprise, who are supplying the world with all kinds of rubber ducks!">
     <meta name="keywords" content="rubber,duck,ducks,rubberduck,shop,rubberducks,">
     <meta name="author" content="Andreas Madum & Mads Feddersen">
-    <meta http-equiv="refresh" content="30">
 
     <!-- COOKIE Consent xD -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
