@@ -1,22 +1,32 @@
-create table users (
-	id INT,
-	userName VARCHAR(20),
-	firstName VARCHAR(30),
-	lastName VARCHAR(30),
-	userEmail VARCHAR(30),
-	userPass VARCHAR(30)
+DROP DATABASE IF EXISTS DuckShopDB;
+CREATE DATABASE DuckShopDB;
+USE DuckShopDB;
+
+CREATE TABLE ´Duck_Shop´ (
+    ShopID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Address varchar(255),
+    Phone_number varchar (255)
 );
 
-insert into users (id, userName, lastName, userEmail, userPass) values (1, 'Donald', 'Trump', 'donald@trumpsta.gov', 'password');
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  userEmail VARCHAR(30),
+	userPass VARCHAR(30),
+	firstName VARCHAR(30),
+	lastName VARCHAR(30),
+  userRank VARCHAR(10)
+);
 
-
-
-create table products (
-	id INT,
+DROP TABLE IF EXISTS products;
+CREATE TABLE IF NOT EXISTS products (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(50),
 	price DECIMAL(5,2),
 	description VARCHAR(1000)
 );
+
+insert into users (id, userEmail, userPass, firstName, lastName) values (1, 'donald@trumpsta.gov', 'password', 'Donald', 'Trump', 'superAdmin');
 
 insert into products (id, name, price, description) values (1, 'Standard', 31.17, 'This is your standard average duck. A true classic, if you will!');
 insert into products (id, name, price, description) values (2, 'Mermaid', 78.41, 'Because, why not?');

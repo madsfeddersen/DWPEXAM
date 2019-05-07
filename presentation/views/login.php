@@ -24,6 +24,7 @@ include ("business/handleLogin.php");
 
   <button class="btn" type="submit" formmethod="post">Log in</button>
   <button class="btn"><a href="/signup">Sign Up</a></button>
+  <button class="btn"><a href="/backend">Temp Login</a></button>
  
 </div> 
 </form>

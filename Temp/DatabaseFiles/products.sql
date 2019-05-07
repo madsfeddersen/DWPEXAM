@@ -1,17 +1,5 @@
-create table users (
-	id INT,
-	userName VARCHAR(20),
-	firstName VARCHAR(30),
-	lastName VARCHAR(30),
-	userEmail VARCHAR(30),
-	userPass VARCHAR(30)
-);
-
-insert into users (id, userName, lastName, userEmail, userPass) values (1, 'Donald', 'Trump', 'donald@trumpsta.gov', 'password');
-
-
-
-create table products (
+DROP TABLE IF EXISTS products;
+CREATE TABLE IF NOT EXISTS products (
 	id INT,
 	name VARCHAR(50),
 	price DECIMAL(5,2),

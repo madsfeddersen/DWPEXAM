@@ -27,7 +27,7 @@
     $router->get('faq', 'presentation/views/faq');
     $router->get('contact', 'presentation/views/contact');
     $router->get('product', 'presentation/views/product');
-    $router->get('backend', 'presentation/views/backend');
+    $router->get('backend', 'presentation/backend/backend');
 
     include (__DIR__ . "/footer.php");
     include (__DIR__ . "/scripts.php");    

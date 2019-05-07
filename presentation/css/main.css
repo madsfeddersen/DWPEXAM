@@ -7,6 +7,12 @@ body
         
     }
 
+tbody, tbody tr, tbody td {
+    background: #292c2f;
+    color: #fff;
+    font-weight: bolder;
+}
+
 /*
 #baggrund
     {
