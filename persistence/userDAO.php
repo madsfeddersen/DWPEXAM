@@ -1,5 +1,5 @@
 <?php
-require( __DIR__ . '/../includes/db/connection.php' );
+require( __DIR__ . '/../business/db/dbcon2.php' );
 
 
 function getUser($userID)
@@ -164,6 +164,5 @@ function userTemplate($row)
     <br>
     <a href='/business/handleUser.php?action=edit&userID=" . $row->id . "' class='waves-effect waves-light btn edit'>Edit</a>
     <a href='/business/handleUser.php?action=delete&userID=" . $row->id . "' class='waves-effect waves-light btn edit'>Delete</a>
-	<br><br><br><br>";
-	
+    <br><br><br><br>";
 }

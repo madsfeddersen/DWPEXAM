@@ -28,6 +28,7 @@
     $router->get('contact', 'presentation/views/contact');
     $router->get('product', 'presentation/views/product');
     $router->get('backend', 'presentation/backend/backend');
+    $router->get('backend2', 'presentation/backend/backend2');
 
     include (__DIR__ . "/footer.php");
     include (__DIR__ . "/scripts.php");    
