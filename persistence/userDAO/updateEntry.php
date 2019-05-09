@@ -9,10 +9,10 @@ if (isset($_POST['entryID']) && isset($_POST['submit'])) {
     $userRank = $_POST['userRank'];
 
     $dbCon = dbCon($user, $pass);
-    $query = $dbCon->prepare("UPDATE users SET `userEmail`='$userName', `firstName`='$firstName', `lastName`='$lastName', `userPass`='$userPass', `userRank`='$userRank' WHERE ID=$entryID");
+    $query = $dbCon->prepare("UPDATE users SET `userEmail`='$userEmail', `firstName`='$firstName', `lastName`='$lastName', `userPass`='$userPass', `userRank`='$userRank' WHERE ID=$entryID");
     $query->execute();
-    header("Location: /presentation/backend/backend2.php?status=updated&ID=$entryID");
+    header("Location: editUsers.php?status=updated&ID=$entryID");
 
 }else{
-    header("Location: /presentation/backend/backend2.php?status=0");
+    header("Location: editUsers.php?status=0");
 }

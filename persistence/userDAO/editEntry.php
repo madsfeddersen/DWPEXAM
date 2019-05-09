@@ -26,8 +26,11 @@ $getUsers = $query->fetchAll();
         ?>
     
 </p>
+
+
         <form class="col s12" name="contact" method="post" action="updateEntry.php">
-            
+        
+    
         <div class="row">
                 <div class="input-field col s12">
                     <input id="userEmail" name="email" type="email"value="<?php echo $getUsers[0][1]; ?>" class="validate" required="" aria-required="true">
@@ -62,9 +65,14 @@ $getUsers = $query->fetchAll();
             </div>
 
             <input type="hidden" name="entryID" value="<?php echo $entryID; ?>">
+            
             <button class="btn waves-effect waves-light" type="submit" name="submit">Update
             </button>
+            
         </form>
+        <br>
+        <button class="btn waves-effect waves-light red"><a href="/dashboard">Back to dashboard</a>
+        </button>
     </div>
 </div>
 </body>
@@ -73,6 +81,6 @@ $getUsers = $query->fetchAll();
 <?php
 }
 else{
-    header("Location: /presentation/backend/backend2.php?status=0");
+    header("Location: editUsers.php?status=0");
 }
 ?>

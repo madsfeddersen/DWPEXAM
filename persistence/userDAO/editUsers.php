@@ -64,17 +64,17 @@ $getUsers = $query->fetchAll();
                             
                             echo "<td>";
                             if ($getUser['userRank']==1){
-                                echo '<img src="/presentation/img/lvl1.png" alt="lvl 1" height="40px">';
+                                echo '<img src="/../../presentation/img/lvl1.png" alt="lvl 1" height="40px">';
                             }
                             elseif ($getUser['userRank']==2){
-                                echo '<img src="/presentation/img/lvl2.png" alt="lvl 2" height="40px">';
+                                echo '<img src="/../../presentation/img/lvl2.png" alt="lvl 2" height="40px">';
                             }
                             elseif ($getUser['userRank']==3){
-                                echo '<img src="/presentation/img/lvl3.png" alt="lvl 3" height="40px">';
+                                echo '<img src="/../../presentation/img/lvl3.png" alt="lvl 3" height="40px">';
                             }
                             echo "</td>";
-                            echo '<td><a href="presentation/backend/editEntry.php?ID='.$getUser['id'].'" class="waves-effect waves-light btn" ">Edit</a></td>';
-                            echo '<td><a href="presentation/backend/deleteEntry.php?ID='.$getUser['id'].'" class="waves-effect waves-light btn red" onclick="return confirm(\'Delete! are you sure?\')">Delete</a></td>';
+                            echo '<td><a href="/../../persistence/userDAO/editEntry.php?ID='.$getUser['id'].'" class="waves-effect waves-light btn" ">Edit</a></td>';
+                            echo '<td><a href="/../../persistence/userDAO/deleteEntry.php?ID='.$getUser['id'].'" class="waves-effect waves-light btn red" onclick="return confirm(\'Delete! are you sure?\')">Delete</a></td>';
                             echo "</tr>";
                         }
                     ?>
@@ -87,7 +87,7 @@ $getUsers = $query->fetchAll();
         <br><br>
         <h3>Add new user to DB!</h3>
 
-        <form class="col s12" name="contact" method="post" action="addEntry.php">
+        <form class="col s12" name="contact" method="post" action="/../../persistence/userDAO/addEntry.php">
             
              <div class="row">
                 <div class="input-field col s12">

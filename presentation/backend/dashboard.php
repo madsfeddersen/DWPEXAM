@@ -15,5 +15,6 @@
 </div>
 <div class="row">
     <a href="/editProducts" class="btn orange center">Products</a>
+    
     <a href="http://localhost/phpmyadmin" target="_blank" class="btn red center">phpMyAdmin</a>
 
