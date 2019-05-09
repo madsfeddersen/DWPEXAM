@@ -19,7 +19,11 @@ $getUsers = $query->fetchAll();
 
 
 <div class="container">
-
+<br>
+<a href="/dashboard" class="btn blue left">Back to dashboard</a>
+<br>
+<br>
+<br>
     <?php
     if (isset($_GET['status'])) {
         if ($_GET['status'] == "deleted") {
@@ -39,7 +43,7 @@ $getUsers = $query->fetchAll();
     ?>
     
     <div class="row">
-    <a href="/dashboard" class="btn blue left">Back to dashboard</a>
+    
         <div class="row">
             <table class="highlight">
                 <thead>

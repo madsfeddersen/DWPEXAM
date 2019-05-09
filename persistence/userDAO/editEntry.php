@@ -22,25 +22,28 @@ $getUsers = $query->fetchAll();
 <body>
 
 <div class="container">
-        <p>Editing userID: #<?php echo $getUsers[0][0] . ' with Email: ' . $getUsers[0][1] ;
+<br>
+        <button class="btn black"><a href="/dashboard">Back to dashboard</a>
+        </button>
+        <p>Editing userID: #<?php var_dump($entryID); echo $getUsers[0][0] . ' with Email: ' . $getUsers[0][1] ;
         ?>
     
 </p>
 
 
-        <form class="col s12" name="contact" method="post" action="updateEntry.php">
+        <form class="col s12" name="contact" method="post" action="/../../persistence/userDAO/updateEntry.php">
         
     
         <div class="row">
                 <div class="input-field col s12">
-                    <input id="userEmail" name="email" type="email"value="<?php echo $getUsers[0][1]; ?>" class="validate" required="" aria-required="true">
+                    <input id="userEmail" name="email" type="email" value="<?php echo $getUsers[0][1]; ?>" class="validate" required="" aria-required="true">
                     <label for="userEmail">E-mail</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="userPass" name="userPass" type="password" class="validate" required="" aria-required="true">
+                    <input id="userPass" name="userPass" type="password" value="<?php echo $getUsers[0][2]; ?>" class="validate" required="" aria-required="true">
                     <label for="userPass">Password</label>
                 </div>
             </div>
@@ -70,9 +73,7 @@ $getUsers = $query->fetchAll();
             </button>
             
         </form>
-        <br>
-        <button class="btn waves-effect waves-light red"><a href="/dashboard">Back to dashboard</a>
-        </button>
+        
     </div>
 </div>
 </body>
