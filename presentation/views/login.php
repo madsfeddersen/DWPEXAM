@@ -12,22 +12,17 @@ include ("business/handleLogin.php");
     <a>Please log in to continue</a>
 </h1>
 
-<p class="page-text">
-
 
 <form method="post" action="">
-<div class="box">
+  <div class="box">
 
-<input type="user" name="user" value="" placeholder="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
-  
-<input type="pass" name="pass" value="" placeholder="password" onFocus="field_focus(this, 'password');" onblur="field_blur(this, 'password');" class="password" />
-
-  <button class="btn" type="submit" formmethod="post">Log in</button>
+  <input type="text" name="userEmail" value="" placeholder="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
+  <input type="password" name="userPass" value="" placeholder="password" onFocus="field_focus(this, 'password');" onblur="field_blur(this, 'password');" class="password" />
+  <button class="btn"><input type="submit" name="submit" value="Log in"></button>
   <button class="btn"><a href="/signup">Sign Up</a></button>
-  <button class="btn"><a href="/backend">Backend</a></button>
-  <button class="btn"><a href="/backend2">Backend 2</a></button>
- 
-</div> 
+  </div> 
 </form>
-</p>
+
+<button class="btn"><a href="/dashboard">Backend</a></button>
+
 

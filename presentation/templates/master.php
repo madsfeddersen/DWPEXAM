@@ -27,8 +27,11 @@
     $router->get('faq', 'presentation/views/faq');
     $router->get('contact', 'presentation/views/contact');
     $router->get('product', 'presentation/views/product');
-    $router->get('backend', 'presentation/backend/backend');
-    $router->get('backend2', 'presentation/backend/backend2');
+    $router->get('dashboard', 'presentation/backend/dashboard');
+    $router->get('editUsers', 'presentation/backend/editUsers');
+    $router->get('editSite', 'presentation/backend/editSite');
+    $router->get('editProducts', 'presentation/backend/editProducts');
+    
 
     include (__DIR__ . "/footer.php");
     include (__DIR__ . "/scripts.php");    
