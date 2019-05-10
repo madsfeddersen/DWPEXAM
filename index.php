@@ -1,5 +1,5 @@
 <?php
-include("presentation/templates/master.php");
+include("presentation/master.php");
 ?>
 
 

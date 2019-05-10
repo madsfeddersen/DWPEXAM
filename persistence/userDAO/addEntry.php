@@ -11,13 +11,12 @@ $userRank = $_POST['userRank'];
 $dbCon = dbCon($user, $pass);
 $query = $dbCon->prepare("INSERT INTO users (`userEmail`, `userPass`, `firstName`, `lastName`, `userRank`) VALUES ('$userEmail', '$userPass', '$firstName', '$lastName',  '$userRank')");
 $query->execute();
-    //header('Location: ' . __DIR__ . 'persistence/userDAO/editUsers.php?status=added');
-    header("Location: editUsers.php?status=added");
+    header("Location: manageUsers.php?status=added");
 }
 
 else
     {
-        header('Location: ' . __DIR__ . 'persistence/userDAO/editUsers.php?status=0');
+        header('Location: ' . __DIR__ . 'persistence/userDAO/manageUsers.php?status=0');
     }
 ?>
 

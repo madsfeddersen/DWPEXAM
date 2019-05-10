@@ -6,7 +6,7 @@ if (isset($_GET['ID'])) {
     $query = $dbCon->prepare("DELETE FROM users WHERE id=$entryID");
     $query->execute();
 
-    header("Location: editUsers.php?status=deleted&ID=$entryID");
+    header("Location: manageUsers.php?status=deleted&ID=$entryID");
 }else{
-    header("Location: editUsers.php?status=0");
+    header("Location: manageUsers.php?status=0");
 }

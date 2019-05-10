@@ -1,6 +1,10 @@
 <?php
-//include ("business/handleLogin.php");
-?>
+		if (logged_in()) {
+		redirect_to("/dashboard");
+	}
+ ?>
+
+
 <head>
   <link rel="stylesheet" href="/presentation/css/login.css">
 </head>
@@ -13,11 +17,11 @@
 </h1>
 
 
-<form method="post" action="">
+<form method="post" action="/../../business/handleLogin.php">
   <div class="box">
 
-  <input type="text" name="userEmail" value="" placeholder="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
-  <input type="password" name="userPass" value="" placeholder="password" onFocus="field_focus(this, 'password');" onblur="field_blur(this, 'password');" class="password" />
+  <input type="text" name="user" value="" placeholder="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
+  <input type="password" name="password" value="" placeholder="password" onFocus="field_focus(this, 'password');" onblur="field_blur(this, 'password');" class="password" />
   <button class="btn"><input type="submit" name="submit" value="Log in"></button>
   <button class="btn"><a href="/signup">Sign Up</a></button>
   <br><br>- Doesn't work

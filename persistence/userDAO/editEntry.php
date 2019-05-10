@@ -7,36 +7,41 @@ if (isset($_GET['ID'])) {
 <head>
     <meta charset="UTF-8">
     <title>Edit entry</title>
-    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/presentation/css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+
 <?php
 $entryID = $_GET['ID'];
 $dbCon = dbCon($user, $pass);
 $query = $dbCon->prepare("SELECT * FROM users WHERE id=$entryID");
 $query->execute();
 $getUsers = $query->fetchAll();
+
+
 ?>
 <body>
 
 <div class="container">
-<br>
-        <button class="btn black"><a href="/dashboard">Back to dashboard</a>
-        </button>
-        <p>Editing userID: #<?php var_dump($entryID); echo $getUsers[0][0] . ' with Email: ' . $getUsers[0][1] ;
+    <br>
+    <button class="btn white black-text dashboard"><a href="/dashboard">Back to dashboard</a>
+    </button>
+    <br>
+        
+        <p>Editing user #<?php echo $getUsers[0][0] . ' with Email: ' . $getUsers[0][1] ;
         ?>
     
-</p>
+        </p>
 
 
-        <form class="col s12" name="contact" method="post" action="/../../persistence/userDAO/updateEntry.php">
+        <form class="col s12" name="contact" method="POST" action="/../../persistence/userDAO/updateEntry.php">
+        
         
     
         <div class="row">
                 <div class="input-field col s12">
-                    <input id="userEmail" name="email" type="email" value="<?php echo $getUsers[0][1]; ?>" class="validate" required="" aria-required="true">
+                    <input id="userEmail" name="userEmail" type="email" value="<?php echo $getUsers[0][1]; ?>" class="validate" required="" aria-required="true">
                     <label for="userEmail">E-mail</label>
                 </div>
             </div>
@@ -50,11 +55,11 @@ $getUsers = $query->fetchAll();
 
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="firstName" name="firstName" type="text"value="<?php echo $getUsers[0][3]; ?>" class="validate" required="" aria-required="true">
+                    <input id="firstName" name="firstName" type="text" value="<?php echo $getUsers[0][3]; ?>" class="validate" required="" aria-required="true">
                     <label for="firstName">First Name</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="lastName" name="lastName" type="text"value="<?php echo $getUsers[0][4]; ?>" class="validate" required="" aria-required="true">
+                    <input id="lastName" name="lastName" type="text" value="<?php echo $getUsers[0][4]; ?>" class="validate" required="" aria-required="true">
                     <label for="lastName">Last Name</label>
                 </div>
             </div>
@@ -62,14 +67,15 @@ $getUsers = $query->fetchAll();
 
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea name="userRank" id="text" class="materialize-textarea" required="" aria-required="true"><?php echo $getUsers[0][5]; ?></textarea>
-                    <label for="userRank">userRank</label>
+                    <input name="userRank" id="userRank" type="text" value="<?php echo $getUsers[0][5]; ?>" class="materialize-textarea" required="" aria-required="true"></textarea>
+                    <label for="userRank">Rank 1 - 3</label>
                 </div>
             </div>
 
             <input type="hidden" name="entryID" value="<?php echo $entryID; ?>">
             
-            <button class="btn waves-effect waves-light" type="submit" name="submit">Update
+            <button class="btn white black-text dashboard" type="submit" name="submit">
+                Update
             </button>
             
         </form>
@@ -82,6 +88,6 @@ $getUsers = $query->fetchAll();
 <?php
 }
 else{
-    header("Location: editUsers.php?status=0");
+    header("Location: manageUsers.php?status=0");
 }
 ?>

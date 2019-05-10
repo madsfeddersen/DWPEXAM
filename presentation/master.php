@@ -1,12 +1,11 @@
 <?php
-    
-    include (__DIR__ . "/header.php");
+    include ("business/session.php");
+    include ("templates/header.php");
     include ("business/router.php");
-    //include ("business/session.php");
 ?>
 <body>
 <?php
-    include (__DIR__ . "/navigation.php");
+    include ("templates/navigation.php");
 
 
     // Gets URI
@@ -28,14 +27,14 @@
     $router->get('contact', 'presentation/views/contact');
     $router->get('product', 'presentation/views/product');
     $router->get('dashboard', 'presentation/backend/dashboard');
-    $router->get('editUsers', 'persistence/userDAO/editUsers');
+    $router->get('editUsers', 'persistence/userDAO/manageUsers');
     $router->get('editSite', 'presentation/backend/editSite');
     $router->get('editProducts', 'presentation/backend/editProducts');
     
     
 
-    include (__DIR__ . "/footer.php");
-    include (__DIR__ . "/scripts.php");    
+    include ("templates/footer.php");
+    include ("templates/scripts.php");    
 ?>
 </body>
 
