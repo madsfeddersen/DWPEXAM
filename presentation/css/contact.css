@@ -10,8 +10,8 @@ form {
 }
 
 #submit:hover {
-    background: #fbbc05;
-    color: #000;
+    color: #fbbc05;
+    border-color: #fbbc05;
     
 }
 .input-group {

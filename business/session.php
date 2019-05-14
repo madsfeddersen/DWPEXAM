@@ -14,8 +14,10 @@
 
     
     function redirect_to($location) {
-        echo "you need to login man!";
-        var_dump($_SESSION['user_id']);
+        echo '<h1 class="page-title">
+		<a>Please log in to continue</a>
+	</h1>';
+        //var_dump($_SESSION['user_id']);
         //header("Location: {$location}");
         //exit;
 }

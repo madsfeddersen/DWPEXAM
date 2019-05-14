@@ -7,14 +7,12 @@
 <?php
     include ("templates/navigation.php");
 
-
     // Gets URI
     $request = $_SERVER['REQUEST_URI'];
 
     // Instantiate Router and parse URI to router
     $router = new Router($request);
     
-
     // Routes
     $router->get('/', 'presentation/views/shop');
     $router->get('home', 'presentation/views/home');
@@ -31,8 +29,6 @@
     $router->get('editSite', 'presentation/backend/editSite');
     $router->get('editProducts', 'presentation/backend/editProducts');
     
-    
-
     include ("templates/footer.php");
     include ("templates/scripts.php");    
 ?>

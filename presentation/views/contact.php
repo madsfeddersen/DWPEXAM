@@ -5,7 +5,7 @@
 
 
 
-<form action="" method="post">
+<form action="/../../business/handleContact.php" method="post">
     <!-- Form fields -->
     <div class="input-group">
         <input type="text" name="name" value="<?php echo !empty($postData['name'])?$postData['name']:''; ?>" placeholder="Your name" required="" />
