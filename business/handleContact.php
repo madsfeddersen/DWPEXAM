@@ -49,13 +49,17 @@ if(isset($_POST['submit'])){
                 $status = 'success'; 
                 $statusMsg = 'Your contact request has submitted successfully.'; 
                 $postData = '';
-
+                
                 header("Location: /contact");
-            }else{ 
+            }
+            else
+            { 
                 $statusMsg = 'Robot verification failed, please try again.'; 
                 header("Location: /contact");
             } 
-        }else{ 
+        }
+        else
+        { 
             $statusMsg = 'Please check on the reCAPTCHA box.'; 
             header("Location: /contact");
         } 
@@ -67,4 +71,8 @@ if(isset($_POST['submit'])){
     } 
 } 
 
+
+    
+
 ?>
+

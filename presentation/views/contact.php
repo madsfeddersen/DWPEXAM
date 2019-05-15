@@ -1,8 +1,22 @@
 <!-- Status message -->
-<?php if(!empty($statusMsg)){ ?>
-    <p class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></p>
+<?php 
+require_once(__DIR__ . "/../../business/handleContact.php");
+
+
+echo "<br>" . $status . "<br>";
+echo $statusMsg;
+
+if(!empty($statusMsg)){ ?>
+    <h1 class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></h1>
 <?php } ?>
 
+
+
+<h1>
+<?php
+
+?>
+</h1>
 
 
 <form action="/../../business/handleContact.php" method="post">
@@ -14,7 +28,7 @@
         <input type="email" name="email" value="<?php echo !empty($postData['email'])?$postData['email']:''; ?>" placeholder="Your email" required="" />
     </div>
     <div class="input-group">
-        <textarea name="message" placeholder="Type message..." required="" ><?php echo !empty($postData['message'])?$postData['message']:''; ?></textarea>
+        <textarea name="message" placeholder="Your message..." required="" ><?php echo !empty($postData['message'])?$postData['message']:''; ?></textarea>
     </div>
 		
     <!-- Google reCAPTCHA box -->
