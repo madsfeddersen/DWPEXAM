@@ -12,21 +12,28 @@
             <a href="/faq">FAQ</a>
             <a href="/contact">Contact</a>
         </div>
-        <h1 id="logoutBtn">
+        <?php
+        //$_SESSION['user_id'] = 1;
+
+        if(isset($_SESSION['user_id'])) {
+        echo '<h1 id="logoutBtn">
             <a href="/logout">
             <i class="fas fa-door-open"></i>
             </a>
-        </h1>
+        </h1>';
+        }
+        ?>
         <h1 id="loginBtn">
             <a href="/login">
                 <i class="fas fa-user-alt"></i>
             </a>
         </h1>
+        
         <h1 id="cartBtn">
             <a href="/cart">
             <i class="fas fa-shopping-cart"></i>
             </a>
-        </h1> 
+        </h1>
     </div>
 
     
