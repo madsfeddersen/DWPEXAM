@@ -13,8 +13,6 @@
             <a href="/contact">Contact</a>
         </div>
         <?php
-        //$_SESSION['user_id'] = 1;
-
         if(isset($_SESSION['user_id'])) {
         echo '<h1 id="logoutBtn">
             <a href="/logout">

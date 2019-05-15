@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-	echo "session";
+	echo 'Session user id: ' . $_SESSION['user_id'];
 	function logged_in() {
 		
 		return isset($_SESSION['user_id']);
