@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
-<h3>Welcome to the dashboard, Admin</h3>
+<h3>Welcome to the dashboard, <?php echo ucwords($_SESSION['firstName']) . ' ' . ucwords($_SESSION['lastName']);?>!</h3>
 <div class="row">
     <a href="/editUsers" class="btn dashboard">Manage users</a>
     <a href="/editSite" class="btn dashboard">Site settings</a>

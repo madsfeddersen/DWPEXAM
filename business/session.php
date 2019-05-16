@@ -1,7 +1,20 @@
 <?php
     session_start();
-    
-	echo 'Session user id: ' . $_SESSION['user_id'];
+	
+	if (isset($_SESSION['user_id'])) {
+
+	echo "Testing / Debugging info from Session.php ---------------------- ";
+
+	echo "Logged in as 'user_id': " . $_SESSION['user_id'] . " with username: " . $_SESSION['userName'];
+
+	}
+
+	else {
+
+		echo "Session not set :D";
+	}
+
+
 	function logged_in() {
 		
 		return isset($_SESSION['user_id']);
@@ -17,12 +30,11 @@
 
     
     function redirect_to($location) {
-        echo '<h1 class="page-title">
-		<a>Please log in to continue</a>
-	</h1>';
-        //var_dump($_SESSION['user_id']);
-        //header("Location: {$location}");
-        //exit;
+        echo "<h1 class='page-title'>
+		<a>Session.php function redirect_to doesn't work yet :(</a>
+		</h1>";
+		//header("Location: {$location}");
+        exit;
 }
 
     function log_out() {
@@ -30,6 +42,7 @@
 		// (i.e. logging out)
 
 		// 1. Find the session
+		/*
 		session_start();
 		
 		// 2. Unset all the session variables
@@ -39,7 +52,7 @@
 		if(isset($_COOKIE[user_id()])) {
 			setcookie(user_id(), '', time()-42000, '/');
 		}
-		
+		*/
 		// 4. Destroy the session
 		session_destroy();
 		

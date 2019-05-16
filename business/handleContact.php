@@ -1,6 +1,7 @@
 <?php 
 $postData = $statusMsg = ''; 
-$status = 'error'; 
+$status = 'Error! :(<br>- I suggest you consult the webmaster!';
+
  
 // If the form is submitted 
 if(isset($_POST['submit'])){ 

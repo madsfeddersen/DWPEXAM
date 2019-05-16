@@ -12,7 +12,6 @@ $dbCon = dbCon($user, $pass);
 $query = $dbCon->prepare("SELECT * FROM users");
 $query->execute();
 $getUsers = $query->fetchAll();
-
 ?>
 
 <div class="container">
@@ -47,9 +46,9 @@ $getUsers = $query->fetchAll();
                 <tr>
                     <th>UserID</th>
                     <th>Email</th>
-                    <th>Name</th>
+                    <th>Full Name</th>
                     <th>Rank</th>
-                    <th>Edit</th>
+                    <th style="padding-left: 10px;">Edit</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
