@@ -15,9 +15,9 @@ if (isset($_POST['user']) && !empty($_POST['user']))
     $query->execute();
     $getUser = $query->fetchAll();
 
-    if (empty($getUser)) { 
+    /*if (empty($getUser)) { 
         echo "Error retrieving data from DB.";
-    }
+    }*/
 
     if ($getUser[0][1] == $userInput && $getUser[0][2] == $passInput)
         {   
@@ -26,12 +26,13 @@ if (isset($_POST['user']) && !empty($_POST['user']))
             $_SESSION['firstName'] = $getUser[0][3];
             $_SESSION['lastName'] = $getUser[0][4];
 
-            echo "<br>Credentials matched!<br><br><h1>Welcome tho the backend</h1>";
+            echo "<br>Input credentials matched!<br><br><h1>Welcome to the backend</h1>";
             header("Location: /dashboard");
         }
     else
         {
-            echo "<br>Wrong user & password!";
+            echo "<br>Wrong email or password!<br>Try again!";
+            echo "<br>You will be redirected back in 5 seconds.";
             header( "Refresh:5; url=/login", true, 303);
             //header("Location: /login");
         }

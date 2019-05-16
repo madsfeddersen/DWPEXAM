@@ -34,7 +34,7 @@
 		<a>Session.php function redirect_to doesn't work yet :(</a>
 		</h1>";
 		//header("Location: {$location}");
-        exit;
+        //exit;
 }
 
     function log_out() {

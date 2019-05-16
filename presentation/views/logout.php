@@ -2,7 +2,7 @@
 
 log_out();
 
-/*
+
 unset($_SESSION['user_id']);
 
 if(!isset($_SESSION['user_id']))
@@ -16,4 +16,4 @@ if(!isset($_SESSION['user_id']))
         echo "<h3>Could not log out</h3>";
     }
 ?>
-*/
+
