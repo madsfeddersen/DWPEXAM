@@ -1,16 +1,23 @@
 <head>
-    
     <!-- Stylesheet and Font Imports -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    
+      
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="/presentation/css/main.css">
     <link rel="stylesheet" href="/presentation/css/navigation.css">
     <link rel="stylesheet" href="/presentation/css/footer.css">
     <link rel="stylesheet" href="/presentation/css/contact.css">
+    <link rel="stylesheet" href="/presentation/css/dashboard.css">     
+    
+    <!-- Title, Meta & SEO -->
+    <title>DuckYou!</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Duck you is an enterprise, who are supplying the world with all kinds of rubber ducks!">
+    <meta name="keywords" content="rubber,duck,ducks,rubberduck,shop,rubberducks,">
+    <meta name="author" content="Andreas Madum & Mads Feddersen">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="/presentation/img/favicon/apple-icon-57x57.png">
@@ -30,13 +37,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/presentation/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Title, Meta & SEO -->
-    <title>DuckYou!</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Duck you is an enterprise, who are supplying the world with all kinds of rubber ducks!">
-    <meta name="keywords" content="rubber,duck,ducks,rubberduck,shop,rubberducks,">
-    <meta name="author" content="Andreas Madum & Mads Feddersen">
 
     <!-- COOKIE Consent xD -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
@@ -60,5 +60,4 @@
     }
     })});
     </script>
-
 </head>

@@ -30,11 +30,14 @@
 
     
     function redirect_to($location) {
-        echo "<h1 class='page-title'>
+        /*echo "<h1 class='page-title'>
 		<a>Session.php function redirect_to doesn't work yet :(</a>
-		</h1>";
-		//header("Location: {$location}");
-        //exit;
+		</h1>";*/
+
+		echo "<script>window.location.href = '/home';</script>";
+
+		//header("Location: {$location}"); Throws error because headers already have been sent
+        exit;
 }
 
     function log_out() {
