@@ -12,9 +12,10 @@ if (isset($_POST['entryID']) && isset($_POST['submit']))
     $opening_hours = $_POST['opening_hours'];
     $daily_product = $_POST['daily_product'];
     $news = $_POST['news'];
+    $shop_description = $_POST['shop_description'];
     
     $dbCon = dbCon($user, $pass);
-    $query = $dbCon->prepare("UPDATE duck_shop SET shop_name='$shop_name', street_address='$street_address', zipcode='$zipcode', phone='$phone', email='$email', opening_hours='$opening_hours', daily_product='$daily_product', news='$news' WHERE id = $entryID");
+    $query = $dbCon->prepare("UPDATE duck_shop SET shop_name='$shop_name', street_address='$street_address', zipcode='$zipcode', phone='$phone', email='$email', opening_hours='$opening_hours', daily_product='$daily_product', news='$news', shop_description='$shop_description' WHERE id = $entryID");
     $query->execute();
 
     header("Location: manageSite.php?status=updated&ID=$entryID");

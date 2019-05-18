@@ -60,6 +60,10 @@ if (isset($_GET['ID'])) {
                         <input id="news" name="news" type="text" value="<?php echo $getDucks[0][8]; ?>" class="validate" required="" aria-required="true">
                         <label for="news">News</label>
                     </div>
+                    <div class="input-field col s12">
+                        <input id="shop_description" name="shop_description" type="text" value="<?php echo $getDucks[0][9]; ?>" class="validate" required="" aria-required="true">
+                        <label for="shop_description">Shop Description</label>
+                    </div>
                 </div>
             <input type="hidden" name="entryID" value="<?php echo $entryID; ?>">
             <button class="btn white black-text dashboard" type="submit" name="submit">

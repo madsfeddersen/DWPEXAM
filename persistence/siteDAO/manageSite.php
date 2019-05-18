@@ -51,6 +51,7 @@ $getDucks = $query->fetchAll();
                 <th>Opening Hours</th>
                 <th>Daily Product</th>
                 <th>News</th>
+                <th>Shop Description</th>
             </tr>
             </thead>
             <tbody>
@@ -67,6 +68,7 @@ $getDucks = $query->fetchAll();
                         echo "<td>". $info['opening_hours']."</td>";
                         echo "<td>". $info['daily_product']."</td>";
                         echo "<td>". $info['news']."</td>";
+                        echo "<td>". $info['shop_description']."</td>";
                         echo "<td>";
                         echo "</td>";
                         echo "</tr>";
@@ -117,6 +119,10 @@ $getDucks = $query->fetchAll();
             <div class="input-field col s12">
                 <input id="news" name="news" type="text" class="validate" required="" aria-required="true">
                 <label for="news">News</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="shop_description" name="shop_description" type="text" class="validate" required="" aria-required="true">
+                <label for="shop_description">Shop Description</label>
             </div>
         </div>
         <button class="btn dashboard" type="submit" name="submit">

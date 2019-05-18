@@ -1,8 +1,5 @@
 <?php
 
-function connectToDB() {
-    
-}
 
 function readShop()
     {
@@ -37,7 +34,9 @@ function readShop()
     
 function readProduct($productID)
     {          
-        
+        $user = "root";
+$pass = "";
+
         require_once (__DIR__ . "/../business/dbcon.php");
         $dbCon = dbCon($user, $pass);
         $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");

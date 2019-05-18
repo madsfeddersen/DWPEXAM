@@ -31,25 +31,17 @@ body
         text-align:center;
     }
 
+.application--wrap
+    {
+        min-height: 50vh!important;
+    }
+
 tbody, tbody tr, tbody td {
     background: #292c2f;
     color: #fff;
     font-weight: bolder;
 }
 
-
-#home
-    {
-        background: url("http://www.downloadclipart.net/svg/7311-yellow-duckling-svg.svg")!important;
-        background-size: contain!important;
-        background-repeat: no-repeat!important;
-        background-position: center!important;
-        height: 500px;
-    }
-
-#logoImg {
-    
-}
 
 a
     {

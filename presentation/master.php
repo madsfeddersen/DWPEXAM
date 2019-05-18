@@ -16,7 +16,7 @@
     // Routes
 
     // Landing page
-    $router->get('/', 'presentation/views/shop');
+    $router->get('/', 'presentation/views/home');
 
     // Views
     $router->get('home', 'presentation/views/home');

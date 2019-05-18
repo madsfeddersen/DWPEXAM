@@ -10,10 +10,11 @@ if (isset($_POST['submit'])) {
     $opening_hours = $_POST['opening_hours'];
     $daily_product = $_POST['daily_product'];
     $news = $_POST['news'];
+    $shop_description = $_POST['shop_description'];
 
-$dbCon = dbCon($user, $pass);
-$query = $dbCon->prepare("INSERT INTO duck_shop (`shop_name`, `street_address`, `zipcode`, `phone`, `email`, `opening_hours`, `daily_product`, `news`) VALUES ('$shop_name', '$street_address', '$zipcode', '$phone',  '$email', '$opening_hours', '$daily_product', '$news')");
-$query->execute();
+    $dbCon = dbCon($user, $pass);
+    $query = $dbCon->prepare("INSERT INTO duck_shop (`shop_name`, `street_address`, `zipcode`, `phone`, `email`, `opening_hours`, `daily_product`, `news`, `shop_description`) VALUES ('$shop_name', '$street_address', '$zipcode', '$phone',  '$email', '$opening_hours', '$daily_product', '$news', '$shop_description')");
+    $query->execute();
     header("Location: manageSite.php?status=added");
 }
 
