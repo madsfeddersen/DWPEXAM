@@ -3,15 +3,13 @@
 	
 	if (isset($_SESSION['user_id'])) {
 
-	echo "Testing / Debugging info from Session.php ---------------------- ";
-
-	echo "Logged in as 'user_id': " . $_SESSION['user_id'] . " with username: " . $_SESSION['userName'];
+	//echo "Logged in as 'user_id': " . $_SESSION['user_id'] . " with email " . $_SESSION['userName'];
 
 	}
 
 	else {
 
-		echo "Session not set :D";
+		echo "Session not set :D / you are not logged in.";
 	}
 
 
@@ -34,9 +32,9 @@
 		<a>Session.php function redirect_to doesn't work yet :(</a>
 		</h1>";*/
 
-		echo "<script>window.location.href = '/home';</script>";
+		echo "<script>window.location.href = '$location';</script>";
 
-		//header("Location: {$location}"); Throws error because headers already have been sent
+		//header("Location: {$location}"); //Throws error because headers already have been sent
         exit;
 }
 

@@ -3,7 +3,7 @@
     include ("templates/header.php");
     include ("business/router.php");
 ?>
-<body>
+<body id="container">
 <?php
     include ("templates/navigation.php");
 
@@ -32,9 +32,10 @@
 
     // Backend views
     $router->get('dashboard', 'presentation/backend/dashboard');
-    $router->get('editSite', 'presentation/backend/editSite');
+    $router->get('siteDash', 'presentation/backend/siteDash');
     $router->get('editProducts', 'presentation/backend/editProducts');
 
+    $router->get('manageSite', 'persistence/siteDAO/manageSite');
     $router->get('editUsers', 'persistence/userDAO/manageUsers');
     
 

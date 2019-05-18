@@ -16,7 +16,7 @@ if (isset($_POST['user']) && !empty($_POST['user']))
     $getUser = $query->fetchAll();
 
     if (empty($getUser)) { 
-        echo "Didn't etrieving data from DB, might be because of wrong credentials.";
+        echo "Didn't retrieve data from DB, might be because of wrong credentials.";
     }
     
     if ($getUser[0][1] == $userInput && $getUser[0][2] == $passInput)

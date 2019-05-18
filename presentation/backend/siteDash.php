@@ -8,7 +8,7 @@
 
 <h3>What do you want to manage / edit?</h3>
 
-<div class="row">
+<!--<div class="row">
     <a href="/dashboard" class="btn center dashboard">Back to dashboard</a>
     <a href="" class="btn dashboard">Daily special offer</a>
     <a href="" class="btn dashboard">News post(s)</a>
@@ -17,4 +17,16 @@
     <a href="" class="btn dashboard">Opening hours</a>
     <a href="" class="btn dashboard">Description</a>
     <a href="" class="btn dashboard">Contact information</a>
+</div>-->
+
+<div class="row">
+    <a href="/dashboard" class="btn center dashboard">Back to dashboard</a>
+    
+    <a href="/manageSite" class="btn dashboard">Manage site</a>
+    <br>
+    <br>
+    <a href="" class="btn dashboard">Daily special offer</a>
+    <a href="" class="btn dashboard">News post(s)</a>
+    
+    
 </div>

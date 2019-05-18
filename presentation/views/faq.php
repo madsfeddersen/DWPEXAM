@@ -1,3 +1,11 @@
+<head>
+    <style>
+    #footer {
+        position: relative;
+    }
+    </style>
+</head>
+
 <br>
 <h1 class="page-title">Frequently asked questions</h1>
 <br>

@@ -10,7 +10,7 @@
     {
         background-color:#292c2f;
         box-shadow:0 1px 1px #ccc;
-        padding: 20px 40px;
+        padding-top: 20px!important;
         height: 80px;
         color: #ffffff;
         box-sizing: border-box;

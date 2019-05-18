@@ -1,11 +1,34 @@
+html,
+body {
+   margin:0;
+   padding:0;
+   height:90%;
+}
+#container {
+   min-height:100%;
+   position:relative;
+}
+#header {
+    padding: 10px;
+}
+#body {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   
+}
+
 body
     {
         font-family: "Montserrat", "sans-serif"!important;
         background-color:#292c2f;
         color: #fff;
         text-align:center;
-        min-height: 100vh;
-        height: 100vh;
     }
 
 tbody, tbody tr, tbody td {
@@ -14,15 +37,19 @@ tbody, tbody tr, tbody td {
     font-weight: bolder;
 }
 
-/*
-#baggrund
+
+#home
     {
-        background: url("../img/background2.jpeg")!important;
-        background-size: cover!important;
+        background: url("http://www.downloadclipart.net/svg/7311-yellow-duckling-svg.svg")!important;
+        background-size: contain!important;
         background-repeat: no-repeat!important;
         background-position: center!important;
+        height: 500px;
     }
-    */
+
+#logoImg {
+    
+}
 
 a
     {

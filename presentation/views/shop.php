@@ -2,6 +2,14 @@
 require_once (__DIR__ . "/../../persistence/productDAO.php");
 ?>
 
+<head>
+    <style>
+    #footer {
+        position: relative;
+    }
+    </style>
+</head>
+
 <div id="app">
     <v-app id="baggrund">
         <v-container grid-list-xl fluid text-xs-center>
@@ -16,3 +24,4 @@ require_once (__DIR__ . "/../../persistence/productDAO.php");
         </v-container>
     </v-app>
 </div>
+

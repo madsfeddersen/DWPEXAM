@@ -2,7 +2,13 @@
 require_once (__DIR__ . "/../../persistence/productDAO.php");
 
 ?>
-
+<head>
+    <style>
+    #footer {
+        position: relative;
+    }
+    </style>
+</head>
 
 <div id="app">
     <v-app>

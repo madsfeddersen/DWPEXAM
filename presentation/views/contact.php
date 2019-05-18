@@ -3,6 +3,8 @@
 require_once(__DIR__ . "/../../business/handleContact.php");
 
 
+
+
 echo "<br>" . $status . "<br>";
 echo $statusMsg;
 
@@ -35,7 +37,7 @@ if(!empty($statusMsg)){ ?>
     <div class="g-recaptcha" data-sitekey="6LchXaEUAAAAAID5UnKUmw3LJqVA9fmo1vWM8TVO"></div>
     
     <!-- Submit button -->
-    <input id="submit" type="submit" name="submit" value="Submit">
+    <input id="submit" type="submit" name="submit" value="Send">
 </form>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>

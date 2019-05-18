@@ -1,9 +1,9 @@
-<div class="header-limiter">
+<div id="header" class="header-limiter">
 	<div id="logo">
         <a href="/home">Duck
             <span>You!</span>
         </a>
-    </div>
+        </div>
 	<div id="links">
         <a href="/home">Home</a>
 		<a href="/shop">Shop</a>
