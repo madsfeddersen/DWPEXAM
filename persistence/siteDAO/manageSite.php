@@ -6,7 +6,7 @@
 
 <?php
 require (__DIR__ . "/../../business/dbcon.php");
-$dbCon = dbCon($user, $pass);
+$dbCon = dbCon();
 $query = $dbCon->prepare("SELECT * FROM duck_shop");
 $query->execute();
 $getDucks = $query->fetchAll();

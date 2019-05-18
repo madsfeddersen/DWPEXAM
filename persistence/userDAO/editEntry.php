@@ -13,7 +13,7 @@ if (isset($_GET['ID'])) {
 
 <?php
     $entryID = $_GET['ID'];
-    $dbCon = dbCon($user, $pass);
+    $dbCon = dbCon();
     $query = $dbCon->prepare("SELECT * FROM users WHERE id=$entryID");
     $query->execute();
     $getUsers = $query->fetchAll();

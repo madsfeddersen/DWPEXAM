@@ -2,7 +2,7 @@
 require_once (__DIR__ . "/../../business/dbcon.php");
 if (isset($_GET['ID'])) {
     $entryID = $_GET['ID'];
-    $dbCon = dbCon($user, $pass);
+    $dbCon = dbCon();
     $query = $dbCon->prepare("DELETE FROM users WHERE id=$entryID");
     $query->execute();
 

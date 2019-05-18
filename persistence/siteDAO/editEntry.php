@@ -13,7 +13,7 @@ if (isset($_GET['ID'])) {
 
 <?php
     $entryID = $_GET['ID'];
-    $dbCon = dbCon($user, $pass);
+    $dbCon = dbCon();
     $query = $dbCon->prepare("SELECT * FROM duck_shop WHERE id=$entryID");
     $query->execute();
     $getDucks = $query->fetchAll();

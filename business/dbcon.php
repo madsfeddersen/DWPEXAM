@@ -1,8 +1,9 @@
 <?php
-$user = "root";
-$pass = "";
-function dbCon($user, $pass)
+
+function dbCon()
 {
+    $user = "root";
+    $pass = "";
     try {
         $dbCon = new PDO('mysql:host=localhost;dbname=duckshopdb;charset=utf8', $user, $pass);
         //$dbCon = null;

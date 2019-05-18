@@ -2,9 +2,13 @@
     require_once (__DIR__ . "/../../persistence/siteDAO/readSite.php");
     require_once (__DIR__ . "/../../persistence/productDAO.php");
 ?>
+
+<head>
+    <link rel="stylesheet" href="/presentation/css/home.css">
+</head>
 <br>
 <h1 class="page-title">News</h1>
-<h4><?php echo $getInfo[0][8];?></h4>
+<h4 class="content"><?php echo $getInfo[0][8];?></h4>
 <br>
 <br>
 <h1 class="page-title">Who are we?</h1>

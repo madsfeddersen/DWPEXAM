@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $userPass = $_POST['userPass'];
     $userRank = $_POST['userRank'];
 
-$dbCon = dbCon($user, $pass);
+$dbCon = dbCon();
 $query = $dbCon->prepare("INSERT INTO users (`userEmail`, `userPass`, `firstName`, `lastName`, `userRank`) VALUES ('$userEmail', '$userPass', '$firstName', '$lastName',  '$userRank')");
 $query->execute();
     header("Location: manageUsers.php?status=added");

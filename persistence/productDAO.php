@@ -5,7 +5,7 @@ function readShop()
     {
         
         require_once (__DIR__ . "/../business/dbcon.php");  
-        $dbCon = dbCon($user, $pass);
+        $dbCon = dbCon();
         $query = $dbCon->prepare("SELECT * FROM products");
         $query->execute();
         $getProducts = $query->fetchAll();
@@ -34,11 +34,8 @@ function readShop()
     
 function readProduct($productID)
     {          
-        $user = "root";
-$pass = "";
-
         require_once (__DIR__ . "/../business/dbcon.php");
-        $dbCon = dbCon($user, $pass);
+        $dbCon = dbCon();
         $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");
         $query->execute();
         $getProducts = $query->fetchAll();

@@ -3,7 +3,7 @@
 
     $user = "root";
     $pass = "";
-    $dbCon = dbCon($user, $pass);
+    $dbCon = dbCon();
     $query = $dbCon->prepare("SELECT * FROM duck_shop");
     $query->execute();
     $getInfo = $query->fetchAll();

@@ -10,14 +10,8 @@ if ($action == "create")
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
     $userRank = $_POST["userRank"];
-
-    
-
-    createUser($userEmail, $userPass, $firstName, $lastName, $userRank);
-    
-    
+    createUser($userEmail, $userPass, $firstName, $lastName, $userRank); 
 }
-
 
 else if ($action == "edit")
 {
@@ -26,21 +20,15 @@ else if ($action == "edit")
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
     $userRank = $_POST["userRank"];
-    $userID = $_POST["userID"];
-    
+    $userID = $_POST["userID"]; 
     updateUser($userEmail, $userPass, $firstName, $lastName, $userRank, $userID);
     
-    
 }
-
-
 
 else if ($action == "delete")
 {
 	$userID  = $_GET["userID"];
     deleteUser($userID);
-
-    
 }
 
 header("Location: /backend");

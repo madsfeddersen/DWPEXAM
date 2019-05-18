@@ -1,7 +1,9 @@
 <?php
     session_start();
 	
-	if (isset($_SESSION['user_id'])) {
+
+	//TESTING STUFF
+	/*if (isset($_SESSION['user_id'])) {
 
 	//echo "Logged in as 'user_id': " . $_SESSION['user_id'] . " with email " . $_SESSION['userName'];
 
@@ -10,7 +12,7 @@
 	else {
 
 		echo "Session not set :D / you are not logged in.";
-	}
+	}*/
 
 
 	function logged_in() {

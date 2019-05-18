@@ -1,3 +1,11 @@
+<head>
+    <style>
+    #footer {
+        position: relative;
+    }
+    </style>
+</head>
+
 <br>
 <h1 class="page-title">About DuckYou!</h1>
 <br><p class="page-text">Hi there, and welcome to our webshop!

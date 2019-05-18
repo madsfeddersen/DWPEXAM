@@ -2,6 +2,14 @@
 require (__DIR__ . "/../../persistence/siteDAO/readSite.php");
 ?>
 
+<head>
+    <style>
+    #footer {
+        position: relative;
+    }
+    </style>
+</head>
+
 <footer id="footer" class="footer-distributed">
     <div class="footer-right">
         <a href="https://www.facebook.com/KimThoeisen" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -39,7 +47,9 @@ require (__DIR__ . "/../../persistence/siteDAO/readSite.php");
         <p class="copyright">
             Duck You! &copy;2019
         </p>
-        </div>   
+        </div>
+        
 </footer>
+
 
    

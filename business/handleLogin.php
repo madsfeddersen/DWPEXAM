@@ -8,7 +8,7 @@ if (isset($_POST['user']) && !empty($_POST['user']))
     $passInput = $_POST['password'];
   
     require ("dbcon.php");
-    $dbCon = dbCon($user, $pass);
+    $dbCon = dbCon();
     //$query = $dbCon->prepare("SELECT id, userEmail, userPass FROM users WHERE userEmail = '$userInput'");
     $query = $dbCon->prepare("SELECT * FROM users WHERE userEmail = :userInput");
     $query->bindValue(":userInput", $userInput);
