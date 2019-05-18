@@ -1,8 +1,7 @@
 <?php 
 $postData = $statusMsg = ''; 
-$status = 'Error! :(<br>- I suggest you consult the webmaster!';
+$status = '';
 
- 
 // If the form is submitted 
 if(isset($_POST['submit'])){ 
     $postData = $_POST; 
@@ -71,9 +70,6 @@ if(isset($_POST['submit'])){
         header("Location: /contact");
     } 
 } 
-
-
-    
 
 ?>
 

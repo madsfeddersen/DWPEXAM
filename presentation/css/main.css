@@ -36,12 +36,23 @@ body
         min-height: 50vh!important;
     }
 
-tbody, tbody tr, tbody td {
+tbody, tbody tr, tbody td
+{
     background: #292c2f;
     color: #fff;
     font-weight: bolder;
 }
 
+.tablerow
+{
+    color: rgba(251, 188, 5, 1); 
+    border-bottom: 1px solid #fff;
+}
+
+.tablebody
+{
+    overflow: hidden;
+}
 
 a
     {

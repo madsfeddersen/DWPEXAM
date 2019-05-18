@@ -1,12 +1,13 @@
 <br>
-<h1 class="page-title"><- Shopping cart -></h1>
-<h4>L33T Butt0Nz not found</h4>
+<h1 class="page-title">Shopping cart</h1>
+
 
 <?php
 if(!isset($_SESSION)) 
 { 
     session_start(); 
 } 
+
 require_once(__DIR__ . "/../../business/shopCart/DBController.php");
 $db_handle = new DBController();
 if(!empty($_GET["action"])) {
@@ -62,17 +63,20 @@ switch($_GET["action"]) {
 
 <head>
 
-    <link href="../../business/shopCart/shopCart.css" type="text/css" rel="stylesheet" />
+    <link href="../../presentation/css/shopCart.css" type="text/css" rel="stylesheet" />
     <!-- Materialize css and js -->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     -->
 </head>
 
+
+<div id="shopping-cart">
+
 <br>
 <a href="/home" class="btn dashboard">Back to home</a>
 <br>
-<div id="shopping-cart">
+
 <div class="heading">Shopping Cart <a id="emptyBtn" href="/cart.php?action=empty">Empty Cart</a></div>
 <?php
 //Reset total cost to do recalc
@@ -135,13 +139,4 @@ if(isset($_SESSION["cart_item"])){
 	}
 	?>
 </div>
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br><br>
-<br><br>
-<br><br><br>
-<br><br>
-MELLEMRUM SKAL FIXES, TEMP FIX MED BR!!!!
+

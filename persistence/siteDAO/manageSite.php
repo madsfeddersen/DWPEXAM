@@ -41,7 +41,7 @@ $getDucks = $query->fetchAll();
     <div class="row">
         <table class="highlight">
             <thead>
-            <tr>
+            <tr class="tablerow">
                 <th>ID</th>
                 <th>Shop Name</th>
                 <th>Address</th>
@@ -54,7 +54,7 @@ $getDucks = $query->fetchAll();
                 <th>Shop Description</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="tablebody">
                 <?php
                     foreach ($getDucks as $info)
                     {
