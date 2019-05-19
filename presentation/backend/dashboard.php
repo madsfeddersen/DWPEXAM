@@ -11,6 +11,7 @@
 
 <h3>Welcome to the dashboard, <?php echo ucwords($_SESSION['firstName']) . ' ' . ucwords($_SESSION['lastName']);?>!</h3>
 <div class="row">
+    <a href="/editOrders" class="btn dashboard">Manage orders</a>
     <a href="/editUsers" class="btn dashboard">Manage users</a>
     <a href="/manageSite" class="btn dashboard">Site settings</a>
     <a href="/editProducts" class="btn dashboard">Products</a>

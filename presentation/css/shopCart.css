@@ -4,33 +4,40 @@ body
     font-family: "Montserrat", "sans-serif"!important;
 }
 
+#footer {
+    margin-top: 90vh;
+}
+
 #shopping-cart table
 {
-    width:100%;background-color: #dedede;
+    width:100%;
+    
+    margin-left:auto; 
+    margin-right:auto;
 }
 
 #shopping-cart table td
 {
-    background-color:#FFFFFF;
+    background-color:#f3f3f3;
+    text-align: center; 
+    vertical-align: middle;
 }
 
 #shopping-cart table th
 {
-    text-align:left;
+    background-color:#f3f3f3;
+    text-align:center;
 }
 
-#shopping-cart
-{
-    margin-bottom:30px;
-}
+
 
 .heading
 {
-    padding: 10px 10px;
+    background: darkgrey;
+    height: 60px;
     border-radius: 2px;
-    color: #000;
-    background: #fff;
-    margin-bottom:10px;
+    padding-top: 10px;
+    margin: 0 auto;
 }
 
 a.removeBtn
@@ -43,19 +50,57 @@ a.removeBtn:visited
     color:#D60202;border:0;padding:2px 10px;font-size:0.9em;
 }
 
-#emptyBtn {
-    background-color: #D60200;
-    border: #D60200 1px solid;
-    padding: 1px 10px;
-    color: #ffffff;
-    font-size: 0.8em;
-    float: right;
+#buyBtn, #emptyBtn, #backBtn {
+    font-size: 30px;
+    font-weight: bolder!important;
     text-decoration: none;
     border-radius: 4px;
+    color: #000;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    padding: 2px 2px;
+    
 }
 
+#buyBtn {
+    float: right;
+    border: #000 1px solid;
+    color: green;
+}
+
+#buyBtn:hover {
+    background-color: green;
+    border: #000 1px solid;
+    color: #fff;
+}
+
+#emptyBtn {
+    float: right;
+    border: #000 1px solid;
+    color: #D60200;
+}
+
+#emptyBtn:hover {
+    background-color: #D60200;
+    border: #000 1px solid;
+    color: #fff;
+}
+
+#backBtn {
+    color: #fff;
+    border: #000 1px solid;
+    float:left;
+}
+
+#backBtn:hover {
+    background-color: rgba(251, 188, 5, 1);
+    border: #000 1px solid;
+}
+
+
+
 .addBtn{
-    background-color: #eb705b;
+    background-color: rgba(251, 188, 5, 1);
     border: 0;
     padding: 3px 10px;
     color: #ffffff;
@@ -73,21 +118,35 @@ a.removeBtn:visited
     margin:15px 10px;
     padding:5px;border:#CCC 1px solid;
     border-radius:4px;
-
+    color: #000;
+    
+    
 }
 
 .product-item div
 {
     text-align:center;	
     margin:10px;
+    
 }
 
 .product-price {
-    color: #005dbb;
-    font-weight: 600;
+    color: #000;
+    font-weight: bolder;
+
 }
 
 .product-image {
-    height:100px;
+    min-height: 100px;
+    max-height: 100px;
+    min-width: 150px;
+    max-width: 150px;
     background-color:#FFF;
+    
+    
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
 }

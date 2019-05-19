@@ -40,7 +40,16 @@ tbody, tbody tr, tbody td
 {
     background: #292c2f;
     color: #fff;
-    font-weight: bolder;
+    font-weight: bold;
+   
+}
+
+
+
+.cartTable {
+    color: #000;
+    text-align: text-center;
+    
 }
 
 .tablerow
