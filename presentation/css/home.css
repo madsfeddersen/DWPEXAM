@@ -1,3 +1,17 @@
 .content {
     margin: 0 10vw 0 10vw;
 }
+
+.addToCartBtn {
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.addToCartBtn:hover{
+    background: #fbbc05;
+  }
+
+.page-sub-title {
+    font-family: Montserrat;
+    font-weight: bolder;
+}

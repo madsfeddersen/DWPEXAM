@@ -74,12 +74,12 @@ if(isset($_SESSION["cart_item"])){
 ?>	
   <div class="col-25">
     <div class="container cartwrap">
-    <h2>Cart <i class="fas fa-shopping-cart"></i></h2>
+    <h2><i class="fas fa-shopping-cart"></i> Order summary</h2>
       <?php
       foreach ($_SESSION["cart_item"] as $item){
       ?>
       <div class="cart-item-container">
-      <div class="price"><?php echo $item["price"]?></div>
+      <div class="product-price"><?php echo $item["price"]?></div>
       <p class=cart-item-name><?php echo $item["quantity"]?> x <b></b><a href=""><?php echo $item["name"] . ' Duck'; ?></a> <span class="price"></span></p>
       </div>
       <?php
