@@ -49,7 +49,7 @@ $getDucks = $query->fetchAll();
                 <th>Phone</th>
                 <th>Inquiry Email</th>
                 <th>Opening Hours</th>
-                <th>Daily Product</th>
+                <th>Duck of the day</th>
                 <th>News</th>
                 <th>Shop Description</th>
             </tr>

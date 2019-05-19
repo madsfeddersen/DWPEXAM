@@ -54,7 +54,7 @@ if (isset($_GET['ID'])) {
                     </div>
                     <div class="input-field col s12">
                         <input id="daily_product" name="daily_product" type="text" value="<?php echo $getDucks[0][7]; ?>" class="validate" required="" aria-required="true">
-                        <label for="daily_product">Daily product</label>
+                        <label for="daily_product">Duck of the day</label>
                     </div>
                     <div class="input-field col s12">
                         <input id="news" name="news" type="text" value="<?php echo $getDucks[0][8]; ?>" class="validate" required="" aria-required="true">
