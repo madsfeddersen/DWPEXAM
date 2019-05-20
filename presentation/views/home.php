@@ -24,7 +24,10 @@
                 <h4> Carefuly selected by our system administrator, Steve. </h4>
             </div>
             <v-layout ma-5 row wrap>
-                <?php readProduct(2);?>
+                <?php
+                    $duckOfDay = $getInfo[0][7];
+                    readProduct($duckOfDay);
+                ?>
             </v-layout>
         </v-container>
     </v-app>

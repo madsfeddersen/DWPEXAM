@@ -38,6 +38,7 @@ class Router{
 		print_r($uri);
 		echo " ";
 		*/
+		
 
 
 		if($uri[0] == trim($route, "/")){

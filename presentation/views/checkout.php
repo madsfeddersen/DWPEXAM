@@ -1,18 +1,30 @@
+<?php
+require_once(__DIR__ . "/../../business/handleCheckout.php");
+
+echo "<br>" . $status . "<br>";
+echo $statusMsg;
+
+if(!empty($statusMsg))
+  {
+?>
+  <h1 class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></h1>
+<?php
+  }
+?>
+
+
+
 <head>
     <link href="presentation/css/checkout.css" rel="stylesheet">
-    
+  
 </head>
-
 <br>
-
 <br>
-
 <div class="row wrap">
-
   <div class="col-50">
     <div class="container">
     <h2>Please fill out the form to checkout</h2>
-      <form action="/../../business/handleCheckout.php" method="POST">
+      <form action="/handleCheckout" method="POST">
         <div class="row">
           <div class="col-25">
             <h3>Billing Address</h3>
@@ -79,7 +91,7 @@ if(isset($_SESSION["cart_item"])){
       foreach ($_SESSION["cart_item"] as $item){
       ?>
       <div class="cart-item-container">
-      <div class="product-price"><?php echo $item["price"]?></div>
+      <div class="product-price"><?php echo $item["price"] . '$'?></div>
       <p class=cart-item-name><?php echo $item["quantity"]?> x <b></b><a href=""><?php echo $item["name"] . ' Duck'; ?></a> <span class="price"></span></p>
       </div>
       <?php

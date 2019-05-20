@@ -6,7 +6,7 @@
 <body id="container">
 <?php
     include ("templates/navigation.php");
-
+    
     // Gets URI
     $request = $_SERVER['REQUEST_URI'];
 
@@ -21,7 +21,6 @@
     // Views
     $router->get('home', 'presentation/views/home');
     $router->get('shop', 'presentation/views/shop');
-    $router->get('checkout', 'presentation/views/checkout');
     $router->get('login', 'presentation/views/login');
     $router->get('logout', 'presentation/views/logout');
     $router->get('signup', 'presentation/views/signup');
@@ -30,6 +29,8 @@
     $router->get('contact', 'presentation/views/contact');
     $router->get('product', 'presentation/views/product');
     $router->get('cart', 'business/cart/cart');
+    $router->get('checkout', 'presentation/views/checkout');
+    $router->get('handleCheckout', 'business/handleCheckout');
 
     // Backend views
     $router->get('dashboard', 'presentation/backend/dashboard');

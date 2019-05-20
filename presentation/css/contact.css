@@ -18,6 +18,7 @@ form {
     border-color: #fbbc05;
     
 }
+
 .input-group {
     font-size: 20px;
     font-weight: bolder;
@@ -34,7 +35,6 @@ form {
 }
 
 .g-recaptcha {
-
     margin: 10 auto;
     width: 304px;
 }

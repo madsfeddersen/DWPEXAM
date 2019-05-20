@@ -1,5 +1,9 @@
 <?php
 
+function createProduct() {
+    
+}
+
 
 function readShop()
     {
@@ -73,6 +77,13 @@ function readProduct($productID)
           
     }
       
+function updateProduct($UpdateThisProduct) {
+    //Use router!!!
+}
+
+function deleteProduct($DeleteThisProduct) {
+    //Use router!!!
+}
 
     
 ?>
