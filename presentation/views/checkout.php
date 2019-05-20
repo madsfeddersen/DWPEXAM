@@ -29,18 +29,18 @@ if(!empty($statusMsg))
           <div class="col-25">
             <h3>Billing Address</h3>
             <label for="fname"><i class="fas fa-user-alt"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Hugh Ash">
+            <input type="text" id="fname" name="fullname" value="<?php echo !empty($postData['fullname'])?$postData['fullname']:''; ?>" placeholder="Hugh Ash">
             <label for="email"><i class="fas fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="hugh@jass.com">
+            <input type="text" id="email" name="email" value="<?php echo !empty($postData['email'])?$postData['email']:''; ?>" placeholder="hugh@jass.com">
             <label for="adr"><i class="fas fa-address-card"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="42 Wallaby Way">
+            <input type="text" id="adr" name="address" value="<?php echo !empty($postData['address'])?$postData['address']:''; ?>" placeholder="42 Wallaby Way">
             <label for="city"><i class="fas fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="Pallet Town">
+            <input type="text" id="city" name="city" value="<?php echo !empty($postData['city'])?$postData['city']:''; ?>" placeholder="Pallet Town">
 
             <div class="row">
               <div class="col-25">
                 <label for="zip">Zip / Postalcode</label>
-                <input type="text" id="zip" name="zip" placeholder="1337 ">
+                <input type="text" id="zip" name="zip" value="<?php echo !empty($postData['zip'])?$postData['zip']:''; ?>" placeholder="1337 ">
               </div>
             </div>
           </div>
@@ -54,19 +54,19 @@ if(!empty($statusMsg))
               <i class="fab fa-cc-discover" style=""></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="Hugh Jacques Ash">
+            <input type="text" id="cname" name="cardname" value="<?php echo !empty($postData['cardname'])?$postData['cardname']:''; ?>" placeholder="Hugh Jacques Ash">
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardnumber" value="<?php echo !empty($postData['cardname'])?$postData['cardname']:''; ?>" placeholder="1111-2222-3333-4444">
             <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="Movember">
+            <input type="text" id="expmonth" name="expmonth" value="<?php echo !empty($postData['expmonth'])?$postData['expmonth']:''; ?>" placeholder="Movember">
             <div class="row">
               <div class="col-25">
                 <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
+                <input type="text" id="expyear" name="expyear" value="<?php echo !empty($postData['expyear'])?$postData['expyear']:''; ?>" placeholder="2018">
               </div>
               <div class="col-25">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
+                <input type="text" id="cvv" name="cvv" value="<?php echo !empty($postData['cvv'])?$postData['cvv']:''; ?>" placeholder="352">
               </div>
             </div>
           </div>
@@ -75,12 +75,12 @@ if(!empty($statusMsg))
         
         
         <!-- Google reCAPTCHA box -->
-        <div class="g-recaptcha" data-sitekey="6LchXaEUAAAAAID5UnKUmw3LJqVA9fmo1vWM8TVO"></div>
-    
-        <input type="submit" value="Continue to checkout" class="btn">
+        <!--<div class="g-recaptcha" data-sitekey="6LchXaEUAAAAAID5UnKUmw3LJqVA9fmo1vWM8TVO"></div>
+-->
+        <input name="submit" type="submit" value="Continue to checkout" class="btn">
       </form>
 
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
 
     </div>
   </div>

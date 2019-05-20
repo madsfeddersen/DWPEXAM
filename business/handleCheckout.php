@@ -1,34 +1,49 @@
 <?php
 
-echo '<br><br>Do stuff =D<br><br>';
-var_dump($_SESSION);
 
+//var_dump($_SESSION);
 
-
-
-   
-
-    
-    
-
-
-
-
-
-
+var_dump($_POST);
 
 $postData = $statusMsg = ''; 
 $status = '';
 
-// If the form is submitted 
-if(isset($_POST['submit'])){ 
-    $postData = $_POST; 
+echo 'Var DUMP<br<br>';
 
+require("dbcon.php");
+
+
+if(isset($_POST['submit'])){ 
+    //$postData = $_POST; 
     
 
-     
+                    $fname = !empty($_POST['fullname'])?$_POST['fullname']:''; 
+                    $email = !empty($_POST['email'])?$_POST['email']:''; 
+                    $adr = !empty($_POST['address'])?$_POST['address']:''; 
+                    $city = !empty($_POST['city'])?$_POST['city']:''; 
+                    $zip = !empty($_POST['zip'])?$_POST['zip']:''; 
+                    $cname = !empty($_POST['cardname'])?$_POST['cardname']:''; 
+                    $ccnum = !empty($_POST['cardnumber'])?$_POST['cardnumber']:'';
+                    $expmonth = !empty($_POST['expmonth'])?$_POST['expmonth']:''; 
+                    $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
+                    $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
+                   
+                    echo '<br><br>POST submitted<br><br>';
+
+
+//Insert order into DB
+$dbCon = dbCon();
+$query = $dbCon->prepare("INSERT INTO orders (`fullname`, `email`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`)
+VALUES ('$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv')");
+$query->execute();
+
+var_dump($dbCon);
+var_dump($query);
+        
+  
+    
         // Validate checkout form fields 
-        if(!empty($_POST['fname']) && !empty($_POST['email']) && !empty($_POST['adr']) && !empty($_POST['city']) && !empty($_POST['zip']) && !empty($_POST['cname']) && !empty($_POST['ccnum']) && !empty($_POST['expmonth']) && !empty($_POST['expyear']) && !empty($_POST['cvv']))
+        if(!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['zip']) && !empty($_POST['cardname']) && !empty($_POST['cardnumber']) && !empty($_POST['expmonth']) && !empty($_POST['expyear']) && !empty($_POST['cvv']))
         { 
             
             // Validate reCAPTCHA box 
@@ -56,13 +71,10 @@ if(isset($_POST['submit'])){
                     $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
                     $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
 
-                    //Insert order into DB
-                    require_once (__DIR__ . "/../../business/dbcon.php");
-                    $dbCon = dbCon($user, $pass);
-                    $query = $dbCon->prepare("INSERT INTO orders (`fullname`, `email`, `address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`) 
-                    VALUES ('$fname', '$email', '$zipcode', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expmonth', '$expyear', '$cvv')");
-                    $query->execute();
                     
+                    
+                    echo "wooo";
+
                     // Send email notification to the site admin 
                     $to = 'andreas.madum1@gmail.com'; 
                     $subject = 'Order confirmation'; 
@@ -103,14 +115,14 @@ if(isset($_POST['submit'])){
             else
             { 
                 $statusMsg = 'Please check on the reCAPTCHA box.'; 
-                header("Location: /checkout");
+                //header("Location: /checkout");
             } 
         }
         else
         { 
             $statusMsg = 'Please fill all the mandatory fields.'; 
-            header("Location: /checkout");
+            //header("Location: /checkout");
         } 
-} 
-
+}
+        
 ?>
