@@ -9,9 +9,10 @@
     .header-limiter
     {
         background-color:#292c2f;
-        box-shadow:0 1px 1px #ccc;
+        /*box-shadow:0 1px 1px #ccc;*/
+        border-bottom: 1px solid #000;
         padding-top: 20px!important;
-        height: 80px;
+        min-height: 80px;
         color: #ffffff;
         box-sizing: border-box;
 }
@@ -89,18 +90,16 @@
         text-decoration:none;
         line-height: 1;
     }*/
-    
-@media all and (max-width: 800px) {
-    
-    .header-limiter div
-    {
-        font-size: 24px;
-    }
 
-    .header-limiter h4
+@media all and (max-width: 900px) {
+        .header-limiter, .header-limiter div, #logo
+        {
+            font-size: 10px;
+        }
+        .header-limiter h4
     {
         font-size: 24px;
-        padding: 20px 40px;
+        padding: 0px 0px;
     }
     
     .header-limiter div a
@@ -110,10 +109,31 @@
     
     .header-limiter div
     {
-            margin-left: 20px;
+            margin-left: 5px;
+    }
+
+    #loginBtn, #cartBtn, #logoutBtn
+    {
+        float: right;
+        font-size: 16px;
+        margin-top: 5px;
+        margin-right: 5px;
     }
     
+
+
+}
+
+        
+    
+@media all and (max-width: 800px) {
+    
+    .header-limiter div
+    {
+        font-size: 10px;
     }
+
+    
     
     /*
     @media all and (max-width: 600px) {

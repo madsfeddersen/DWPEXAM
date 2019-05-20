@@ -36,6 +36,21 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS orders;
+CREATE TABLE IF NOT EXISTS orders (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  fullname VARCHAR(30),
+	email VARCHAR(30),
+	shipping_address VARCHAR(30),
+	city VARCHAR(30),
+	zip VARCHAR(30),
+	cname VARCHAR(30),
+	ccnum VARCHAR(30),
+	expmonth VARCHAR(30),
+	expyear VARCHAR(30),
+	cvv VARCHAR(30)
+);
+
 insert into duck_shop (id, shop_name, street_address, zipcode, phone, email, opening_hours, daily_product, news, shop_description) 
 values (1, 'DuckYou!', 'Duck Street 1', '6710 Esbjerg V', '+45 13377331', 'duck@duck.dk', '08-18', 'Trump Duck',
  'New products in store, check them out here!', 'We are your number 1 stop rubber duck shop. We have been crowned 
@@ -51,3 +66,8 @@ INSERT INTO `products` (`id`, `name`, `code`, `price`, `description`) VALUES
 (3, 'Arnold', 'DS0023', 150.00, 'DILLOOON! GET TO ZE CHOPPA!'),
 (4, 'Sunglasses', 'DS0024', 80.00, 'It’s even cool than you!'),
 (5, 'Trump', 'DS0025',  30.00,'A Trump-ified rubber duck (Wall and bad politics not included');
+
+
+INSERT INTO `orders` (id, fullname, email, shipping_address, city, zip, cname, ccnum, expmonth, expyear, cvv) VALUES
+(1, 'Ma name', 'email', 'road 32', 'esbjerg', '6710', 'Card namez', '1111-2222-3333-4444', 'November', '1995', '352');
+           

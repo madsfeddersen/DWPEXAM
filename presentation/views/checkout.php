@@ -72,11 +72,16 @@ if(!empty($statusMsg))
           </div>
           
         </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-        </label>
+        
+        
+        <!-- Google reCAPTCHA box -->
+        <div class="g-recaptcha" data-sitekey="6LchXaEUAAAAAID5UnKUmw3LJqVA9fmo1vWM8TVO"></div>
+    
         <input type="submit" value="Continue to checkout" class="btn">
       </form>
+
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     </div>
   </div>
   <?php
