@@ -23,7 +23,13 @@ if(isset($_POST['submit'])){
                     $expmonth = !empty($_POST['expmonth'])?$_POST['expmonth']:''; 
                     $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
                     $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
-                   
+
+                    foreach ($_SESSION["cart_item"] as $item){
+                        $productName = $item['name'];
+                        $quantity = $item['quantity'];
+                        $price = $item['price'];
+                    }
+                    
                     echo '<br><br>POST submitted<br><br>';
 
 
@@ -32,15 +38,10 @@ if(isset($_POST['submit'])){
 
 require ("dbcon2.php");
 $dbCon2 = dbCon2();
-$query = $dbCon2->prepare("INSERT INTO orders (`fullname`, `email`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`)
-VALUES ('$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv')");
+$query = $dbCon2->prepare("INSERT INTO orders (`fullname`, `email`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `quantity`, `price`)
+VALUES ('$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$quantity', '$price')");
 $query->execute();
 
-var_dump($dbCon2);
-var_dump($query);
-        
-  
-    
         // Validate checkout form fields 
         if(!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['zip']) && !empty($_POST['cardname']) && !empty($_POST['cardnumber']) && !empty($_POST['expmonth']) && !empty($_POST['expyear']) && !empty($_POST['cvv']))
         { 

@@ -8,8 +8,8 @@ function createProduct() {
 function readShop()
     {
         
-        require (__DIR__ . "/../business/dbcon.php");  
-        $dbCon = dbCon();
+        require (__DIR__ . "/../business/dbcon2.php");  
+        $dbCon = dbCon2();
         $query = $dbCon->prepare("SELECT * FROM products");
         $query->execute();
         $getProducts = $query->fetchAll();

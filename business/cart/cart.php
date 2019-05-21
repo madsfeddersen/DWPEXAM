@@ -164,6 +164,8 @@ if(!empty($_GET["action"]))
 
 		}
 	}
+
+	var_dump($_SESSION['cart_item']);
 ?>
 </div>
 

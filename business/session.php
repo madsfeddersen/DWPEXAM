@@ -1,22 +1,25 @@
 <?php
+	session_start();
+
+	
 	//TESTING STUFF
 	//session_cache_limiter('public');
 	//echo session_cache_limiter();
 	
-	/*if (isset($_SESSION['user_id'])) {
+	if (isset($_SESSION['user_id'])) {
 
-	//echo "Logged in as 'user_id': " . $_SESSION['user_id'] . " with email " . $_SESSION['userName'];
+	echo "Logged in as 'user_id': " . $_SESSION['user_id'] . " with email " . $_SESSION['userName'];
 
 	}
 
 	else {
 
 		echo "Session not set :D / you are not logged in.";
-	}*/
-
+	
+	}
 
 	
-	session_start();
+	
 
 	function logged_in() {
 		return isset($_SESSION['user_id']);

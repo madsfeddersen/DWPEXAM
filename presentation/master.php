@@ -42,7 +42,7 @@
     $router->get('siteDash', 'presentation/backend/siteDash');
     $router->get('manageSite', 'persistence/siteDAO/manageSite');
     $router->get('editProducts', 'presentation/backend/editProducts');
-    $router->get('editOrders', 'presentation/backend/editOrders');
+    $router->get('editOrders', 'persistence/orderDAO/manageOrders');
 
     // Logic routes
     $router->get('handleCheckout', 'business/handleCheckout');
