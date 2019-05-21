@@ -47,13 +47,17 @@ if(isset($_POST['submit']))
                     $productName = $item['name'];
                     $quantity = $item['quantity'];
                     $price = $item['price'];
+                    //$size = $item['size'];
+                    //$color = $item['color'];
+                    $size = 'XL';
+                    $color = 'Duck color';
                 }
                     
                 //Insert order into DB
                 require ("dbcon2.php");
                 $dbCon2 = dbCon2();
-                $query = $dbCon2->prepare("INSERT INTO orders (`user_id`, `fullname`, `orderEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `quantity`, `price`)
-                VALUES ('$user_id', '$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$quantity', '$price')");
+                $query = $dbCon2->prepare("INSERT INTO orders (`user_id`, `fullname`, `orderEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `size`, `color`, `quantity`, `price`)
+                VALUES ('$user_id', '$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$size,', '$color', '$quantity', '$price')");
                 $query->execute();
 
                     // Send email invoice to the user
@@ -67,9 +71,11 @@ if(isset($_POST['submit']))
                         <p><b>Zip: </b>".$zip."</p> 
                         <p><b>Name on Card: </b>".$cname."</p> 
                         <p><b>Card Number: </b>".$ccnum."</p>
-                        <p><b>Product: </b>".$productname."</p>
+                        <p><b>Product: </b>".$productName."Duck</p>
+                        <p><b>Size: </b>".$size."</p>
+                        <p><b>Color: </b>".$color."</p>
                         <p><b>Quantity: </b>".$quantity."</p>
-                        <p><b>Price: </b>".$price."</p>
+                        <p><b>Price: </b>".$price."</p>                
                     "; 
                     
                     // Always set content-type when sending HTML email 

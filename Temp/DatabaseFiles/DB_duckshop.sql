@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS `products` (
 DROP TABLE IF EXISTS orders;
 CREATE TABLE IF NOT EXISTS orders (
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `user_id` VARCHAR NOT NULL AUTO_INCREMENT(30),
-  fullname VARCHAR(30),
+	user_id int NOT NULL,
+  	fullname VARCHAR(30),
 	orderEmail VARCHAR(30),
 	shipping_address VARCHAR(30),
 	city VARCHAR(30),
@@ -48,7 +48,9 @@ CREATE TABLE IF NOT EXISTS orders (
 	cvv VARCHAR(30),
   productname VARCHAR(30),
   quantity VARCHAR(30),
-  price VARCHAR(30),
+  size VARCHAR(30),
+  color VARCHAR(30),
+  price VARCHAR(30)
 );
 
 insert into duck_shop (id, shop_name, street_address, zipcode, phone, email, opening_hours, daily_product, news, shop_description) 

@@ -44,11 +44,20 @@ tbody, tbody tr, tbody td
    
 }
 
-
+.productform input, .productform select, .productform select option {
+    background: none;
+    color: red!important;
+    font-weight: bolder;
+    border: 1px solid #000;
+    margin-top: 10px;
+    text-align: center;
+    text-align-last:center;
+    width: 100%;
+}
 
 .cartTable {
     color: #000;
-    text-align: text-center;
+    text-align: center;
     
 }
 
@@ -207,6 +216,14 @@ padding-bottom: 5%;
     border: 1px solid;
     border-radius: 15px;
     padding: 2% 2%;
+}
+
+#addBtn {
+        
+        border: 1px solid #000;
+        padding: 3px 10px;
+        color: #000;
+        margin-left: 2px;
 }
 
 #addToCart:hover {

@@ -22,6 +22,8 @@ if(!empty($_GET["action"]))
 					'name'=>$productByCode[0]["name"],
 					'code'=>$productByCode[0]["code"],
 					'quantity'=>$_POST["quantity"],
+					'size'=>$_POST["size"],
+					'color'=>$_POST["color"],
 					'price'=>$productByCode[0]["price"]));
 					
 					if(!empty($_SESSION["cart_item"]))
@@ -110,6 +112,8 @@ if(!empty($_GET["action"]))
 <th class="cartTable"><strong>Name</strong></th>
 <th class="cartTable"><strong>Code</strong></th>
 <th class="cartTable"><strong>Quantity</strong></th>
+<th class="cartTable"><strong>Size</strong></th>
+<th class="cartTable"><strong>Color</strong></th>
 <th class="cartTable"><strong>Price</strong></th>
 <th class="cartTable"><strong>Remove Item</strong></th>
 </tr>
@@ -121,6 +125,8 @@ if(!empty($_GET["action"]))
 				<td class="cartTable"><strong><?php echo $item["name"]; ?></strong></td>
 				<td class="cartTable"><?php echo $item["code"]; ?></td>
 				<td class="cartTable"><?php echo $item["quantity"]; ?></td>
+				<td class="cartTable"><?php echo $item["size"]; ?></td>
+				<td class="cartTable"><?php echo $item["color"]; ?></td>
 				<td class="cartTable"><?php echo $item["price"]." DKK"; ?></td>
 				<td class="cartTable"><a href="/business/cart/cart.php?action=remove&code=<?php echo $item['code']; ?> " class="removeBtn">Remove</a></td>
 				</tr>
@@ -130,7 +136,7 @@ if(!empty($_GET["action"]))
 	?>
 
 <tr>
-<td colspan="5" text-align=right style="color:#000;"><strong>Total:</strong> <?php echo $item_total." DKK"; ?></td>
+<td colspan="7" text-align=right style="color:#000;"><strong>Total:</strong> <?php echo $item_total." DKK"; ?></td>
 </tr>
 </tbody>
 </table>	
@@ -141,8 +147,17 @@ if(!empty($_GET["action"]))
 </div>
 <div>
   <br>
-	<h1> More ducks that might interest you :)</h1>
+
+
+
+
+
+
+
+  <h1> More ducks that might interest you :)</h1>
+
 <?php
+
 	$product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY code ASC");
 	if (!empty($product_array))
 		{ 
@@ -158,10 +173,27 @@ if(!empty($_GET["action"]))
 		<div class="product-price"><?php echo $product_array[$aNumber]["price"]." DKK";?></div>
 		<div>
 			<input type="text" name="quantity" value="1" size="2" />
+			
+            
+            <select name="color">
+                    <option value="Duck">Duck Color</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>dada
+                    <option value="Green">Green</option>
+                </select>
+                <br>
+                <select name="size">
+                <option value="Regular">Regular</option>
+                <option value="Small">Small</option>
+                <option value="Large">Large</option>dada
+                <option value="Giant">Giant</option>
+            </select>
 			<input type="submit" value="Add to cart" class="addBtn" />
 		</div>
 	</form>
 </div>
+
+
 <?php
 
 		}
@@ -170,6 +202,3 @@ if(!empty($_GET["action"]))
 	
 ?>
 </div>
-
-
-
