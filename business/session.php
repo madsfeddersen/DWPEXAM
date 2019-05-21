@@ -25,11 +25,11 @@
 		}
 		}
 		
-		function confirm_admin() {
-			if(isset($_SESSION['userRank']) && ($_SESSION['userRank']) == 1 || ($_SESSION['userRank'] == 2))
-            {
-							redirect_to("login.php");
-						}
+	function confirm_admin() {
+		if($_SESSION['userRank'] != 1 || $_SESSION['userRank'] !=2)
+      {
+				redirect_to("/logout");
+			}
 		}
     
     function redirect_to($location) {
@@ -44,7 +44,7 @@
 		// (i.e. logging out)
 
 		// 1. Find the session
-		/*
+		
 		session_start();
 		
 		// 2. Unset all the session variables
@@ -54,7 +54,7 @@
 		if(isset($_COOKIE[user_id()])) {
 			setcookie(user_id(), '', time()-42000, '/');
 		}
-		*/
+		
 		// 4. Destroy the session
 		session_destroy();
 		

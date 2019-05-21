@@ -1,3 +1,8 @@
+<?php
+confirm_logged_in(); 
+confirm_admin();
+?>
+
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
