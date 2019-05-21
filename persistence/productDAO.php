@@ -8,7 +8,7 @@ function createProduct() {
 function readShop()
     {
         
-        require_once (__DIR__ . "/../business/dbcon.php");  
+        require (__DIR__ . "/../business/dbcon.php");  
         $dbCon = dbCon();
         $query = $dbCon->prepare("SELECT * FROM products");
         $query->execute();

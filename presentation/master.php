@@ -1,7 +1,12 @@
 <?php
     include ("business/session.php");
-    include ("templates/header.php");
+    
     include ("business/router.php");
+    if(!isset($_SESSION))
+      {
+        session_start();
+      }
+	include ("templates/header.php");
 ?>
 <body id="container">
 <?php
@@ -30,7 +35,6 @@
     $router->get('product', 'presentation/views/product');
     $router->get('cart', 'business/cart/cart');
     $router->get('checkout', 'presentation/views/checkout');
-    $router->get('handleCheckout', 'business/handleCheckout');
 
     // Backend views
     $router->get('dashboard', 'presentation/backend/dashboard');
@@ -40,13 +44,15 @@
     $router->get('editProducts', 'presentation/backend/editProducts');
     $router->get('editOrders', 'presentation/backend/editOrders');
 
-    
-    
-
-    include ("templates/footer.php");
+    // Logic routes
+    $router->get('handleCheckout', 'business/handleCheckout');
+  
     include ("templates/scripts.php");    
+    include ("templates/footer.php");
 ?>
 </body>
+
+
 
 
 

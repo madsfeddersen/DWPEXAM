@@ -86,7 +86,13 @@ if(!empty($_GET["action"]))
 	<a href="/shop" id="backBtn">Back to shop</a>
 	<a id="emptyBtn" href="/../../business/cart/cart.php?action=empty">Empty Cart</a>
 	<?php
-        if(isset($_SESSION['cart_item']))
+        if(!isset($_SESSION['user_id']) )
+        {
+            echo '<a href="/login" id="buyBtn" >Login to checkout</a>';
+        }
+    ?>
+	<?php
+        if(isset($_SESSION['cart_item']) && isset($_SESSION['user_id']) )
         {
             echo '<a href="/checkout" id="buyBtn" >Checkout</a>';
         }

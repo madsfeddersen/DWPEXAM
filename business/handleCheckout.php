@@ -1,16 +1,12 @@
 <?php
 
 
-//var_dump($_SESSION);
-
-var_dump($_POST);
-
 $postData = $statusMsg = ''; 
 $status = '';
 
-echo 'Var DUMP<br<br>';
 
-require("dbcon.php");
+
+
 
 
 if(isset($_POST['submit'])){ 
@@ -32,12 +28,15 @@ if(isset($_POST['submit'])){
 
 
 //Insert order into DB
-$dbCon = dbCon();
-$query = $dbCon->prepare("INSERT INTO orders (`fullname`, `email`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`)
+
+
+require ("dbcon2.php");
+$dbCon2 = dbCon2();
+$query = $dbCon2->prepare("INSERT INTO orders (`fullname`, `email`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`)
 VALUES ('$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv')");
 $query->execute();
 
-var_dump($dbCon);
+var_dump($dbCon2);
 var_dump($query);
         
   

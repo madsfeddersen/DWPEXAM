@@ -1,6 +1,6 @@
 <?php
     
-    include(__DIR__ . "/../../business/dbcon.php");
+    require (__DIR__ . "/../../business/dbcon.php");
     $user = "root";
     $pass = "";
     $dbCon = dbCon();
