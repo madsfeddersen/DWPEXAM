@@ -4,7 +4,7 @@
 $postData = $statusMsg = ''; 
 $status = '';
 
-
+var_dump($_POST);
 
 
 

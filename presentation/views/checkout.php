@@ -4,6 +4,9 @@ require_once(__DIR__ . "/../../business/handleCheckout.php");
 echo "<br>" . $status . "<br>";
 echo $statusMsg;
 
+var_dump($_SESSION);
+
+
 if(!empty($statusMsg))
   {
 ?>
@@ -29,9 +32,9 @@ if(!empty($statusMsg))
           <div class="col-25">
             <h3>Billing Address</h3>
             <label for="fname"><i class="fas fa-user-alt"></i> Full Name</label>
-            <input type="text" id="fname" name="fullname" value="<?php echo !empty($postData['fullname'])?$postData['fullname']:''; ?>" placeholder="Hugh Ash">
+            <input readonly type="text" id="fname" name="fullname" value="<?php echo $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];?>" placeholder="<?php echo $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];?>">
             <label for="email"><i class="fas fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" value="<?php echo !empty($postData['email'])?$postData['email']:''; ?>" placeholder="hugh@jass.com">
+            <input readonly type="text" id="email" name="email" value="<?php echo $_SESSION['userName'];?>" placeholder="<?php echo $_SESSION['userName'];?>">
             <label for="adr"><i class="fas fa-address-card"></i> Address</label>
             <input type="text" id="adr" name="address" value="<?php echo !empty($postData['address'])?$postData['address']:''; ?>" placeholder="42 Wallaby Way">
             <label for="city"><i class="fas fa-institution"></i> City</label>
