@@ -38,6 +38,7 @@
 
     // Backend views
     $router->get('dashboard', 'presentation/backend/dashboard');
+    $router->get('userDashboard', 'presentation/backend/userDashboard');
     $router->get('editUsers', 'persistence/userDAO/manageUsers');
     $router->get('siteDash', 'presentation/backend/siteDash');
     $router->get('manageSite', 'persistence/siteDAO/manageSite');

@@ -104,7 +104,7 @@ if(!empty($_GET["action"]))
 	{
 			$item_total = 0;
 ?>	
-<table align="center" cellpadding="10" cellspacing="1">
+<table cellpadding="10" cellspacing="1">
 <tbody>
 <tr>
 <th class="cartTable"><strong>Name</strong></th>
@@ -153,6 +153,8 @@ if(!empty($_GET["action"]))
 	<form method="post" action="/../../business/cart/cart.php?action=add&code=<?php echo $product_array[$aNumber]["code"];?>">
 		<div><strong><?php echo $product_array[$aNumber]["name"] . ' Duck';?></strong></div>
 		<div class="product-image"><img src="/../../presentation/img/products/<?php echo $product_array[$aNumber]["id"] . '.png';?>"></div>
+		<br>
+		<br>
 		<div class="product-price"><?php echo $product_array[$aNumber]["price"]." DKK";?></div>
 		<div>
 			<input type="text" name="quantity" value="1" size="2" />
@@ -165,7 +167,7 @@ if(!empty($_GET["action"]))
 		}
 	}
 
-	var_dump($_SESSION['cart_item']);
+	
 ?>
 </div>
 

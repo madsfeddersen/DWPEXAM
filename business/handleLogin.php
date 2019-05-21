@@ -25,23 +25,24 @@ if (isset($_POST['user']) && !empty($_POST['user']))
             $_SESSION["userName"] = $getUser[0][1];
             $_SESSION['firstName'] = $getUser[0][3];
             $_SESSION['lastName'] = $getUser[0][4];
+            $_SESSION['userRank'] = $getUser[0][5];
 
             echo "<br>Input credentials matched!<br><br><h1>Welcome to the backend</h1>";
-            header("Location: /dashboard");
+            redirect_to("/dashboard");
         }
     else
         {
             echo "<br>Wrong email or password!<br>Try again!";
             echo "<br>You will be redirected back in 5 seconds.";
             header( "Refresh:5; url=/login", true, 303);
-            //header("Location: /login");
+            redirect_to("/login");
         }
 }
 
 else
     {
         echo "<br>Please input a password";
-        header("Location: /login");
+        redirect_to("/login");
     }
 
 

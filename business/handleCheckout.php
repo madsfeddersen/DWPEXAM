@@ -1,49 +1,42 @@
 <?php
 
-
 $postData = $statusMsg = ''; 
 $status = '';
 
-var_dump($_POST);
+if(isset($_POST['submit']))
+{ 
+   
+    $fname = !empty($_POST['fullname'])?$_POST['fullname']:''; 
+    $email = !empty($_POST['email'])?$_POST['email']:''; 
+    $adr = !empty($_POST['address'])?$_POST['address']:''; 
+    $city = !empty($_POST['city'])?$_POST['city']:''; 
+    $zip = !empty($_POST['zip'])?$_POST['zip']:''; 
+    $cname = !empty($_POST['cardname'])?$_POST['cardname']:''; 
+    $ccnum = !empty($_POST['cardnumber'])?$_POST['cardnumber']:'';
+    $expmonth = !empty($_POST['expmonth'])?$_POST['expmonth']:''; 
+    $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
+    $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
 
-
-
-
-if(isset($_POST['submit'])){ 
-    //$postData = $_POST; 
-    
-
-                    $fname = !empty($_POST['fullname'])?$_POST['fullname']:''; 
-                    $email = !empty($_POST['email'])?$_POST['email']:''; 
-                    $adr = !empty($_POST['address'])?$_POST['address']:''; 
-                    $city = !empty($_POST['city'])?$_POST['city']:''; 
-                    $zip = !empty($_POST['zip'])?$_POST['zip']:''; 
-                    $cname = !empty($_POST['cardname'])?$_POST['cardname']:''; 
-                    $ccnum = !empty($_POST['cardnumber'])?$_POST['cardnumber']:'';
-                    $expmonth = !empty($_POST['expmonth'])?$_POST['expmonth']:''; 
-                    $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
-                    $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
-
-                    foreach ($_SESSION["cart_item"] as $item){
-                        $productName = $item['name'];
-                        $quantity = $item['quantity'];
-                        $price = $item['price'];
-                    }
+    foreach ($_SESSION["cart_item"] as $item)
+    {
+        $productName = $item['name'];
+        $quantity = $item['quantity'];
+        $price = $item['price'];
+    }
                     
-                    echo '<br><br>POST submitted<br><br>';
+    //Insert order into DB
+    require ("dbcon2.php");
+    $dbCon2 = dbCon2();
+    $query = $dbCon2->prepare("INSERT INTO orders (`fullname`, `userEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `quantity`, `price`)
+    VALUES ('$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$quantity', '$price')");
+    $query->execute();
 
+        $postData = $_POST; 
 
-//Insert order into DB
-
-
-require ("dbcon2.php");
-$dbCon2 = dbCon2();
-$query = $dbCon2->prepare("INSERT INTO orders (`fullname`, `userEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `quantity`, `price`)
-VALUES ('$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$quantity', '$price')");
-$query->execute();
-
-        // Validate checkout form fields 
-        if(!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['zip']) && !empty($_POST['cardname']) && !empty($_POST['cardnumber']) && !empty($_POST['expmonth']) && !empty($_POST['expyear']) && !empty($_POST['cvv']))
+    //Send invoice to user
+        
+    // Validate checkout form fields 
+    if(!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['zip']) && !empty($_POST['cardname']) && !empty($_POST['cardnumber']) && !empty($_POST['expmonth']) && !empty($_POST['expyear']) && !empty($_POST['cvv']))
         { 
             
             // Validate reCAPTCHA box 
@@ -71,11 +64,7 @@ $query->execute();
                     $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
                     $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
 
-                    
-                    
-                    echo "wooo";
-
-                    // Send email notification to the site admin 
+                    // Send email invoice to the user
                     $to = 'andreas.madum1@gmail.com'; 
                     $subject = 'Order confirmation'; 
                     $htmlContent = " 

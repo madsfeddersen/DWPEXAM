@@ -1,4 +1,7 @@
-<?php confirm_logged_in(); ?>
+<?php
+confirm_logged_in(); 
+confirm_admin();
+?>
 
 
 <head>
@@ -9,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
-<h3>Welcome to the dashboard, <?php echo ucwords($_SESSION['firstName']) . ' ' . ucwords($_SESSION['lastName']);?>!</h3>
+<h3>Welcome to the admin dashboard,<br> <?php echo ucwords($_SESSION['firstName']) . ' ' . ucwords($_SESSION['lastName']);?>!</h3>
 <div class="row">
     <a href="/editOrders" class="btn dashboard">Manage orders</a>
     <a href="/editUsers" class="btn dashboard">Manage users</a>

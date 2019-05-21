@@ -4,8 +4,6 @@ require_once(__DIR__ . "/../../business/handleCheckout.php");
 echo "<br>" . $status . "<br>";
 echo $statusMsg;
 
-var_dump($_SESSION);
-
 
 if(!empty($statusMsg))
   {
@@ -80,7 +78,7 @@ if(!empty($statusMsg))
         <!-- Google reCAPTCHA box -->
         <!--<div class="g-recaptcha" data-sitekey="6LchXaEUAAAAAID5UnKUmw3LJqVA9fmo1vWM8TVO"></div>
 -->
-        <input name="submit" type="submit" value="Continue to checkout" class="btn">
+        <input name="submit" type="submit" value="Confirm order" class="btn">
       </form>
 
      <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>-->

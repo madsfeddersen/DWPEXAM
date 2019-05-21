@@ -15,13 +15,35 @@
         if(isset($_SESSION['user_id']))
         {
             echo '<h1 id="logoutBtn"><a href="/logout"><i class="fas fa-door-open"></i></a></h1>';
+              
+            if(isset($_SESSION['userRank']) && ($_SESSION['userRank']) == 1 || ($_SESSION['userRank'] == 2))
+            {
+                echo '<h1 id="loginBtn"><a href="/dashboard"><i class="fas fa-user-alt"></i></a></h1>';
+            }
+
+            else
+            {
+                echo '<h1 id="loginBtn"><a href="/userDashboard"><i class="fas fa-user-alt"></i></a></h1>';
+            }
         }
+
+        if(!isset($_SESSION['user_id']))
+        {
+            echo '<h1 id="loginBtn">
+            <a href="/login">
+                <i class="fas fa-user-alt"></i>
+            </a>
+        </h1>';
+        }
+
     ?>
-    <h1 id="loginBtn">
-        <a href="/login">
-            <i class="fas fa-user-alt"></i>
-        </a>
-    </h1>
+
+
+
+    
+
+
+
     <h1 id="cartBtn">
         <a href="/cart">
         <i class="fas fa-shopping-cart"></i>

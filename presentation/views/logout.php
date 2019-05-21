@@ -1,7 +1,5 @@
 <?php
 
-log_out();
-
 
 unset($_SESSION['user_id']);
 
