@@ -1,37 +1,13 @@
 <?php
 
+
+
 $postData = $statusMsg = ''; 
 $status = '';
 
 if(isset($_POST['submit']))
 { 
-   
-    $fname = !empty($_POST['fullname'])?$_POST['fullname']:''; 
-    $email = !empty($_POST['email'])?$_POST['email']:''; 
-    $adr = !empty($_POST['address'])?$_POST['address']:''; 
-    $city = !empty($_POST['city'])?$_POST['city']:''; 
-    $zip = !empty($_POST['zip'])?$_POST['zip']:''; 
-    $cname = !empty($_POST['cardname'])?$_POST['cardname']:''; 
-    $ccnum = !empty($_POST['cardnumber'])?$_POST['cardnumber']:'';
-    $expmonth = !empty($_POST['expmonth'])?$_POST['expmonth']:''; 
-    $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
-    $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
-
-    foreach ($_SESSION["cart_item"] as $item)
-    {
-        $productName = $item['name'];
-        $quantity = $item['quantity'];
-        $price = $item['price'];
-    }
-                    
-    //Insert order into DB
-    require ("dbcon2.php");
-    $dbCon2 = dbCon2();
-    $query = $dbCon2->prepare("INSERT INTO orders (`fullname`, `userEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `quantity`, `price`)
-    VALUES ('$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$quantity', '$price')");
-    $query->execute();
-
-        $postData = $_POST; 
+    $postData = $_POST; 
 
     //Send invoice to user
         
@@ -53,16 +29,32 @@ if(isset($_POST['submit']))
                 // If reCAPTCHA response is valid 
                 if($responseData->success){ 
                     // Posted form data 
-                    $fname = !empty($_POST['fname'])?$_POST['fname']:''; 
-                    $email = !empty($_POST['email'])?$_POST['email']:''; 
-                    $adr = !empty($_POST['adr'])?$_POST['adr']:''; 
-                    $city = !empty($_POST['city'])?$_POST['city']:''; 
-                    $zip = !empty($_POST['zip'])?$_POST['zip']:''; 
-                    $cname = !empty($_POST['cname'])?$_POST['cname']:''; 
-                    $ccnum = !empty($_POST['ccnum'])?$_POST['ccnum']:'';
-                    $expmonth = !empty($_POST['expmonth'])?$_POST['expmonth']:''; 
-                    $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
-                    $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
+
+                $fname = !empty($_POST['fullname'])?$_POST['fullname']:''; 
+                $email = !empty($_POST['email'])?$_POST['email']:''; 
+                $adr = !empty($_POST['address'])?$_POST['address']:''; 
+                $city = !empty($_POST['city'])?$_POST['city']:''; 
+                $zip = !empty($_POST['zip'])?$_POST['zip']:''; 
+                $cname = !empty($_POST['cardname'])?$_POST['cardname']:''; 
+                $ccnum = !empty($_POST['cardnumber'])?$_POST['cardnumber']:'';
+                $expmonth = !empty($_POST['expmonth'])?$_POST['expmonth']:''; 
+                $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
+                $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
+                $user_id = $_SESSION['user_id'];
+
+                foreach ($_SESSION["cart_item"] as $item)
+                {
+                    $productName = $item['name'];
+                    $quantity = $item['quantity'];
+                    $price = $item['price'];
+                }
+                    
+                //Insert order into DB
+                require ("dbcon2.php");
+                $dbCon2 = dbCon2();
+                $query = $dbCon2->prepare("INSERT INTO orders (`user_id`, `fullname`, `orderEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `quantity`, `price`)
+                VALUES ('$user_id', '$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$quantity', '$price')");
+                $query->execute();
 
                     // Send email invoice to the user
                     $to = 'andreas.madum1@gmail.com'; 
@@ -74,10 +66,10 @@ if(isset($_POST['submit']))
                         <p><b>City: </b>".$adr."</p>
                         <p><b>Zip: </b>".$zip."</p> 
                         <p><b>Name on Card: </b>".$cname."</p> 
-                        <p><b>Card Number: </b>".$ccnum."</p> 
-                        <p><b>Exp month: </b>".$expmonth."</p> 
-                        <p><b>Exp year: </b>".$expyear."</p>
-                        <p><b>CVV: </b>".$cvv."</p> 
+                        <p><b>Card Number: </b>".$ccnum."</p>
+                        <p><b>Product: </b>".$productname."</p>
+                        <p><b>Quantity: </b>".$quantity."</p>
+                        <p><b>Price: </b>".$price."</p>
                     "; 
                     
                     // Always set content-type when sending HTML email 
@@ -93,25 +85,29 @@ if(isset($_POST['submit']))
                     $statusMsg = 'Your order has been created.'; 
                     $postData = '';
                     
-                    header("Location: /checkout");
+                    redirect_to("/orders");
                 }
                 else
                 { 
                     $statusMsg = 'Robot verification failed, please try again.'; 
-                    header("Location: /checkout");
+                    echo $statusMsg;
+                    redirect_to("/checkout");
                 } 
             }
             else
             { 
                 $statusMsg = 'Please check on the reCAPTCHA box.'; 
-                //header("Location: /checkout");
+                echo $statusMsg;
+                redirect_to("/checkout");
             } 
         }
         else
         { 
-            $statusMsg = 'Please fill all the mandatory fields.'; 
-            //header("Location: /checkout");
+            $statusMsg = 'Please fill in all the mandatory fields.'; 
+            echo $statusMsg;
+            redirect_to("/checkout");
         } 
 }
-        
+
+
 ?>

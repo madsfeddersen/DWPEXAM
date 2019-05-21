@@ -1,6 +1,6 @@
 <?php
 confirm_logged_in(); 
-confirm_admin();
+/*confirm_admin();*/
 ?>
 
 

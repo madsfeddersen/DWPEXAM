@@ -35,10 +35,12 @@
     $router->get('product', 'presentation/views/product');
     $router->get('cart', 'business/cart/cart');
     $router->get('checkout', 'presentation/views/checkout');
+    $router->get('profile', 'presentation/views/profile');
+    $router->get('orders', 'presentation/views/orders');
+    $router->get('userDashboard', 'presentation/views/userDashboard');
 
     // Backend views
     $router->get('dashboard', 'presentation/backend/dashboard');
-    $router->get('userDashboard', 'presentation/backend/userDashboard');
     $router->get('editUsers', 'persistence/userDAO/manageUsers');
     $router->get('siteDash', 'presentation/backend/siteDash');
     $router->get('manageSite', 'persistence/siteDAO/manageSite');

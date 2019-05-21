@@ -12,13 +12,11 @@ $userEmail = $_SESSION['userName'];
 
 $dbCon = dbCon2();
 //$query = $dbCon->prepare("SELECT orderEmail, userEmail, orders.id, fullname, shipping_address, city, zip, productname, quantity, price FROM users, orders WHERE orderEmail = (userEmail = '$userEmail')");
-$query = $dbCon->prepare("SELECT * FROM orders");
 
+$query = $dbCon->prepare("SELECT * FROM orders");
 $query->execute();
 $getOrder = $query->fetchAll();
 
-//var_dump($query);
-//var_dump($getOrder);
 ?>
 
 <div class="container">
