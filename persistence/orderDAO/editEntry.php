@@ -26,41 +26,21 @@
     <button class="btn grey dashboard"><a href="/dashboard">Back to dashboard</a>
     </button>
     <br>
-        <p>Editing order number: <?php echo $getOrder[0][0] . ' from user: ' . $getOrder[0][1];?>
+        <p>Editing shipping details for order: <?php echo $getOrder[0][0] . ' from user: ' . $getOrder[0][1];?>
         </p>
         <form class="col s12" name="contact" method="POST" action="/../../persistence/orderDAO/updateEntry.php">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="shop_name" name="shop_name" type="text" value="<?php echo $getOrder[0][1]; ?>" class="validate" required="" aria-required="true">
-                        <label for="shop_name">Full Name</label>
+                        <input id="shipping _adress" name="shipping _adress" type="text" value="<?php echo $getOrder[0][4]; ?>" class="validate" required="" aria-required="true">
+                        <label for="shipping _adress">Shipping Adress</label>
                     </div>
                     <div class="input-field col s12">
-                        <input id="street_address" name="street_address" type="text" value="<?php echo $getOrder[0][2]; ?>" class="validate" required="" aria-required="true">
-                        <label for="street_address">Email</label>
+                        <input id="city" name="city" type="text" value="<?php echo $getOrder[0][5]; ?>" class="validate" required="" aria-required="true">
+                        <label for="city">City</label>
                     </div>
                     <div class="input-field col s12">
-                        <input id="zipcode" name="zipcode" type="text" value="<?php echo $getOrder[0][3]; ?>" class="validate" required="" aria-required="true">
-                        <label for="zipcode">Shipping Adress</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="phone" name="phone" type="text" value="<?php echo $getOrder[0][4]; ?>" class="validate" required="" aria-required="true">
-                        <label for="phone">City</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="email" name="email" type="text" value="<?php echo $getOrder[0][5]; ?>" class="validate" required="" aria-required="true">
-                        <label for="email">Zip</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="opening_hours" name="opening_hours" type="text" value="<?php echo $getOrder[0][6]; ?>" class="validate" required="" aria-required="true">
-                        <label for="opening_hours">Product name</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="daily_product" name="daily_product" type="text" value="<?php echo $getOrder[0][7]; ?>" class="validate" required="" aria-required="true">
-                        <label for="daily_product">Quantity</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="news" name="news" type="text" value="<?php echo $getOrder[0][8]; ?>" class="validate" required="" aria-required="true">
-                        <label for="news">Price</label>
+                        <input id="zip" name="zip" type="text" value="<?php echo $getOrder[0][6]; ?>" class="validate" required="" aria-required="true">
+                        <label for="zip">Zip</label>
                     </div>
             <input type="hidden" name="entryID" value="<?php echo $entryID; ?>">
             <button class="btn white black-text dashboard" type="submit" name="submit">

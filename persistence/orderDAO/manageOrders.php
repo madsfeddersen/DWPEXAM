@@ -6,10 +6,19 @@
 
 <?php
 require (__DIR__ . "/../../business/dbcon2.php");
+
+
+$userEmail = $_SESSION['userName'];
+
 $dbCon = dbCon2();
+//$query = $dbCon->prepare("SELECT orderEmail, userEmail, orders.id, fullname, shipping_address, city, zip, productname, quantity, price FROM users, orders WHERE orderEmail = (userEmail = '$userEmail')");
 $query = $dbCon->prepare("SELECT * FROM orders");
+
 $query->execute();
 $getOrder = $query->fetchAll();
+
+//var_dump($query);
+//var_dump($getOrder);
 ?>
 
 <div class="container">
@@ -60,7 +69,7 @@ $getOrder = $query->fetchAll();
                         echo "<tr>";
                         echo "<td>". $info['id']."</td>";
                         echo "<td>". $info['fullname']."</td>";
-                        echo "<td>". $info['email']."</td>";
+                        echo "<td>". $info['orderEmail']."</td>";
                         echo "<td>". $info['shipping_address']."</td>";
                         echo "<td>". $info['city']."</td>";
                         echo "<td>". $info['zip']."</td>";

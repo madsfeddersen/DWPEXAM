@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
 
 require ("dbcon2.php");
 $dbCon2 = dbCon2();
-$query = $dbCon2->prepare("INSERT INTO orders (`fullname`, `email`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `quantity`, `price`)
+$query = $dbCon2->prepare("INSERT INTO orders (`fullname`, `userEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `quantity`, `price`)
 VALUES ('$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$quantity', '$price')");
 $query->execute();
 
