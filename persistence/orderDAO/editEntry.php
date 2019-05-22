@@ -16,7 +16,7 @@
 
     require (__DIR__ . "/../../business/dbcon.php");  
     $dbCon = dbCon();
-    $query = $dbCon->prepare("SELECT * FROM orders WHERE email = '$userEmail'");
+    $query = $dbCon->prepare("SELECT * FROM orders");
     $query->execute();
     $getOrder = $query->fetchAll();
 ?>
@@ -31,8 +31,8 @@
         <form class="col s12" name="contact" method="POST" action="/../../persistence/orderDAO/updateEntry.php">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="shipping _adress" name="shipping _adress" type="text" value="<?php echo $getOrder[0][4]; ?>" class="validate" required="" aria-required="true">
-                        <label for="shipping _adress">Shipping Adress</label>
+                        <input id="shipping_address" name="shipping_address" type="text" value="<?php echo $getOrder[0][4]; ?>" class="validate" required="" aria-required="true">
+                        <label for="shipping_address">Shipping Adress</label>
                     </div>
                     <div class="input-field col s12">
                         <input id="city" name="city" type="text" value="<?php echo $getOrder[0][5]; ?>" class="validate" required="" aria-required="true">

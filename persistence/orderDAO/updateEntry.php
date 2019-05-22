@@ -4,16 +4,14 @@ if (isset($_POST['entryID']) && isset($_POST['submit']))
 {
     $entryID = $_POST['entryID'];
 
-    
-    $shipping_address = $_POST['shipping_adress'];
+    $shipping_address = $_POST['shipping_address'];
     $city = $_POST['city'];
     $zip = $_POST['zip'];
     
     
-    $dbCon = dbCon($user, $pass);
-    $query = $dbCon->prepare("UPDATE orders SET shipping_adress='$shipping_address', city='$city', zip='$zip' WHERE id = $entryID");
+    $dbCon = dbCon();
+    $query = $dbCon->prepare("UPDATE orders SET shipping_address='$shipping_address', city='$city', zip='$zip' WHERE id = $entryID");
     $query->execute();
-
     header("Location: manageOrders.php?status=updated&ID=$entryID");
 }
 else

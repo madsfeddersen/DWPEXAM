@@ -12,11 +12,11 @@ CREATE TABLE IF NOT EXISTS orders (
 	expmonth VARCHAR(30),
 	expyear VARCHAR(30),
 	cvv VARCHAR(30),
-  productname VARCHAR(30),
-  quantity VARCHAR(30),
-  size VARCHAR(30),
-  color VARCHAR(30),
-  price VARCHAR(30)
+	productname VARCHAR(30),
+	quantity VARCHAR(30),
+	size VARCHAR(30),
+	color VARCHAR(30),
+	price VARCHAR(30)
 );
 
 INSERT INTO `orders` (id, user_id, fullname, orderEmail, shipping_address, city, zip, cname, ccnum, expmonth, expyear, cvv, productname, size, color, quantity, price) VALUES
