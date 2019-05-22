@@ -23,12 +23,12 @@ if(isset($_POST['submit'])){
             // If reCAPTCHA response is valid 
             if($responseData->success){ 
                 // Posted form data 
-                $name = !empty($_POST['name'])?$_POST['name']:''; 
-                $email = !empty($_POST['email'])?$_POST['email']:''; 
-                $message = !empty($_POST['message'])?$_POST['message']:''; 
+                $name = strip_tags(!empty($_POST['name'])?$_POST['name']:''); 
+                $email = strip_tags(!empty($_POST['email'])?$_POST['email']:''); 
+                $message = strip_tags(!empty($_POST['message'])?$_POST['message']:''); 
                  
                 // Send email notification to the site admin 
-                $to = 'andreas.madum1@gmail.com'; 
+                $to = 'duckshopdwp@gmail.com'; 
                 $subject = 'New contact form have been submitted'; 
                 $htmlContent = " 
                     <h1>Contact request details</h1> 

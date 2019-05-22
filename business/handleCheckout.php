@@ -30,16 +30,16 @@ if(isset($_POST['submit']))
                 if($responseData->success){ 
                     // Posted form data 
 
-                $fname = !empty($_POST['fullname'])?$_POST['fullname']:''; 
-                $email = !empty($_POST['email'])?$_POST['email']:''; 
-                $adr = !empty($_POST['address'])?$_POST['address']:''; 
-                $city = !empty($_POST['city'])?$_POST['city']:''; 
-                $zip = !empty($_POST['zip'])?$_POST['zip']:''; 
-                $cname = !empty($_POST['cardname'])?$_POST['cardname']:''; 
-                $ccnum = !empty($_POST['cardnumber'])?$_POST['cardnumber']:'';
-                $expmonth = !empty($_POST['expmonth'])?$_POST['expmonth']:''; 
-                $expyear = !empty($_POST['expyear'])?$_POST['expyear']:'';
-                $cvv = !empty($_POST['cvv'])?$_POST['cvv']:''; 
+                $fname = strip_tags(!empty($_POST['fullname'])?$_POST['fullname']:''); 
+                $email = strip_tags(!empty($_POST['email'])?$_POST['email']:''); 
+                $adr = strip_tags(!empty($_POST['address'])?$_POST['address']:''); 
+                $city = strip_tags(!empty($_POST['city'])?$_POST['city']:''); 
+                $zip = strip_tags(!empty($_POST['zip'])?$_POST['zip']:''); 
+                $cname = strip_tags(!empty($_POST['cardname'])?$_POST['cardname']:''); 
+                $ccnum = strip_tags(!empty($_POST['cardnumber'])?$_POST['cardnumber']:'');
+                $expmonth = strip_tags(!empty($_POST['expmonth'])?$_POST['expmonth']:''); 
+                $expyear = strip_tags(!empty($_POST['expyear'])?$_POST['expyear']:'');
+                $cvv = strip_tags(!empty($_POST['cvv'])?$_POST['cvv']:''); 
                 $user_id = $_SESSION['user_id'];
 
                 foreach ($_SESSION["cart_item"] as $item)
@@ -59,7 +59,7 @@ if(isset($_POST['submit']))
                 $query->execute();
 
                     // Send email invoice to the user
-                    $to = 'duckshopdwp@gmail.com'; 
+                    $to = $email; 
                     $subject = 'Order confirmation'; 
                     $htmlContent = " 
                         <h1>Order details</h1> 
@@ -69,7 +69,7 @@ if(isset($_POST['submit']))
                         <p><b>Zip: </b>".$zip."</p> 
                         <p><b>Name on Card: </b>".$cname."</p> 
                         <p><b>Card Number: </b>".$ccnum."</p>
-                        <p><b>Product: </b>".$productName."Duck</p>
+                        <p><b>Product: </b>".$productName." Duck</p>
                         <p><b>Size: </b>".$size."</p>
                         <p><b>Color: </b>".$color."</p>
                         <p><b>Quantity: </b>".$quantity."</p>

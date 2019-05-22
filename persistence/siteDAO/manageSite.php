@@ -12,7 +12,7 @@
 <?php
 require (__DIR__ . "/../../business/dbcon.php");
 $dbCon = dbCon();
-$query = $dbCon->prepare("SELECT * FROM duck_shop");
+$query = $dbCon->prepare("SELECT * FROM getsite");
 $query->execute();
 $getDucks = $query->fetchAll();
 ?>

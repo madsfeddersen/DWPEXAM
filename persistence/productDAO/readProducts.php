@@ -24,18 +24,16 @@ function readShop()
                 </a> 
                 </v-flex>';
 
-                
-           
             echo $duckString;
         }
-        
     }
 
 function readProduct($productID)
     {          
         require (__DIR__ . "/../../business/dbcon.php");
         $dbCon = dbCon();
-        $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");
+        $query = $dbCon->prepare("SELECT * FROM products WHERE id = :product_id");
+        $query->bindParam(':product_id', $productID);
         $query->execute();
         $getProducts = $query->fetchAll();
         
@@ -85,7 +83,8 @@ function readProduct($productID)
     {          
         require (__DIR__ . "/../../business/dbcon.php");
         $dbCon = dbCon();
-        $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");
+        $query = $dbCon->prepare("SELECT * FROM products WHERE id = :product_id");
+        $query->bindParam(':product_id', $productID);
         $query->execute();
         $getProducts = $query->fetchAll();
         

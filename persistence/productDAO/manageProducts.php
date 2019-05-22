@@ -21,8 +21,7 @@
 <?php
 require (__DIR__ . "/../../business/dbcon.php");
 $dbCon = dbCon();
-//$query = $dbCon->prepare("SELECT products.id, products.name, products.code, products.price, products.description, images.file_name, images.for_duck FROM products, images");
-$query = $dbCon->prepare("SELECT * FROM products");
+$query = $dbCon->prepare("SELECT * FROM productlist");
 $query->execute();
 $getProducts = $query->fetchAll();
 

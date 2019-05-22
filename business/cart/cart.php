@@ -82,9 +82,7 @@ if(!empty($_GET["action"]))
 <br>
 <h1 class="page-title">Shopping cart</h1>
 <br>
-<br>
-<div id="shopping-cart">
-<div class="heading">
+
 	<a href="/shop" id="backBtn">Back to shop</a>
 	<a id="emptyBtn" href="/../../business/cart/cart.php?action=empty">Empty Cart</a>
 	<?php
@@ -99,7 +97,10 @@ if(!empty($_GET["action"]))
             echo '<a href="/checkout" id="buyBtn" >Checkout</a>';
         }
     ?>
-</div>
+
+<br>
+<div id="shopping-cart">
+
 <?php
 	//Reset total cost to do recalc
 	if(isset($_SESSION["cart_item"]))
