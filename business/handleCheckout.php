@@ -47,10 +47,8 @@ if(isset($_POST['submit']))
                     $productName = $item['name'];
                     $quantity = $item['quantity'];
                     $price = $item['price'];
-                    //$size = $item['size'];
-                    //$color = $item['color'];
-                    $size = 'XL';
-                    $color = 'Duck color';
+                    $size = $item['size'];
+                    $color = $item['color'];
                 }
                     
                 //Insert order into DB

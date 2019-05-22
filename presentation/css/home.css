@@ -1,5 +1,17 @@
+#container {
+    background: #fafafa;
+}
+
+.page-title {
+    color: #000;
+    margin-top: 30px;
+    
+}
+
 .content {
-    margin: 0 10vw 0 10vw;
+    color: #000;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 .addToCartBtn {

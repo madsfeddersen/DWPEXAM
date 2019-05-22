@@ -54,6 +54,8 @@ $getOrder = $query->fetchAll();
                 <th>Zip</th>
                 <th>Product</th>
                 <th>Quantity</th>
+                <th>Size</th>
+                <th>Color</th>
                 <th>Price</th>
             </tr>
             </thead>
@@ -70,6 +72,8 @@ $getOrder = $query->fetchAll();
                         echo "<td>". $info['zip']."</td>";
                         echo "<td>". $info['productname']."</td>";
                         echo "<td>". $info['quantity']."</td>";
+                        echo "<td>". $info['size']."</td>";
+                        echo "<td>". $info['color']."</td>";
                         echo "<td>". $info['price']."</td>";
                         echo "<td>";
                         echo "</td>";

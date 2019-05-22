@@ -46,13 +46,13 @@ tbody, tbody tr, tbody td
 
 .productform input, .productform select, .productform select option {
     background: none;
-    color: red!important;
+    color: #000;
     font-weight: bolder;
     border: 1px solid #000;
     margin-top: 10px;
     text-align: center;
     text-align-last:center;
-    width: 100%;
+    width: 50%;
 }
 
 .cartTable {
@@ -219,7 +219,7 @@ padding-bottom: 5%;
 }
 
 #addBtn {
-        
+        background: green;
         border: 1px solid #000;
         padding: 3px 10px;
         color: #000;

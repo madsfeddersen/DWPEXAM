@@ -42,9 +42,8 @@
     // Backend views
     $router->get('dashboard', 'presentation/backend/dashboard');
     $router->get('editUsers', 'persistence/userDAO/manageUsers');
-    $router->get('siteDash', 'presentation/backend/siteDash');
     $router->get('manageSite', 'persistence/siteDAO/manageSite');
-    $router->get('editProducts', 'presentation/backend/editProducts');
+    $router->get('editProducts', 'persistence/productDAO/manageProducts');
     $router->get('editOrders', 'persistence/orderDAO/manageOrders');
 
     // Logic routes

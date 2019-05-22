@@ -21,7 +21,7 @@ if (isset($_GET['ID'])) {
 
 <div class="container">
     <br>
-    <button class="btn white black-text dashboard"><a href="/dashboard">Back to dashboard</a>
+    <button class="btn grey dashboard"><a href="/dashboard">Back to dashboard</a>
     </button>
     <br>
         <p>Editing user #<?php echo $getUsers[0][0] . ' with Email: ' . $getUsers[0][1];?>

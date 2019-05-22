@@ -3,6 +3,9 @@
 	
 
 	
+	/*
+	Testing stuff
+
 	if (isset($_SESSION['user_id'])) {
 	echo "Logged in as 'user_id': " . $_SESSION['user_id'] . " with email " . $_SESSION['userName'];
 
@@ -10,7 +13,7 @@
 	else {
 
 		echo "Session not set / you are not logged in.";
-	}
+	}*/
 
 
 
@@ -25,12 +28,16 @@
 		}
 		}
 		
+	
+		/*
 	function confirm_admin() {
 		if($_SESSION['userRank'] != 1 || $_SESSION['userRank'] !=2)
       {
 				redirect_to("/logout");
 			}
-		}
+	}
+	*/
+
     
     function redirect_to($location) {
        	echo "<script>window.location.href = '$location';</script>";

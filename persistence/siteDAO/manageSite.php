@@ -39,7 +39,7 @@ $getDucks = $query->fetchAll();
     
 <div class="row">
     <div class="row">
-        <table class="highlight">
+        <table class="highlight striped centered responsive-table">
             <thead>
             <tr class="tablerow">
                 <th>ID</th>

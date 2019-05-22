@@ -34,6 +34,12 @@ body {
     -ms-flex: 75%; /* IE10 */
     flex: 75%;
   }
+
+  .fab {
+    color: #000;
+    font-size: 40px;
+    background: #fff;
+  }
   
   .col-25,
   .col-50,

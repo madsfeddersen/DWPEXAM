@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS orders (
 insert into duck_shop (id, shop_name, street_address, zipcode, phone, email, opening_hours, daily_product, news, shop_description) 
 values (1, 'DuckYou!', 'Duck Street 1', '6710 Esbjerg V', '+45 13377331', 'duck@duck.dk', 'In the quacking Hours', 1,
  'New products in store, check them out here!', 'We are your number 1 stop rubber duck shop. We have been crowned 
- "The best duckshop in the universe" for the seventh year in a row. Yes, by ourselves but that is besides the point');
+ "The best duckshop in the universe" for the seventh year in a row. Yes, by ourselves but that is besides the point!');
 
 
 insert into users (id, userEmail, userPass, firstName, lastName, userRank) values

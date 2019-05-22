@@ -1,6 +1,6 @@
 <?php
 confirm_logged_in(); 
-/*confirm_admin();*/
+//confirm_admin();
 ?>
 
 
@@ -16,9 +16,9 @@ confirm_logged_in();
 <div class="row">
     <a href="/editOrders" class="btn dashboard">Manage orders</a>
     <a href="/editUsers" class="btn dashboard">Manage users</a>
+    <a href="/editProducts" class="btn dashboard">Manage Products</a>
     <a href="/manageSite" class="btn dashboard">Site settings</a>
-    <a href="/editProducts" class="btn dashboard">Products</a>
-    <a href="http://localhost/phpmyadmin" target="_blank" class="btn dashboard">phpMyAdmin</a>
+    <a href="http://localhost/phpmyadmin" target="_blank" class="btn dashboard">local phpMyAdmin</a>
 </div>
 
 <div id="duck">

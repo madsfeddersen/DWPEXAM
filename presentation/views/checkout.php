@@ -49,10 +49,10 @@ if(!empty($statusMsg))
             <h3>Payment</h3>
             <label for="fname">Accepted Cards</label>
             <div class="icon-container">
-              <i class="fab fa-cc-visa" style=""></i>
-              <i class="fab fa-cc-amex" style=""></i>
-              <i class="fab fa-cc-mastercard" style=""></i>
-              <i class="fab fa-cc-discover" style=""></i>
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-paypal"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-amazon-pay"></i>
             </div>
             <label for="cname">Name on Card</label>
             <input type="text" id="cname" name="cardname" value="<?php echo !empty($postData['cardname'])?$postData['cardname']:''; ?>" placeholder="Hugh Jacques Ash">
@@ -63,11 +63,11 @@ if(!empty($statusMsg))
             <div class="row">
               <div class="col-25">
                 <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" value="<?php echo !empty($postData['expyear'])?$postData['expyear']:''; ?>" placeholder="2018">
+                <input type="text" id="expyear" name="expyear" value="<?php echo !empty($postData['expyear'])?$postData['expyear']:''; ?>" placeholder="1337">
               </div>
               <div class="col-25">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" value="<?php echo !empty($postData['cvv'])?$postData['cvv']:''; ?>" placeholder="352">
+                <input type="text" id="cvv" name="cvv" value="<?php echo !empty($postData['cvv'])?$postData['cvv']:''; ?>" placeholder="123">
               </div>
             </div>
           </div>
