@@ -26,8 +26,7 @@ if (isset($_POST['user']) && !empty($_POST['user']))
             $_SESSION['firstName'] = $getUser[0][3];
             $_SESSION['lastName'] = $getUser[0][4];
             $_SESSION['userRank'] = $getUser[0][5];
-
-            echo "<br>Input credentials matched!<br><br><h1>Welcome to the backend</h1>";
+            
             redirect_to("/home");
         }
     else

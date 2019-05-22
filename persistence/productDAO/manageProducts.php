@@ -13,13 +13,19 @@
     <a href="/dashboard" class="btn black-text dashboard">Back to dashboard</a>
 </div>
 
+<div class="row">
+    <a href="/upload" class="btn black-text dashboard">Upload images</a>
+</div>
+
 
 <?php
 require (__DIR__ . "/../../business/dbcon.php");
 $dbCon = dbCon();
+//$query = $dbCon->prepare("SELECT products.id, products.name, products.code, products.price, products.description, images.file_name, images.for_duck FROM products, images");
 $query = $dbCon->prepare("SELECT * FROM products");
 $query->execute();
 $getProducts = $query->fetchAll();
+
 ?>
 
     <?php
@@ -42,7 +48,7 @@ $getProducts = $query->fetchAll();
     
     <div class="row" style="width: 80%;">
         <div class="row">
-            <table class="highlight striped centered responsive-table">
+            <table class="highlight striped ">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -59,13 +65,16 @@ $getProducts = $query->fetchAll();
                     
                     <?php
                         foreach ($getProducts as $product) {
+                            $getDuckImgId = '/presentation/img/products/' . $product['name'] . '.png';
+                           
+
                             echo "<tr>";
-                            echo "<td>". $product['id'] ."</td>";
-                            echo "<td>". $product['name'] ."</td>";
+                            echo "<td>". $product['id'] ."</td>";     
+                            echo "<td>". $product['name']."</td>";                   
                             echo "<td>". $product['code'] ."</td>";    
-                            echo "<td>". "IMG"."</td>"; 
+                            echo "<td>". $duckImg = '<img class="editProductImg" src="' . $getDuckImgId . '"></img>'."</td>";
                             echo "<td>". $product['price'] ."</td>"; 
-                            echo "<td>Description</td>";  
+                            echo "<td>". $product['description'] ."</td>";  
                             echo "</td>";
                             
                             echo '<td><a href="/../../persistence/productDAO/editEntry.php?ID='.$product['id'].'" class="btn black-text dashboard" ">Edit</a></td>';
@@ -105,9 +114,6 @@ $getProducts = $query->fetchAll();
                     <label for="description">Description</label>
                 </div>
             </div>
-        <?php
-            require_once(__DIR__ . "/../../business/imgupload/upload.php");
-        ?>
             <button class="btn black-text dashboard" type="submit" name="submit">
                 Add product
             </button>

@@ -26,7 +26,6 @@
                 echo '<h1 id="loginBtn"><a href="/userDashboard"><i class="fas fa-user-alt"></i></a></h1>';
             }
         }
-
         if(!isset($_SESSION['user_id']))
         {
             echo '<h1 id="loginBtn">
@@ -35,15 +34,7 @@
             </a>
         </h1>';
         }
-
     ?>
-
-
-
-    
-
-
-
     <h1 id="cartBtn">
         <a href="/cart">
         <i class="fas fa-shopping-cart"></i>

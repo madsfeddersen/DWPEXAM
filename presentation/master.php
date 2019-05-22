@@ -38,6 +38,7 @@
     $router->get('profile', 'presentation/views/profile');
     $router->get('orders', 'presentation/views/orders');
     $router->get('userDashboard', 'presentation/views/userDashboard');
+    $router->get('upload', 'business/imgupload/upload');
 
     // Backend views
     $router->get('dashboard', 'presentation/backend/dashboard');

@@ -39,7 +39,7 @@ $getDucks = $query->fetchAll();
     
 <div class="row">
     <div class="row">
-        <table class="highlight striped centered responsive-table">
+        <table class="highlight striped centered">
             <thead>
             <tr class="tablerow">
                 <th>ID</th>
@@ -74,7 +74,7 @@ $getDucks = $query->fetchAll();
                         echo "</tr>";
                         echo "<tr>";
                         echo '<td><a href="/../../persistence/siteDAO/editEntry.php?ID='.$info['id'].'" class="btn dashboard" ">Edit</a></td>';
-                        echo '<td><a href="/../../persistence/siteDAO/deleteEntry.php?ID='.$info['id'].'" class="btn red dashboard" onclick="return confirm(\'Delete! are you sure?\')">Delete</a></td>';
+                        //echo '<td><a href="/../../persistence/siteDAO/deleteEntry.php?ID='.$info['id'].'" class="btn red dashboard" onclick="return confirm(\'Delete! are you sure?\')">Delete</a></td>';
                         echo "</tr>";
                     }
                 ?>
@@ -85,11 +85,11 @@ $getDucks = $query->fetchAll();
     <br>
     <br>
     <br>
-    <h3>Add a new shop to DB</h3>
+    <!--<h3>Add a new shop to DB</h3>
     <form class="col s12" name="contact" method="post" action="/../../persistence/siteDAO/addEntry.php">
         <div class="row">
             <div class="input-field col s12">
-                <input id="shop_name" name="shop_name" type="text" value="<?php echo $getDucks[0][1]; ?>" class="validate" required="" aria-required="true">
+                <input id="shop_name" name="shop_name" type="text" value="<?php //echo $getDucks[0][1]; ?>" class="validate" required="" aria-required="true">
                 <label for="shop_name">Shop Name</label>
             </div>
             <div class="input-field col s12">
@@ -128,5 +128,5 @@ $getDucks = $query->fetchAll();
         <button class="btn dashboard" type="submit" name="submit">
             Add shop
         </button>
-    </form>
+    </form>-->
 </div>

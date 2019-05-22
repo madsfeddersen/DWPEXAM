@@ -14,8 +14,8 @@
     if (isset($_GET['ID'])) {
         $entryID = $_GET['ID'];
 
-    require (__DIR__ . "/../../business/dbcon2.php");  
-    $dbCon2 = dbCon2();
+    require (__DIR__ . "/../../business/dbcon.php");  
+    $dbCon = dbCon();
     $query = $dbCon2->prepare("SELECT * FROM orders WHERE email = '$userEmail'");
     $query->execute();
     $getOrder = $query->fetchAll();

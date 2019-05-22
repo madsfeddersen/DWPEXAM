@@ -1,6 +1,6 @@
 <?php
     require_once (__DIR__ . "/../../persistence/siteDAO/readSite.php");
-    require_once (__DIR__ . "/../../persistence/productDAO.php");
+    require_once (__DIR__ . "/../../persistence/productDAO/readProducts.php");
 ?>
 
 <head>

@@ -5,14 +5,12 @@
 </head>
 
 <?php
-require (__DIR__ . "/../../business/dbcon2.php");
+require (__DIR__ . "/../../business/dbcon.php");
 
 
 $userEmail = $_SESSION['userName'];
 
-$dbCon = dbCon2();
-//$query = $dbCon->prepare("SELECT orderEmail, userEmail, orders.id, fullname, shipping_address, city, zip, productname, quantity, price FROM users, orders WHERE orderEmail = (userEmail = '$userEmail')");
-
+$dbCon = dbCon();
 $query = $dbCon->prepare("SELECT * FROM orders");
 $query->execute();
 $getOrder = $query->fetchAll();
@@ -46,7 +44,7 @@ $getOrder = $query->fetchAll();
     
 <div class="row">
     <div class="row">
-        <table class="highlight striped centered responsive-table">
+        <table class="highlight striped centered">
             <thead>
             <tr class="tablerow">
                 <th>ID</th>

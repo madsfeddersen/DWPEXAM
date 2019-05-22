@@ -110,6 +110,7 @@ if(!empty($_GET["action"]))
 <tbody>
 <tr>
 <th class="cartTable"><strong>Name</strong></th>
+<th class="cartTable"><strong>Image</strong></th>
 <th class="cartTable"><strong>Code</strong></th>
 <th class="cartTable"><strong>Quantity</strong></th>
 <th class="cartTable"><strong>Size</strong></th>
@@ -120,9 +121,12 @@ if(!empty($_GET["action"]))
 <?php		
 		foreach ($_SESSION["cart_item"] as $item)
 		{
+			$getDuckImgId = '/presentation/img/products/' . $item['name'] . '.png';
+			$duckImg = '<img style="height: 50px; width: 50px;" class="editProductImg" src="' . $getDuckImgId . '"></img>';
 ?>
 				<tr>
 				<td class="cartTable"><strong><?php echo $item["name"]; ?></strong></td>
+				<td class="cartTable"><strong><?php echo $duckImg; ?></strong></td>
 				<td class="cartTable"><?php echo $item["code"]; ?></td>
 				<td class="cartTable"><?php echo $item["quantity"]; ?></td>
 				<td class="cartTable"><?php echo $item["size"]; ?></td>
@@ -136,7 +140,7 @@ if(!empty($_GET["action"]))
 	?>
 
 <tr>
-<td colspan="7" text-align=right style="color:#000;"><strong>Total:</strong> <?php echo $item_total." DKK"; ?></td>
+<td colspan="8" text-align=right style="color:#000;"><strong>Total:</strong> <?php echo $item_total." DKK"; ?></td>
 </tr>
 </tbody>
 </table>	
@@ -167,7 +171,7 @@ if(!empty($_GET["action"]))
 <div class="product-item">
 	<form method="post" action="/../../business/cart/cart.php?action=add&code=<?php echo $product_array[$aNumber]["code"];?>">
 		<div><strong><?php echo $product_array[$aNumber]["name"] . ' Duck';?></strong></div>
-		<div class="product-image"><img src="/../../presentation/img/products/<?php echo $product_array[$aNumber]["id"] . '.png';?>"></div>
+		<div class="product-image"><img src="/../../presentation/img/products/<?php echo $product_array[$aNumber]["name"] . '.png';?>"></div>
 		<br>
 		<br>
 		<div class="product-price"><?php echo $product_array[$aNumber]["price"]." DKK";?></div>

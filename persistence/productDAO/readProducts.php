@@ -1,14 +1,9 @@
 <?php
 
-function createProduct() {
-    
-}
-
-
 function readShop()
     {
         
-        require (__DIR__ . "/../business/dbcon.php");  
+        require (__DIR__ . "/../../business/dbcon.php");  
         $dbCon = dbCon();
         $sql = "CALL `getProducts`();"; 
         $query = $dbCon->prepare($sql);
@@ -18,7 +13,7 @@ function readShop()
         foreach ($getProducts as $duck)
         {
             // THIS WORKS WITH LOCALHOST $getDuckImgId = '/../backend/DWPEXAM/presentation/img/products/' . $duck['id'] . '.png';
-            $getDuckImgId = '/presentation/img/products/' . $duck['id'] . '.png';
+            $getDuckImgId = '/presentation/img/products/' . $duck['name'] . '.png';
             
             $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
@@ -36,10 +31,9 @@ function readShop()
         
     }
 
-    
 function readProduct($productID)
     {          
-        require (__DIR__ . "/../business/dbcon.php");
+        require (__DIR__ . "/../../business/dbcon.php");
         $dbCon = dbCon();
         $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");
         $query->execute();
@@ -47,7 +41,7 @@ function readProduct($productID)
         
        foreach($getProducts as $duck)
             {
-            $getDuckImgId = '/presentation/img/products/' . $duck['id'] . '.png';
+            $getDuckImgId = '/presentation/img/products/' . $duck['name'] . '.png';
             $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
             $duckInfo = '<h1 id="productTitle">' . $duck['name'] .  " " . 'Duck' . '</h1>' . $b . $duck['description'] . $b . $b . '<div id="priceTag">' . $duck['price'] . 'USD$</div>';
@@ -84,14 +78,12 @@ function readProduct($productID)
 
             echo $duckString1 . $duckString2;
         
-            }
-            
-          
+            }    
     }
 
     function readProductFrontpage($productID)
     {          
-        require (__DIR__ . "/../business/dbcon.php");
+        require (__DIR__ . "/../../business/dbcon.php");
         $dbCon = dbCon();
         $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");
         $query->execute();
@@ -99,7 +91,7 @@ function readProduct($productID)
         
        foreach($getProducts as $duck)
             {
-            $getDuckImgId = '/presentation/img/products/' . $duck['id'] . '.png';
+            $getDuckImgId = '/presentation/img/products/' . $duck['name'] . '.png';
             $duckImg = '<v-img class="duckImg" src="' . $getDuckImgId . '"></v-img>';
             $b = "<br>";
             $duckInfo = '<h1 id="productTitle">' . $duck['name'] .  " " . 'Duck' . '</h1>' . $b . $duck['description'] . $b . $b . ' <a href="/product/' . $duck['id'] . '"><p style="color: #000;">See more</p><div id="priceTag">' . $duck['price'] . 'USD$</div>';
@@ -109,14 +101,5 @@ function readProduct($productID)
             echo $duckString1 . $duckString2;
             }
     }
-      
-function updateProduct($UpdateThisProduct) {
-    //Use router!!!
-}
-
-function deleteProduct($DeleteThisProduct) {
-    //Use router!!!
-}
-
     
 ?>
