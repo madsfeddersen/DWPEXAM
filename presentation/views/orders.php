@@ -5,11 +5,11 @@
 </head>
 
 <?php
-require (__DIR__ . "/../../business/dbcon2.php");
+require (__DIR__ . "/../../business/dbcon.php");
 
 $userID = $_SESSION['user_id'];
 
-$dbCon = dbCon2();
+$dbCon = dbCon();
 $query = $dbCon->prepare("SELECT * FROM orders WHERE orders.user_id='$userID'");
 $query->execute();
 $getOrder = $query->fetchAll();

@@ -52,14 +52,14 @@ if(isset($_POST['submit']))
                 }
                     
                 //Insert order into DB
-                require ("dbcon2.php");
-                $dbCon2 = dbCon2();
-                $query = $dbCon2->prepare("INSERT INTO orders (`user_id`, `fullname`, `orderEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `size`, `color`, `quantity`, `price`)
-                VALUES ('$user_id', '$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$size,', '$color', '$quantity', '$price')");
+                require ("dbcon.php");
+                $dbCon = dbCon();
+                $query = $dbCon->prepare("INSERT INTO orders (`user_id`, `fullname`, `orderEmail`, `shipping_address`, `city`, `zip`, `cname`, `ccnum`, `expmonth`, `expyear`, `cvv`, `productname`, `size`, `color`, `quantity`, `price`)
+                VALUES ('$user_id', '$fname', '$email', '$adr',  '$city', '$zip', '$cname', '$ccnum', '$expmonth', '$expyear', '$cvv', '$productName', '$size', '$color', '$quantity', '$price')");
                 $query->execute();
 
                     // Send email invoice to the user
-                    $to = 'andreas.madum1@gmail.com'; 
+                    $to = 'duckshopdwp@gmail.com'; 
                     $subject = 'Order confirmation'; 
                     $htmlContent = " 
                         <h1>Order details</h1> 

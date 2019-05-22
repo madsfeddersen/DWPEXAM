@@ -60,7 +60,7 @@ function readProduct($productID)
             <select name="color">
                     <option value="Duck">Duck Color</option>
                     <option value="Red">Red</option>
-                    <option value="Blue">Blue</option>dada
+                    <option value="Blue">Blue</option>
                     <option value="Green">Green</option>
                 </select>
                 <br>
