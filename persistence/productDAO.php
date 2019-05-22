@@ -10,7 +10,8 @@ function readShop()
         
         require (__DIR__ . "/../business/dbcon.php");  
         $dbCon = dbCon();
-        $query = $dbCon->prepare("SELECT * FROM products");
+        $sql = "CALL `getProducts`();"; 
+        $query = $dbCon->prepare($sql);
         $query->execute();
         $getProducts = $query->fetchAll();
 

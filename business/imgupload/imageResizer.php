@@ -59,10 +59,12 @@ class imageResizer {
 	}
 }
 
-function dostuff($scale){
-$size = new imageResizer();
-$size->load("img.jpeg");
-$size->scale($scale);
-$size->save("img/img2.jpg");
-}
-dostuff(25);
+/*
+	function dostuff($scale){
+	$size = new imageResizer();
+	$size->load("img.jpeg");
+	$size->scale($scale);
+	$size->save("img/img2.jpg");
+	}
+	dostuff(25);
+*/

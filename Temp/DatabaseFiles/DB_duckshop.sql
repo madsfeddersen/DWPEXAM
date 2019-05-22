@@ -80,4 +80,14 @@ INSERT INTO `products` (`id`, `name`, `code`, `price`, `description`) VALUES
 
 INSERT INTO `orders` (id, `user_id`, fullname, orderEmail, shipping_address, city, zip, cname, ccnum, expmonth, expyear, cvv, productname, quantity, price) VALUES
 (1, 1, 'Ma name', 'email', 'road 32', 'esbjerg', '6710', 'Card namez', '1111-2222-3333-4444', 'November', '1995', '352', "Trump", 2, 30.00);
-                          
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getFooter`()
+SELECT * FROM duck_shop$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getProducts`()
+    NO SQL
+SELECT * FROM products$$
+DELIMITER ;

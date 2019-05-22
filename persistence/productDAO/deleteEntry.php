@@ -1,8 +1,8 @@
 <?php
-require_once (__DIR__ . "/../../business/dbcon2.php");
+require_once (__DIR__ . "/../../business/dbcon.php");
 if (isset($_GET['ID'])) {
     $entryID = $_GET['ID'];
-    $dbCon = dbCon2();
+    $dbCon = dbCon();
     $query = $dbCon->prepare("DELETE FROM products WHERE id=$entryID");
     $query->execute();
 

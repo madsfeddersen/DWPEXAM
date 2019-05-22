@@ -59,38 +59,37 @@ if(isset($_POST['Submit']))
     }
 }
 ?>
-<html>
-<body>
+
 <?php
 foreach ($upmsg as $msg)
-{
-echo "<h1>".$msg."</h1>";
-}
+    {
+        echo "<h1>".$msg."</h1>";
+    }
 ?>
 
 
-<div class="row">
+            <div class="row">
                 <div class="input-field col s12">
 
                    <?php
-                    foreach ($upmsg as $msg)
-                        {
-                            echo "<h1>".$msg."</h1>";
-                        }
+                        foreach ($upmsg as $msg)
+                            {
+                                echo "<h1>".$msg."</h1>";
+                            }
                     ?>
 
                     <h3>Attach image</h3>
                     <b>Image:</b><br><input type="file" name="image" value=""><br>
                     <div class="input-field col s4">
-                        <input id="wsize" name="wsize" type="text" class="validate" required="" aria-required="true">
+                        <input id="wsize" name="wsize" type="text" class="validate" aria-required="true">
                         <label for="wsize">Width in pixels</label>
                     </div>
                     <div class="input-field col s4">
-                        <input id="hsize" name="hsize" type="text" class="validate" required="" aria-required="true">
+                        <input id="hsize" name="hsize" type="text" class="validate"  aria-required="true">
                         <label for="hsize">Height in pixels</label>
                     </div>
                     <div class="input-field col s4">
-                        <input id="ssize" name="ssize" type="text" class="validate" required="" aria-required="true">
+                        <input id="ssize" name="ssize" type="text" class="validate"  aria-required="true">
                         <label for="ssize">Scale in %</label>
                     </div>
                 </div>
