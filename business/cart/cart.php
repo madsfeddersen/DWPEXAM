@@ -151,24 +151,20 @@ if(!empty($_GET["action"]))
 
 </div>
 <div>
-  <br>
+<br>
+<br>
 
-
-
-
-
-
-
-  <h1> More ducks that might interest you :)</h1>
-
+  <h1>We recommend this duck for you:</h1>
 <?php
+	$randomNumber = mt_rand(1, 10);
 
-	$product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY code ASC");
+	$product_array = $db_handle->runQuery("SELECT * FROM products WHERE id = '$randomNumber'");
 	if (!empty($product_array))
 		{ 
 			foreach($product_array as $aNumber=> $value)
 		{
 ?>
+
 <div class="product-item">
 	<form method="post" action="/../../business/cart/cart.php?action=add&code=<?php echo $product_array[$aNumber]["code"];?>">
 		<div><strong><?php echo $product_array[$aNumber]["name"] . ' Duck';?></strong></div>

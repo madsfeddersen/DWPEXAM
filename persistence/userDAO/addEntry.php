@@ -10,7 +10,8 @@ if (isset($_POST['submit'])) {
                 $userRank = strip_tags($_POST['userRank']);
 
                 $dbCon = dbCon();
-                $query = $dbCon->prepare("INSERT INTO users (`userEmail`, `userPass`, `firstName`, `lastName`, `userRank`) VALUES (:userEmail, :userPass, :firstName, :lastName, :userRank)");
+                $query = $dbCon->prepare("INSERT INTO users (`userEmail`, `userPass`, `firstName`, `lastName`, `userRank`)
+                VALUES (:userEmail, :userPass, :firstName, :lastName, :userRank)");
                 $query->bindParam(':userEmail', $userEmail);
                 $query->bindParam(':userPass', $userPass);
                 $query->bindParam(':firstName', $firstName);
