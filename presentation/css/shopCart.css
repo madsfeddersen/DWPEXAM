@@ -117,13 +117,22 @@ body > div > div > form > div > input {
     border-bottom: #79b946 1px dotted;padding: 10px;
 }
 
+.product-container {
+    margin-top: 1vh;
+    width: 100%;
+    text-align: center;
+}
+
 .product-item {
-    float:left;	
+    
     background-color:#fff;
-    margin:15px 10px;
+    display: table;
+    margin: 0 auto;
     padding:5px;border:#CCC 1px solid;
     border-radius:4px;
     color: #000;
+    display: inline-block;
+    
     
     
 }

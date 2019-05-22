@@ -153,10 +153,10 @@ if(!empty($_GET["action"]))
 <div>
 <br>
 <br>
-
+<br>
   <h1>We recommend this duck for you:</h1>
 <?php
-	$randomNumber = mt_rand(1, 10);
+	$randomNumber = mt_rand(1, 13);
 
 	$product_array = $db_handle->runQuery("SELECT * FROM products WHERE id = '$randomNumber'");
 	if (!empty($product_array))
@@ -164,34 +164,35 @@ if(!empty($_GET["action"]))
 			foreach($product_array as $aNumber=> $value)
 		{
 ?>
-
-<div class="product-item">
-	<form method="post" action="/../../business/cart/cart.php?action=add&code=<?php echo $product_array[$aNumber]["code"];?>">
-		<div><strong><?php echo $product_array[$aNumber]["name"] . ' Duck';?></strong></div>
-		<div class="product-image"><img src="/../../presentation/img/products/<?php echo $product_array[$aNumber]["name"] . '.png';?>"></div>
-		<br>
-		<br>
-		<div class="product-price"><?php echo $product_array[$aNumber]["price"]." DKK";?></div>
-		<div>
-			<input type="text" name="quantity" value="1" size="2" />
-			
-            
-            <select name="color">
-                    <option value="Duck">Duck Color</option>
-                    <option value="Red">Red</option>
-                    <option value="Blue">Blue</option>dada
-                    <option value="Green">Green</option>
-                </select>
-                <br>
-                <select name="size">
-                <option value="Regular">Regular</option>
-                <option value="Small">Small</option>
-                <option value="Large">Large</option>dada
-                <option value="Giant">Giant</option>
-            </select>
-			<input type="submit" value="Add to cart" class="addBtn" />
-		</div>
-	</form>
+<div class="product-container">
+	<div class="product-item">
+		<form method="post" action="/../../business/cart/cart.php?action=add&code=<?php echo $product_array[$aNumber]["code"];?>">
+			<div><strong><?php echo $product_array[$aNumber]["name"] . ' Duck';?></strong></div>
+			<div class="product-image"><img src="/../../presentation/img/products/<?php echo $product_array[$aNumber]["name"] . '.png';?>"></div>
+			<br>
+			<br>
+			<div class="product-price"><?php echo $product_array[$aNumber]["price"]." DKK";?></div>
+			<div>
+				<input type="text" name="quantity" value="1" size="2" />
+				
+				
+				<select name="color">
+						<option value="Duck">Duck Color</option>
+						<option value="Red">Red</option>
+						<option value="Blue">Blue</option>dada
+						<option value="Green">Green</option>
+					</select>
+					<br>
+					<select name="size">
+					<option value="Regular">Regular</option>
+					<option value="Small">Small</option>
+					<option value="Large">Large</option>dada
+					<option value="Giant">Giant</option>
+				</select>
+				<input type="submit" value="Add to cart" class="addBtn" />
+			</div>
+		</form>
+	</div>
 </div>
 
 
