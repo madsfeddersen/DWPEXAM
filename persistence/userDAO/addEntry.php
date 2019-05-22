@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
                 $query->bindParam(':lastName', $lastName);
                 $query->bindParam(':userRank', $userRank);
                 $query->execute();
+                
     header("Location: manageUsers.php?status=added");
 }
 

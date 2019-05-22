@@ -6,10 +6,10 @@ if(isset($_POST['submit']))
 { 
     $postData = $_POST; 
 
-    //Send invoice to user
-        
     // Validate checkout form fields 
-    if(!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['zip']) && !empty($_POST['cardname']) && !empty($_POST['cardnumber']) && !empty($_POST['expmonth']) && !empty($_POST['expyear']) && !empty($_POST['cvv']))
+    if(!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['address'])
+    && !empty($_POST['city']) && !empty($_POST['zip']) && !empty($_POST['cardname'])
+    && !empty($_POST['cardnumber']) && !empty($_POST['expmonth']) && !empty($_POST['expyear']) && !empty($_POST['cvv']))
     { 
             
         // Validate reCAPTCHA box 
