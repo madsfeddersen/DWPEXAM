@@ -10,7 +10,7 @@ if (isset($_POST['entryID']) && isset($_POST['submit']))
     $description = $_POST['description'];
     
     $dbCon = dbCon($user, $pass);
-    $query = $dbCon->prepare("UPDATE products SET 'name'='$name', code='$code', price='$price', description='$description' WHERE id = $entryID");
+    $query = $dbCon->prepare("UPDATE products SET products.name='$name', code='$code', price='$price', description='$description' WHERE id = $entryID");
     $query->execute();
     
     header("Location: manageProducts.php?status=updated&ID=$entryID");

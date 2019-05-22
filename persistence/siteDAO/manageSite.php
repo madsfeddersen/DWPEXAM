@@ -1,4 +1,5 @@
 <?php
+    require_once (__DIR__ . "/../../business/session.php");
     confirm_logged_in();
 ?>
 

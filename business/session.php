@@ -1,10 +1,8 @@
 <?php
 	session_start();
 	
-
-	
 	/*
-	Testing stuff
+	//Testing stuff
 
 	if (isset($_SESSION['user_id'])) {
 	echo "Logged in as 'user_id': " . $_SESSION['user_id'] . " with email " . $_SESSION['userName'];
@@ -14,7 +12,6 @@
 
 		echo "Session not set / you are not logged in.";
 	}*/
-
 
 
 	function logged_in() {
@@ -29,7 +26,7 @@
 	}
 		
 	
-		/*
+	/*
 	function confirm_admin() {
 		if($_SESSION['userRank'] != 1 || $_SESSION['userRank'] !=2)
       {
