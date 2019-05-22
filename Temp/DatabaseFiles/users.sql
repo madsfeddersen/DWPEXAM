@@ -8,4 +8,8 @@ CREATE TABLE IF NOT EXISTS users (
   	userRank VARCHAR(10)
 );
 
-insert into users (id, userEmail, userPass, firstName, lastName, userRank) values (1, 'donald@trumpsta.gov', 'password', 'Donald', 'Trump', 'superAdmin');
+insert into users (id, userEmail, userPass, firstName, lastName, userRank) values
+(1, 'donald@trumpsta.gov', 'password', 'Donald', 'Trump', '1'),
+(1, 'andreashenriksen95@live.dk', 'pass', 'Andreas', 'Madum', '1'),
+(1, 'duckshopdwp@gmail.com', 'teacherpassword', 'Duck', 'Shop', '2'),
+(1, 'pleb@mail.dk', 'pass', 'Pleb', 'User', '3');

@@ -36,7 +36,7 @@ DROP TABLE IF EXISTS orders;
 CREATE TABLE IF NOT EXISTS orders (
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	user_id int NOT NULL,
-  	fullname VARCHAR(30),
+  fullname VARCHAR(30),
 	orderEmail VARCHAR(30),
 	shipping_address VARCHAR(30),
 	city VARCHAR(30),
@@ -53,14 +53,22 @@ CREATE TABLE IF NOT EXISTS orders (
   price VARCHAR(30)
 );
 
+CREATE VIEW getSite AS SELECT * FROM duck_shop;
+CREATE VIEW productlist AS SELECT * FROM products;
+
+CREATE PROCEDURE `getFooter`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT * FROM duck_shop;
+CREATE PROCEDURE `getProducts`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT * FROM duck_shop;
+
 insert into duck_shop (id, shop_name, street_address, zipcode, phone, email, opening_hours, daily_product, news, shop_description) 
 values (1, 'DuckYou!', 'Duck Street 1', '6710 Esbjerg V', '+45 13377331', 'duck@duck.dk', 'In the quacking Hours', 1,
  'New products in store, check them out here!', 'We are your number 1 stop rubber duck shop. We have been crowned 
  "The best duckshop in the universe" for the seventh year in a row. Yes, by ourselves but that is besides the point!');
 
-
 insert into users (id, userEmail, userPass, firstName, lastName, userRank) values
-(1, 'donald@trumpsta.gov', 'password', 'Donald', 'Trump', 'superAdmin');
+(1, 'donald@trumpsta.gov', 'password', 'Donald', 'Trump', '1'),
+(2, 'andreashenriksen95@live.dk', 'pass', 'Andreas', 'Madum', '1'),
+(3, 'duckshopdwp@gmail.com', 'teacherpassword', 'Duck', 'Shop', '2'),
+(4, 'pleb@mail.dk', 'pass', 'Pleb', 'User', '3');
 
 INSERT INTO `products` (`id`, `name`, `code`, `price`, `description`) VALUES
 (1, 'Standard', 'DS0021', 25.00, 'This is your standard average duck. A true classic, if you will!'),
@@ -72,22 +80,10 @@ INSERT INTO `products` (`id`, `name`, `code`, `price`, `description`) VALUES
 (7, 'Bat', 'DS0027',  125.00,'“I have one power. I never give up.” – Batman'),
 (8, 'Female', 'DS0028',  75.00,'A female version of the standard duck. Just look at those luscious eyelashes!'),
 (9, 'Ninja', 'DS0029',  125.00,'It’s not very good at its job as it can be seen quite easily on this page…'),
-(10, 'Danish Dynamite', 'DS0030',  150.00,'A proud red and white duck that symbolizes tradition and patriotism!'),
+(10, 'Viking', 'DS0030',  150.00,'A proud red and white duck that symbolizes tradition and patriotism!'),
 (11, 'Sweden', 'DS0031',  200.00,'Aka. Faggot Duck. The mortal enemy of the Dansken Duck.'),
 (12, 'McDeeJay', 'DS0032',  50.00,'His beats are so slick that they will make you go quackers!'),
 (13, 'Grandma', 'DS0033',  25.00,'Might ship with homemade cookies!');
 
-
 INSERT INTO `orders` (id, `user_id`, fullname, orderEmail, shipping_address, city, zip, cname, ccnum, expmonth, expyear, cvv, productname, quantity, price) VALUES
 (1, 1, 'Ma name', 'email', 'road 32', 'esbjerg', '6710', 'Card namez', '1111-2222-3333-4444', 'November', '1995', '352', "Trump", 2, 30.00);
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getFooter`()
-SELECT * FROM duck_shop$$
-DELIMITER ;
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getProducts`()
-    NO SQL
-SELECT * FROM products$$
-DELIMITER ;
