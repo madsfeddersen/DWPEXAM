@@ -1,3 +1,8 @@
+<?php
+    confirm_logged_in();
+?>
+
+
 <head>
     <!-- Materialize css and js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">

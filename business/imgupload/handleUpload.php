@@ -17,12 +17,13 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
             // Insert image file name into database
             $insert = $db->query("INSERT into images (file_name, for_duck, uploaded_on) VALUES ('$fileName', '$forDuck', NOW())");
-            var_dump($db);
+            
             if($insert){
                 $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
                 redirect_to("/editProducts");
             }else{
                 $statusMsg = "File upload failed, please try again.";
+                
                 redirect_to("/upload");
             } 
         }else{

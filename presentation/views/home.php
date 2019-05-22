@@ -1,4 +1,5 @@
 <?php
+    require_once (__DIR__ . "/../../business/homePageClass.php");
     require_once (__DIR__ . "/../../persistence/siteDAO/readSite.php");
     require_once (__DIR__ . "/../../persistence/productDAO/readProducts.php");
 ?>
@@ -8,10 +9,20 @@
 </head>
 
 <div id="container">
-<h1 class="page-title">News</h1>
+<h1 class="page-title">
+    <?php
+        $news = new EchoText;
+        $news->echoNews();
+    ?>
+</h1>
 <h4 class="content news"><?php echo $getInfo[0][8];?></h4>
 <hr>
-<h1 class="page-title">Who are we?</h1>
+<h1 class="page-title">
+    <?php
+        $news = new EchoText;
+        $news->echoDescription();
+    ?>
+</h1>
 <h4 class="content desciption"><?php echo $getInfo[0][9];?></h4>
 <hr>
     <div id="app">
