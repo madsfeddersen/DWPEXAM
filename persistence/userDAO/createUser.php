@@ -28,10 +28,13 @@ if(isset($_POST['submit']))
                 $firstName = strip_tags($_POST['firstName']);
                 $lastName = strip_tags($_POST['lastName']);
                 $userPass = strip_tags($_POST['userPass']);
-                $userRank = strip_tags($_POST['userRank']);
 
                 $dbCon = dbCon();
-                $query = $dbCon->prepare("INSERT INTO users (`userEmail`, `userPass`, `firstName`, `lastName`, `userRank`) VALUES ('$userEmail', '$userPass', '$firstName', '$lastName',  '$userRank')");
+                $query = $dbCon->prepare("INSERT INTO users (`userEmail`, `userPass`, `firstName`, `lastName`, `userRank`) VALUES (:userEmail, :userPass, :firstName, :lastName, 3)");
+                $query->bindParam(':userEmail', $userEmail);
+                $query->bindParam(':userPass', $userPass);
+                $query->bindParam(':firstName', $firstName);
+                $query->bindParam(':lastName', $lastName);
                 $query->execute();
                 
                 header("Location: /login");

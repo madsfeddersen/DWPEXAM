@@ -16,7 +16,7 @@
 
     require (__DIR__ . "/../../business/dbcon.php");  
     $dbCon = dbCon();
-    $query = $dbCon2->prepare("SELECT * FROM orders WHERE email = '$userEmail'");
+    $query = $dbCon->prepare("SELECT * FROM orders WHERE email = '$userEmail'");
     $query->execute();
     $getOrder = $query->fetchAll();
 ?>
