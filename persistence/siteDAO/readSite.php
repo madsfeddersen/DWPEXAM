@@ -1,9 +1,6 @@
 <?php
-    
-    require (__DIR__ . "/../../business/dbcon.php");
-    $user = "root";
-    $pass = "";
-    $dbCon = dbCon();
+    require_once (__DIR__ . "/../../business/dbconFooter.php");
+    $dbCon = dbConFooter();
     $query = $dbCon->prepare("SELECT * FROM duck_shop");
     $query->execute();
     $getInfo = $query->fetchAll();

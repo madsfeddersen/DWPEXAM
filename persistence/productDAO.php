@@ -8,9 +8,9 @@ function createProduct() {
 function readShop()
     {
         
-        require (__DIR__ . "/../business/dbcon2.php");  
-        $dbCon2 = dbCon2();
-        $query = $dbCon2->prepare("SELECT * FROM products");
+        require (__DIR__ . "/../business/dbcon.php");  
+        $dbCon = dbCon();
+        $query = $dbCon->prepare("SELECT * FROM products");
         $query->execute();
         $getProducts = $query->fetchAll();
 
@@ -38,9 +38,9 @@ function readShop()
     
 function readProduct($productID)
     {          
-        require (__DIR__ . "/../business/dbcon2.php");
-        $dbCon2 = dbCon2();
-        $query = $dbCon2->prepare("SELECT * FROM products WHERE id = '$productID'");
+        require (__DIR__ . "/../business/dbcon.php");
+        $dbCon = dbCon();
+        $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");
         $query->execute();
         $getProducts = $query->fetchAll();
         
@@ -90,9 +90,9 @@ function readProduct($productID)
 
     function readProductFrontpage($productID)
     {          
-        require (__DIR__ . "/../business/dbcon2.php");
-        $dbCon2 = dbCon2();
-        $query = $dbCon2->prepare("SELECT * FROM products WHERE id = '$productID'");
+        require (__DIR__ . "/../business/dbcon.php");
+        $dbCon = dbCon();
+        $query = $dbCon->prepare("SELECT * FROM products WHERE id = '$productID'");
         $query->execute();
         $getProducts = $query->fetchAll();
         

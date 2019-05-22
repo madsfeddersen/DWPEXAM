@@ -1,6 +1,5 @@
 <?php
-
-function dbCon2()
+function dbConFooter()
 {
     $user = "root";
     $pass = "";

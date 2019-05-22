@@ -10,7 +10,7 @@
 <h3>Product CRUD</h3>
 
 <div class="row">
-    <a href="/dashboard" class="btn grey black-text dashboard">Back to dashboard</a>
+    <a href="/dashboard" class="btn  dashboard">Back to dashboard</a>
 </div>
 
 
@@ -68,7 +68,7 @@ $getProducts = $query->fetchAll();
                             echo "<td>Description</td>";  
                             echo "</td>";
                             
-                            echo '<td><a href="/../../persistence/productDAO/editEntry.php?ID='.$product['id'].'" class="btn grey black-text dashboard" ">Edit</a></td>';
+                            echo '<td><a href="/../../persistence/productDAO/editEntry.php?ID='.$product['id'].'" class="btn dashboard" ">Edit</a></td>';
                             echo '<td><a href="/../../persistence/productDAO/deleteEntry.php?ID='.$product['id'].'" class="btn red" onclick="return confirm(\'Delete! are you sure?\')">Delete</a></td>';
                             echo "</tr>";
                         }
@@ -105,13 +105,8 @@ $getProducts = $query->fetchAll();
                     <label for="description">Description</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea name="image" id="image" class="materialize-textarea" required="" aria-required="true"></textarea>
-                    <label for="image">Image</label>
-                </div>
-            </div>
-            <button class="btn grey black-text dashboard" type="submit" name="submit">
+           
+            <button class="btn dashboard" type="submit" name="submit">
                 Add product
             </button>
         </form>
