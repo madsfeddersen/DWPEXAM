@@ -47,8 +47,7 @@ require (__DIR__ . "/../../persistence/siteDAO/readSite.php");
         <p class="copyright">
             Duck You! &copy;2019
         </p>
-        </div>
-        
+    </div>
 </footer>
 
 

@@ -11,11 +11,11 @@
 </head>
 
 <?php
-require (__DIR__ . "/../../business/dbcon.php");
-$dbCon = dbCon();
-$query = $dbCon->prepare("SELECT * FROM getsite");
-$query->execute();
-$getDucks = $query->fetchAll();
+    require (__DIR__ . "/../../business/dbcon.php");
+    $dbCon = dbCon();
+    $query = $dbCon->prepare("SELECT * FROM getsite");
+    $query->execute();
+    $getDucks = $query->fetchAll();
 ?>
 
 <div class="container">
