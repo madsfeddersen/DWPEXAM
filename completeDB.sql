@@ -1,12 +1,9 @@
-CREATE DATABASE IF NOT EXISTS duckshopdb;
-USE duckshopdb;
-
 DROP TABLE IF EXISTS duck_shop;
 CREATE TABLE IF NOT EXISTS duck_shop (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     shop_name varchar(20),
     street_address varchar(30),
-	zipcode varchar(20),
+	  zipcode varchar(20),
     phone varchar(12),
     email varchar(20),
     opening_hours varchar(255),
@@ -63,9 +60,9 @@ values (1, 'DuckYou!', 'Duck Street 1', '6710 Esbjerg V', '+45 13377331', 'duck@
 
 insert into users (id, userEmail, userPass, firstName, lastName, userRank) values
 (1, 'donald@trumpsta.gov', 'password', 'Donald', 'Trump', '1'),
-(2, 'andreashenriksen95@live.dk', 'pass', 'Andreas', 'Madum', '1'),
-(3, 'duckshopdwp@gmail.com', 'teacherpassword', 'Duck', 'Shop', '2'),
-(4, 'pleb@mail.dk', 'pass', 'Pleb', 'User', '3');
+(1, 'andreashenriksen95@live.dk', 'pass', 'Andreas', 'Madum', '1'),
+(1, 'duckshopdwp@gmail.com', 'teacherpassword', 'Duck', 'Shop', '2'),
+(1, 'pleb@mail.dk', 'pass', 'Pleb', 'User', '3');
 
 INSERT INTO `products` (`id`, `name`, `code`, `price`, `description`) VALUES
 (1, 'Standard', 'DS0021', 25.00, 'This is your standard average duck. A true classic, if you will!'),
@@ -86,13 +83,8 @@ INSERT INTO `products` (`id`, `name`, `code`, `price`, `description`) VALUES
 INSERT INTO `orders` (id, `user_id`, fullname, orderEmail, shipping_address, city, zip, cname, ccnum, expmonth, expyear, cvv, productname, quantity, price) VALUES
 (1, 1, 'Ma name', 'email', 'road 32', 'esbjerg', '6710', 'Card namez', '1111-2222-3333-4444', 'November', '1995', '352', "Trump", 2, 30.00);
 
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getFooter`()
-SELECT * FROM duck_shop$$
-DELIMITER ;
+CREATE VIEW getSite AS SELECT * FROM duck_shop;
+CREATE VIEW productlist AS SELECT * FROM products;
 
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getProducts`()
-    NO SQL
-SELECT * FROM products$$
-DELIMITER ;
+CREATE PROCEDURE `getFooter`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT * FROM duck_shop;
+CREATE PROCEDURE `getProducts`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT * FROM duck_shop;
