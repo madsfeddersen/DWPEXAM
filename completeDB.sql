@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS duckshopdb;
+USE duckshopdb;
+
 DROP TABLE IF EXISTS duck_shop;
 CREATE TABLE IF NOT EXISTS duck_shop (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -60,9 +63,9 @@ values (1, 'DuckYou!', 'Duck Street 1', '6710 Esbjerg V', '+45 13377331', 'duck@
 
 insert into users (id, userEmail, userPass, firstName, lastName, userRank) values
 (1, 'donald@trumpsta.gov', 'password', 'Donald', 'Trump', '1'),
-(1, 'andreashenriksen95@live.dk', 'pass', 'Andreas', 'Madum', '1'),
-(1, 'duckshopdwp@gmail.com', 'teacherpassword', 'Duck', 'Shop', '2'),
-(1, 'pleb@mail.dk', 'pass', 'Pleb', 'User', '3');
+(2, 'andreashenriksen95@live.dk', 'pass', 'Andreas', 'Madum', '1'),
+(3, 'duckshopdwp@gmail.com', 'teacherpassword', 'Duck', 'Shop', '2'),
+(4, 'pleb@mail.dk', 'pass', 'Pleb', 'User', '3');
 
 INSERT INTO `products` (`id`, `name`, `code`, `price`, `description`) VALUES
 (1, 'Standard', 'DS0021', 25.00, 'This is your standard average duck. A true classic, if you will!'),
