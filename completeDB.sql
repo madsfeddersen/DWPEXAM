@@ -2,6 +2,7 @@ DROP DATABASE IF EXISTS duckshopdb;
 CREATE DATABASE duckshopdb;
 USE duckshopdb;
 
+
 DROP TABLE IF EXISTS duck_shop;
 CREATE TABLE IF NOT EXISTS duck_shop (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -16,6 +17,7 @@ CREATE TABLE IF NOT EXISTS duck_shop (
     shop_description text(10000)
 );
 
+
 DROP TABLE IF EXISTS users;
 CREATE TABLE IF NOT EXISTS users (
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -25,6 +27,7 @@ CREATE TABLE IF NOT EXISTS users (
 	lastName VARCHAR(30),
   userRank VARCHAR(10)
 );
+
 
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
@@ -36,11 +39,12 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`)
 );
 
+
 DROP TABLE IF EXISTS orders;
 CREATE TABLE IF NOT EXISTS orders (
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	user_id int NOT NULL,
-  	fullname VARCHAR(30),
+  fullname VARCHAR(30),
 	orderEmail VARCHAR(30),
 	shipping_address VARCHAR(30),
 	city VARCHAR(30),
@@ -56,6 +60,15 @@ CREATE TABLE IF NOT EXISTS orders (
   color VARCHAR(30),
   price VARCHAR(30)
 );
+
+
+CREATE VIEW getSite AS SELECT * FROM duck_shop;
+CREATE VIEW productList AS SELECT * FROM products;
+
+
+CREATE PROCEDURE `getFooter`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT * FROM duck_shop;
+CREATE PROCEDURE `getProducts`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT * FROM products;
+
 
 insert into duck_shop (id, shop_name, street_address, zipcode, phone, email, opening_hours, daily_product, news, shop_description) 
 values (1, 'DuckYou!', 'Duck Street 1', '6710 Esbjerg V', '+45 13377331', 'duck@duck.dk', 'In the quacking Hours', 1,
@@ -87,8 +100,4 @@ INSERT INTO `products` (`id`, `name`, `code`, `price`, `description`) VALUES
 INSERT INTO `orders` (id, `user_id`, fullname, orderEmail, shipping_address, city, zip, cname, ccnum, expmonth, expyear, cvv, productname, quantity, price) VALUES
 (1, 1, 'Ma name', 'email', 'road 32', 'esbjerg', '6710', 'Card namez', '1111-2222-3333-4444', 'November', '1995', '352', "Trump", 2, 30.00);
 
-CREATE VIEW getSite AS SELECT * FROM duck_shop;
-CREATE VIEW productlist AS SELECT * FROM products;
 
-CREATE PROCEDURE `getFooter`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT * FROM duck_shop;
-CREATE PROCEDURE `getProducts`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT * FROM duck_shop;
