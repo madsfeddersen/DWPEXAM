@@ -1,7 +1,7 @@
 .dashboard, .dashboard a {
     font-weight: bold;
     background: none!important;
-    color: #fff!important;
+    color: #a9a9a9!important;
     border: 0.5px solid #fff;
     margin-right: 5px;
     margin-left: 5px;
@@ -12,8 +12,8 @@
 }
 
 .dashboard:hover, .dashboard a:hover{
-    color: rgba(251, 188, 5, 1);
-    border-color: rgba(251, 188, 5, 1);
+    color: rgba(251, 188, 5, 1)!important;
+    border-color: rgba(251, 188, 5, 1)!important;
 }
 
 #duck
