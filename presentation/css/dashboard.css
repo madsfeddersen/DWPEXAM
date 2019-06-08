@@ -1,7 +1,7 @@
 .dashboard, .dashboard a {
     font-weight: bold;
     background: none!important;
-    color: #fff;
+    color: #fff!important;
     border: 0.5px solid #fff;
     margin-right: 5px;
     margin-left: 5px;
